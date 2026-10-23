@@ -396,7 +396,7 @@ details.faq > div {
           <tr><td>Message (up to 140 characters)</td><td>Optional</td><td>You write it in a record.</td></tr>
           <tr><td>Streak and totals</td><td>Required</td><td>The server calculates them: current and longest streak, last record date, whether you used this month's Streak Freeze, and total distance and steps. We also store the streak values from before each record, so that we can restore them if you delete a same-day record.</td></tr>
           <tr><td>Likes, follows, reports (with reason), and blocks</td><td>Optional (when you use the feature)</td><td>Created by your actions. We store who did it, to which record or user, and when.</td></tr>
-          <tr><td>Server logs</td><td>Automatic</td><td>If a server function has an error, it logs the function name, step name, and error details. It does not log request content such as your messages. The server service (Supabase) also keeps request logs, such as request addresses, automatically. According to Supabase's documentation, these request logs can include the request time and the request address (including the query string after the address). They can also include the IP address and country of the connection, and device and app information (User-Agent).</td></tr>
+          <tr><td>Server logs</td><td>Automatic</td><td>If a server function has an error, it logs the function name, step name, and error details. Some error logs can also include your account ID and a record ID, so that we can tell which account the request came from. It does not log request content such as your messages. The server service (Supabase) also keeps request logs, such as request addresses, automatically. According to Supabase's documentation, these request logs can include the request time and the request address (including the query string after the address). They can also include the IP address and country of the connection, and device and app information (User-Agent).</td></tr>
         </tbody>
       </table></div>
 
@@ -1326,7 +1326,7 @@ details.faq > div {
           <tr><td>메시지(최대 140자)</td><td>선택</td><td>이용자가 기록에 직접 씁니다.</td></tr>
           <tr><td>연속 기록과 누적 값</td><td>필수</td><td>서버가 계산합니다. 현재 · 최장 연속 기록, 마지막 기록일, 이번 달 연속 기록 보호 사용 여부, 누적 거리 · 걸음 수입니다. 당일 기록을 지울 때 되돌리려고 기록 전 연속 기록 값도 저장합니다.</td></tr>
           <tr><td>좋아요, 팔로우, 신고(사유 포함), 차단</td><td>선택(그 기능을 쓸 때)</td><td>이용자의 동작으로 만들어집니다. 누가, 어떤 기록이나 이용자에게, 언제 했는지를 저장합니다.</td></tr>
-          <tr><td>서버 기록(로그)</td><td>자동</td><td>서버 함수에 오류가 나면 함수 이름, 단계 이름, 오류 내용을 남깁니다. 이용자가 쓴 메시지 같은 요청 본문은 남기지 않습니다. 서버 서비스(Supabase)도 요청 주소 같은 요청 기록을 자동으로 남깁니다. Supabase 문서에 따르면 이 요청 기록에는 요청 시각과 요청 주소(주소 뒤에 붙는 조회 값 포함)가 들어갈 수 있습니다. 접속한 IP 주소와 국가, 기기 · 앱 정보(User-Agent)도 들어갈 수 있습니다.</td></tr>
+          <tr><td>서버 기록(로그)</td><td>자동</td><td>서버 함수에 오류가 나면 함수 이름, 단계 이름, 오류 내용을 남깁니다. 일부 오류 기록에는 어느 계정의 요청인지 알 수 있도록 계정 ID와 기록 ID가 함께 남을 수 있습니다. 이용자가 쓴 메시지 같은 요청 본문은 남기지 않습니다. 서버 서비스(Supabase)도 요청 주소 같은 요청 기록을 자동으로 남깁니다. Supabase 문서에 따르면 이 요청 기록에는 요청 시각과 요청 주소(주소 뒤에 붙는 조회 값 포함)가 들어갈 수 있습니다. 접속한 IP 주소와 국가, 기기 · 앱 정보(User-Agent)도 들어갈 수 있습니다.</td></tr>
         </tbody>
       </table></div>
 
@@ -2256,7 +2256,7 @@ details.faq > div {
           <tr><td>メッセージ（最大140文字）</td><td>任意</td><td>利用者が記録に書きます。</td></tr>
           <tr><td>連続記録と累計</td><td>必須</td><td>サーバーが計算します。現在と最長の連続記録、最後の記録日、今月の連続記録の保護を使ったかどうか、累計の距離と歩数です。当日の記録を削除したときに戻すため、記録する前の連続記録の値も保存します。</td></tr>
           <tr><td>いいね、フォロー、報告（理由を含む）、ブロック</td><td>任意（その機能を使うとき）</td><td>利用者の操作で作られます。だれが、どの記録や利用者に、いつ行ったかを保存します。</td></tr>
-          <tr><td>サーバーの記録（ログ）</td><td>自動</td><td>サーバー関数でエラーが起きると、関数名、段階名、エラーの内容を記録します。利用者が書いたメッセージなどのリクエスト本文は記録しません。サーバーサービス（Supabase）も、リクエストのアドレスなどのリクエスト記録を自動で残します。Supabaseの文書によると、このリクエスト記録には、リクエストの日時とリクエストのアドレス（アドレスの後ろに付くクエリ文字列を含む）が含まれることがあります。接続元のIPアドレスと国、端末・アプリの情報（User-Agent）も含まれることがあります。</td></tr>
+          <tr><td>サーバーの記録（ログ）</td><td>自動</td><td>サーバー関数でエラーが起きると、関数名、段階名、エラーの内容を記録します。一部のエラーの記録には、どのアカウントのリクエストかが分かるように、アカウントIDと記録IDも残ることがあります。利用者が書いたメッセージなどのリクエスト本文は記録しません。サーバーサービス（Supabase）も、リクエストのアドレスなどのリクエスト記録を自動で残します。Supabaseの文書によると、このリクエスト記録には、リクエストの日時とリクエストのアドレス（アドレスの後ろに付くクエリ文字列を含む）が含まれることがあります。接続元のIPアドレスと国、端末・アプリの情報（User-Agent）も含まれることがあります。</td></tr>
         </tbody>
       </table></div>
 
