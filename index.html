@@ -1,1 +1,3125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &amp; Terms · StepStella</title>
+<meta name="description" content="Privacy Policy and Terms of Service for the StepStella iPhone app, in English, Korean, and Japanese.">
+<style>
+/*
+  걸음별자리(StepStella) 웹 문서 공통 스타일
+  - 지원 · 개인정보처리방침 · 이용약관 페이지가 함께 쓴다.
+  - 외부 글꼴과 스크립트를 쓰지 않는다. 시스템 글꼴만 쓴다.
+  - 색은 아래 :root 변수에만 적는다. 강조색은 앱 브랜드 초록(03_visual_design/00_design_decisions.md V3)이다.
+    라이트 #16794A, 다크 #26A166. 모든 글자 색은 배경 위에서 WCAG AA(4.5:1) 이상이다.
+*/
 
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;          /* 페이지 배경 */
+  --surface: #f3f6f4;     /* 목차 · 표 머리 · FAQ 배경 */
+  --text: #16211c;        /* 본문 글자 (WalklogInk 라이트) · 흰 배경 16.6:1 */
+  --text-muted: #4d5a53;  /* 보조 글자 · 흰 배경 7.2:1 */
+  --accent: #16794a;      /* 링크 · 강조 (WalklogGreen 라이트) · 흰 배경 5.4:1 */
+  --line: #dce7e1;        /* 구분선 (WalklogLine 라이트, 장식용) */
+  --todo-bg: #ffe27a;     /* 아직 정하지 않은 값 표시 배경 */
+  --todo-text: #16211c;   /* 노란 배경 위 글자 · 12.9:1 */
+  --code-bg: #eaf0ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101412;
+    --surface: #1a201d;
+    --text: #dae9e1;        /* WalklogInk 다크 · 14.8:1 */
+    --text-muted: #a6b5ad;  /* 8.7:1 */
+    --accent: #26a166;      /* WalklogGreen 다크 · 5.6:1 */
+    --line: #323a36;        /* WalklogLine 다크 */
+    --todo-bg: #f5cf4b;
+    --todo-text: #1a1400;   /* 12.2:1 */
+    --code-bg: #232a26;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, system-ui, "Hiragino Sans", "Apple SD Gothic Neo", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  word-break: keep-all;      /* 한국어 낱말 중간에서 줄이 바뀌지 않게 한다 */
+  overflow-wrap: anywhere;   /* 긴 메일 주소 · 주소가 화면 밖으로 나가지 않게 한다 */
+}
+
+body:lang(ja) {
+  word-break: normal;        /* 일본어는 낱말 사이에 띄어쓰기가 없으므로 기본 줄바꿈을 쓴다 */
+}
+
+/* 머리글 */
+
+.site-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.lang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 0.9375rem;
+}
+
+.lang a {
+  color: var(--accent);
+}
+
+.lang a[aria-current="true"] {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 본문 */
+
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.35;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 24px 0 8px;
+}
+
+h2 {
+  font-size: 1.375rem;
+  margin: 40px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin: 28px 0 8px;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 16px;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+li + li {
+  margin-top: 4px;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background-color: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+/* 목차 */
+
+.toc {
+  background-color: var(--surface);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 16px 0 8px;
+}
+
+.toc ol {
+  margin: 0;
+}
+
+/* 표: 표만 가로로 밀어 볼 수 있고, 페이지는 가로로 밀리지 않는다 */
+
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  min-width: 7em;
+}
+
+th {
+  background-color: var(--surface);
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* 아직 정하지 않은 값 */
+
+mark.todo {
+  background-color: var(--todo-bg);
+  color: var(--todo-text);
+  padding: 0.05em 0.3em;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* 자주 묻는 질문 */
+
+details.faq {
+  background-color: var(--surface);
+  border-radius: 8px;
+  margin: 0 0 8px;
+}
+
+details.faq summary {
+  cursor: pointer;
+  padding: 12px 16px;
+  font-weight: 600;
+}
+
+details.faq[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+details.faq > div {
+  padding: 12px 16px 4px;
+}
+
+/* 바닥글 */
+
+.site-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 16px 32px;
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+/* 인쇄 */
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #000000;
+    --text-muted: #333333;
+    --accent: #000000;
+  }
+
+  .lang,
+  .toc {
+    display: none;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* 한 파일 세 언어 페이지에 더한 규칙 */
+
+.lang-section + .lang-section {
+  border-top: 4px solid var(--accent);  /* 언어 구역 사이 구분선 */
+}
+
+.lang-section:lang(ja) {
+  word-break: normal;        /* body:lang(ja)와 같은 이유. 이 페이지의 body는 lang="en"이다 */
+}
+
+.doc-nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 0.9375rem;
+}
+
+.doc + .doc {
+  padding-top: 0;            /* 방침 뒤에 이어지는 약관 */
+}
+
+.site-footer a {
+  color: var(--accent);
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="https://purple-lamp-236.github.io/walk-log-landing/">StepStella</a>
+  <nav class="lang" aria-label="Language"><a href="#en" lang="en">English</a><a href="#ko" lang="ko">한국어</a><a href="#ja" lang="ja">日本語</a></nav>
+</header>
+<main>
+<article id="en" lang="en" class="lang-section">
+  <nav class="doc-nav" aria-label="Documents"><a href="#en-privacy">Privacy Policy</a><a href="#en-terms">Terms of Service</a></nav>
+  <div class="doc" id="en-privacy">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: 2026-10-23 · Last updated: 2026-10-23</p>
+
+    <nav class="toc" aria-label="Contents">
+      <ol>
+        <li><a href="#en-privacy-s1">About this policy</a></li>
+        <li><a href="#en-privacy-s2">Information we process</a></li>
+        <li><a href="#en-privacy-s3">Why we use your information</a></li>
+        <li><a href="#en-privacy-s4">Information we do not collect</a></li>
+        <li><a href="#en-privacy-s5">Location information</a></li>
+        <li><a href="#en-privacy-s6">Health data (HealthKit)</a></li>
+        <li><a href="#en-privacy-s7">What other users can see</a></li>
+        <li><a href="#en-privacy-s8">How long we keep information</a></li>
+        <li><a href="#en-privacy-s9">Deletion and account deletion</a></li>
+        <li><a href="#en-privacy-s10">Sharing with third parties</a></li>
+        <li><a href="#en-privacy-s11">Service providers and outside services</a></li>
+        <li><a href="#en-privacy-s12">Transfers outside Korea</a></li>
+        <li><a href="#en-privacy-s13">Your rights and how to use them</a></li>
+        <li><a href="#en-privacy-s14">Children under 14</a></li>
+        <li><a href="#en-privacy-s15">How we protect your information</a></li>
+        <li><a href="#en-privacy-s16">Automatic collection tools</a></li>
+        <li><a href="#en-privacy-s17">Privacy officer</a></li>
+        <li><a href="#en-privacy-s18">Where to get help</a></li>
+        <li><a href="#en-privacy-s19">Changes to this policy</a></li>
+      </ol>
+    </nav>
+
+    <section id="en-privacy-s1">
+      <h2>1. About this policy</h2>
+      <p>This policy explains how the iPhone app StepStella (Korean name: 걸음별자리) handles your personal information.</p>
+      <ul>
+        <li>Once a day, StepStella reads yesterday's step count and distance from the Apple Health app. It moves your virtual position on the globe by that distance, and you can leave a short message.</li>
+        <li>The app is run by an individual developer. In this policy, we call this developer the "operator".</li>
+        <li>Operator name: YoungBeom Seo</li>
+        <li>Contact: <a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>The app is free. It has no ads and no in-app purchases.</li>
+        <li>You must be 14 or older to use the app. See <a href="#en-privacy-s14">Section 14</a>.</li>
+        <li>The sign-up screen and Settings › Privacy › Data Policy in the app link to this policy.</li>
+        <li>If you continue on the sign-up screen, you agree to this policy and the Terms of Service.</li>
+      </ul>
+      <p>This policy is available in Korean, English, and Japanese. The Korean version is the reference version. The English and Japanese versions have the same content. If the versions differ, the Korean version applies.</p>
+    </section>
+
+    <section id="en-privacy-s2">
+      <h2>2. Information we process</h2>
+      <p>The tables below list all information the app processes. "Required" means you need it to use the app. "Optional" means we process it only if you allow it or use that feature.</p>
+
+      <h3>Information stored on the server</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Item</th><th>Required or optional</th><th>How we get it</th></tr></thead>
+        <tbody>
+          <tr><td>Account ID</td><td>Required</td><td>A random ID number the server creates when you sign in with Apple.</td></tr>
+          <tr><td>Apple sign-in information</td><td>Required</td><td>A sign-in confirmation value that Apple sends when you sign in with Apple. From it, the server's sign-in feature (Supabase Auth) stores the user identifier that Apple gives this app and token information (such as the issuer). It also stores the time you signed up and the time you last signed in. The app does not ask for your name or email when you sign in with Apple. However, if Apple sends an email address (or an address from Apple's "Hide My Email") with the sign-in, the server's sign-in feature may also store that address.</td></tr>
+          <tr><td>Sign-in session information</td><td>Required</td><td>When you sign in, the server's sign-in feature (Supabase Auth) creates session information to keep you signed in. This information includes the IP address of the connection and device and app information (User-Agent). It also stores the time the session was created and the time it was refreshed.</td></tr>
+          <tr><td>Anonymous ID</td><td>Required</td><td>A random value the server creates when you sign up. Example: <code>#A3F29C01</code></td></tr>
+          <tr><td>Time zone</td><td>Required</td><td>Taken from your device settings when you sign up. Example: <code>Asia/Seoul</code></td></tr>
+          <tr><td>Starting city coordinates</td><td>Required</td><td>Set when you sign up. With location permission, this is the center of the city found from your device location (if no city is found, the center of an area of about 39 km × 20 km). Without location permission, this is the main city of your device's time zone. See <a href="#en-privacy-s5">Section 5</a>.</td></tr>
+          <tr><td>Record date, step count, and distance (yesterday's daily total)</td><td>Required (recorded as 0 if you do not allow Health access)</td><td>Read from the Apple Health app (HealthKit). See <a href="#en-privacy-s6">Section 6</a>.</td></tr>
+          <tr><td>Direction</td><td>Required</td><td>You choose it. There is a Base Direction you choose with your first record and a direction you choose for each record. A 0 km record has no direction.</td></tr>
+          <tr><td>Virtual position</td><td>Required</td><td>The server calculates it from yesterday's virtual position, the direction you chose, and yesterday's distance.</td></tr>
+          <tr><td>Public or private setting</td><td>Required</td><td>You choose it for each record. The default is public.</td></tr>
+          <tr><td>Message (up to 140 characters)</td><td>Optional</td><td>You write it in a record.</td></tr>
+          <tr><td>Streak and totals</td><td>Required</td><td>The server calculates them: current and longest streak, last record date, whether you used this month's Streak Freeze, and total distance and steps. We also store the streak values from before each record, so that we can restore them if you delete a same-day record.</td></tr>
+          <tr><td>Likes, follows, reports (with reason), and blocks</td><td>Optional (when you use the feature)</td><td>Created by your actions. We store who did it, to which record or user, and when.</td></tr>
+          <tr><td>Server logs</td><td>Automatic</td><td>If a server function has an error, it logs the function name, step name, and error details. It does not log request content such as your messages. The server service (Supabase) also keeps request logs, such as request addresses, automatically. According to Supabase's documentation, these request logs can include the request time and the request address (including the query string after the address). They can also include the IP address and country of the connection, and device and app information (User-Agent).</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Information in the operator's mailbox</h3>
+      <ul>
+        <li>Settings › Support › Contact Us opens the Mail app on your device. The app sends nothing to the server.</li>
+        <li>If you send an email, the operator receives your email address and the content of your email.</li>
+        <li>The email body is pre-filled with the app version, iOS version, device model identifier (for example, iPhone18,1), and app language. You can see and delete this before you send.</li>
+        <li>We do not pre-fill your device name, device identifiers, or Anonymous ID.</li>
+      </ul>
+
+      <h3>Information stored only on your device</h3>
+      <p>The information below stays on your iPhone. We do not send it to the server.</p>
+      <ul>
+        <li>Settings: whether you finished onboarding, whether the daily reminder is on and its time, Map Marker, Appearance, when to ask for notification permission again, and the account ID that owns the cache</li>
+        <li>Cache (a copy stored on your device for a short time so screens load quickly): your records and the Journey Neighbors feed</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s3">
+      <h2>3. Why we use your information</h2>
+      <p>The operator uses personal information only for the purposes below. If a purpose changes, we update this policy first.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Purpose</th><th>Information used</th></tr></thead>
+        <tbody>
+          <tr><td>Signing you in, keeping you signed in, and telling your records apart from others</td><td>Account ID, Apple sign-in information, sign-in session information</td></tr>
+          <tr><td>Setting the record date. We convert server time to the local date in your saved time zone. The "yesterday" range in the Health app also uses this time zone.</td><td>Time zone</td></tr>
+          <tr><td>Calculating your virtual position and showing your records (globe, map, and Log tab)</td><td>Starting city coordinates, step count, distance, direction, virtual position, message</td></tr>
+          <tr><td>Calculating streaks, Discovery Radius, and Streak Freeze</td><td>Streak and totals, record date, distance</td></tr>
+          <tr><td>Running the Journey Neighbors feed (showing public records of users whose virtual positions are near yours)</td><td>Anonymous ID, public records, virtual position, likes, follows</td></tr>
+          <tr><td>Handling inappropriate records: word filter, reports, automatic hiding, and blocking</td><td>Messages, reports, blocks, account ID</td></tr>
+          <tr><td>Answering your questions</td><td>Contact emails</td></tr>
+          <tr><td>Finding server errors</td><td>Server logs</td></tr>
+        </tbody>
+      </table></div>
+      <p>The legal basis for each item is as follows.</p>
+      <ul>
+        <li><strong>Required items and server logs:</strong> We process the items marked "Required" in <a href="#en-privacy-s2">Section 2</a> to carry out the service agreement we have with you (Korean Personal Information Protection Act, Article 15(1)(4)). Sign-in session information is also included here, because you need it to sign in. Step count and distance are covered separately below.</li>
+        <li><strong>Step count and distance (Health app data):</strong> We process them based on your consent when you allow Health access (the same Act, Article 15(1)(1)). If you do not allow it, we record 0.</li>
+        <li><strong>Device location:</strong> We use it only to find your starting city at sign-up, based on your consent when you allow location access (the same Act, Article 15(1)(1)).</li>
+        <li><strong>Optional items (message, likes, follows, reports, and blocks):</strong> We process them based on your consent when you use that feature (the same Act, Article 15(1)(1)).</li>
+        <li><strong>Contact emails:</strong> We process them based on your consent when you send an email (the same Act, Article 15(1)(1)).</li>
+        <li><strong>Daily reminder setting:</strong> When you turn on the reminder, whether it is on and its time are stored only on your device. We do not send them to the server.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s4">
+      <h2>4. Information we do not collect</h2>
+      <ul>
+        <li><strong>Name and email:</strong> We do not ask for your name or email when you sign in with Apple. However, if Apple sends an email address with the sign-in, the server's sign-in feature may store it (<a href="#en-privacy-s2">Section 2</a>).</li>
+        <li><strong>Advertising identifier:</strong> We do not read your device's advertising identifier. The app does not track you.</li>
+        <li><strong>Analytics, advertising, and crash reporting tools:</strong> The app does not include these tools (SDKs).</li>
+        <li><strong>Remote push tokens:</strong> The app does not use push notifications sent from a server. So we do not collect device tokens for push notifications. The daily reminder is a local notification that your device shows by itself.</li>
+        <li><strong>Exact location:</strong> We do not store your device's exact coordinates on the server. The app does not read your location when you save a record. See <a href="#en-privacy-s5">Section 5</a>.</li>
+        <li><strong>Raw health data:</strong> We do not send the original records from the Health app to the server. We send only the daily totals.</li>
+        <li><strong>Other permissions:</strong> We do not ask for access to photos, the camera, or contacts.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s5">
+      <h2>5. Location information</h2>
+      <p>The app uses your device location only to set your starting city at sign-up. To keep exact places such as your home hidden, the server stores only an approximate location (usually the center of your starting city).</p>
+
+      <h3>Location permission</h3>
+      <ul>
+        <li>We ask only for "While Using the App" permission. The app does not read your location when you are not using it (in the background).</li>
+        <li>The app reads your location only once each time it needs it. It asks for an accuracy of about 100 m.</li>
+        <li>The app reads your location only when it sets your starting city at sign-up (including when you tap "Try Again" on that screen). It does not read your location when you save a record.</li>
+        <li>You do not have to allow location access. You can still sign up and record without it.</li>
+        <li>You can change this permission at any time in the iPhone Settings app.</li>
+        <li>The map does not show your real current location.</li>
+      </ul>
+
+      <h3>At sign-up: starting city</h3>
+      <p>A geohash divides Earth's surface into cells and gives each cell a short text code. Fewer characters mean a bigger cell.</p>
+      <ul>
+        <li>We do not use your device's exact coordinates as your starting point.</li>
+        <li>The app sends your device coordinates to Apple's geocoding service. Geocoding finds a city name from coordinates.</li>
+        <li>If a city is found, we use the center of that city.</li>
+        <li>If no city is found, we use the center of a 4-character geohash cell (about 39 km × 20 km).</li>
+        <li>If your location is not available, we use the main city of your device's time zone. In this case, we send only a public city name and its coordinates to Apple. We do not send your location.</li>
+        <li>The server stores only the coordinates chosen this way. We do not send your device coordinates or the city name to the server.</li>
+        <li>There is no feature to change your starting city coordinates.</li>
+      </ul>
+
+      <h3>When you record</h3>
+      <ul>
+        <li>The app does not read your device location when you save a record.</li>
+        <li>A record stores your virtual position (below), not your real location.</li>
+        <li>If a future version uses your location when you record, we will update this policy first (<a href="#en-privacy-s19">Section 19</a>).</li>
+      </ul>
+
+      <h3>Virtual position</h3>
+      <ul>
+        <li>Your virtual position is not your real location.</li>
+        <li>It is a point on the globe that starts at your starting city and moves by the distance you walked in the direction you chose.</li>
+        <li>Your first record does not move. It stays at your starting city.</li>
+        <li>The server calculates it and stores it as coordinates. What other users can see is in <a href="#en-privacy-s7">Section 7</a>.</li>
+      </ul>
+
+      <h3>Korean Act on the Protection, Use, etc. of Location Information</h3>
+      <ul>
+        <li>The app reads your device location only to find your starting city at sign-up. It does not read your location when you record.</li>
+        <li>The server stores only an approximate location: usually the center of a city, or the center of an area of about 39 km × 20 km if no city is found.</li>
+        <li>If we find that this Act requires the operator to do something, we will first update this policy and the <a href="#en-terms">Terms of Service</a>. We will then announce the change as described in <a href="#en-privacy-s19">Section 19</a> of this policy and <a href="#en-terms-s17">Section 17</a> of the Terms of Service.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s6">
+      <h2>6. Health data (HealthKit)</h2>
+      <p>HealthKit is an Apple feature that lets apps read data stored in the iPhone Health app.</p>
+
+      <h3>Data we read</h3>
+      <ul>
+        <li>The app reads only two types of data: step count and walking + running distance.</li>
+        <li>We do not read other health data such as heart rate or sleep.</li>
+        <li>We do not write any data to the Health app.</li>
+        <li>We read only the daily total for yesterday, from 0:00 to 24:00 in your saved time zone. We read it when you open the record screen.</li>
+        <li>We leave out values that you entered by hand in the Health app.</li>
+        <li>If your daily distance is over 100 km, we record 100 km. If your step count is over 200,000 steps, we record 200,000 steps.</li>
+      </ul>
+
+      <h3>Storage and visibility</h3>
+      <ul>
+        <li>We send only the daily totals to the server. We do not send the original records from the Health app.</li>
+        <li>The server stores the step count and distance for each record, and your totals.</li>
+        <li>Records are public by default. For a public record, other users can see your exact step count and distance in the Journey Neighbors feed.</li>
+        <li>Users who follow you see the distance rounded to the nearest 1 km and the step count rounded to the nearest 1,000 steps.</li>
+        <li>Other users cannot see the step count and distance of private records.</li>
+      </ul>
+
+      <h3>What we do not use it for</h3>
+      <ul>
+        <li>We use health data only to calculate and show your records.</li>
+        <li>We do not use health data for advertising, marketing, or usage-based data mining.</li>
+        <li>We do not sell health data.</li>
+        <li>We do not share health data with third parties such as advertisers or data brokers. The company that runs our server is listed in <a href="#en-privacy-s11">Section 11</a>.</li>
+      </ul>
+
+      <h3>Permission</h3>
+      <ul>
+        <li>You do not have to allow Health access. If you do not, the values are read as 0, and you can record 0 steps.</li>
+        <li>iOS does not tell the app whether you allowed Health access.</li>
+        <li>You can change this permission in Settings › Privacy &amp; Security › Health › StepStella.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s7">
+      <h2>7. What other users can see</h2>
+
+      <h3>Journey Neighbors feed</h3>
+      <p>The Journey Neighbors feed shows public records of other users within your Discovery Radius (5 km to 50 km) from your virtual position. It shows only records from the last 7 days.</p>
+      <ul>
+        <li>Shown on a feed card: Anonymous ID, distance range between virtual positions ("Within 1 km", "Within 5 km", "Within 10 km", "Within Radius"), distance, step count, message, number of likes, date</li>
+        <li>Not shown: account ID, name, email, virtual position coordinates, direction, time zone</li>
+        <li>Other users cannot see private records.</li>
+        <li>You choose public or private for each record. You can also switch past records between public and private in the Log tab.</li>
+        <li>Other users' devices may keep a feed cache until their next refresh.</li>
+      </ul>
+
+      <h3>Likes</h3>
+      <ul>
+        <li>The owner of a record sees only the number of likes.</li>
+        <li>Even the owner cannot see who liked the record.</li>
+      </ul>
+
+      <h3>Follows</h3>
+      <ul>
+        <li>You can follow a user only from a record shown in your feed.</li>
+        <li>A follow lasts 30 days.</li>
+        <li>We do not notify the other user when you follow them or when a follow ends.</li>
+        <li>Users who follow you see your public records from the last 30 days on the globe.</li>
+        <li>These positions are shown as the center of a 5-character geohash cell (about 4.9 km × 4.9 km). They can differ from the actual virtual position by up to about 2.4 km.</li>
+        <li>Distance is rounded to the nearest 1 km and step count to the nearest 1,000 steps. Messages are not shown.</li>
+        <li>Your first record stays at your starting city. So if your first record is within the last 30 days, followers can tell the rough location of your starting city.</li>
+      </ul>
+
+      <h3>Hiding and blocking</h3>
+      <ul>
+        <li>If 3 users report a record, it is hidden automatically. A hidden record is removed from the feed and from followers' globes. The owner can still see it.</li>
+        <li>If you block a user, your records and theirs disappear from each other's feeds. Follows between you also end.</li>
+        <li>We do not tell the other user that you blocked them. You cannot undo a block in the app.</li>
+      </ul>
+
+      <h3>Anonymous ID</h3>
+      <ul>
+        <li>The feed shows an Anonymous ID instead of a name. An Anonymous ID is a random value: <code>#</code> followed by 8 hexadecimal characters.</li>
+        <li>Your Anonymous ID changes to a new value every 90 days. The server checks once a day and replaces IDs older than 90 days.</li>
+        <li>We do this to make it hard to track one person over a long period.</li>
+        <li>We do not keep old IDs in the database tables.</li>
+        <li>However, an old ID may remain for a while in these places: old data before the database finishes its automatic cleanup, server request logs, and feed caches on other users' devices</li>
+        <li>Follows, likes, reports, and blocks are stored with your account ID, not your Anonymous ID. So they stay the same when your Anonymous ID changes.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s8">
+      <h2>8. How long we keep information</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Information</th><th>How long we keep it</th></tr></thead>
+        <tbody>
+          <tr><td>Account information (account ID, Apple sign-in information, Anonymous ID, time zone, starting city coordinates, Base Direction)</td><td>Until you delete your account</td></tr>
+          <tr><td>Sign-in session information</td><td>Until you sign out or delete your account. When you sign out, we end the sessions on all devices signed in to this account. We delete the information of the ended sessions. When you delete your account, we also delete the session information. According to Supabase's documentation, sessions last with no time limit by default. The feature that limits session time is available only on the Pro plan and up. So if you only delete the app without signing out, the session information stays on the server. It may also stay if the sign-out request does not reach the server, for example because of a network problem. In that case, it is deleted when you sign in again and then sign out, or when you delete your account.</td></tr>
+          <tr><td>Records (date, step count, distance, direction, virtual position, message, public or private setting)</td><td>Until you delete your account. If you delete a same-day record, we delete it right away.</td></tr>
+          <tr><td>Streak and totals</td><td>Until you delete your account</td></tr>
+          <tr><td>Each Anonymous ID</td><td>90 days. Then we replace it with a new ID.</td></tr>
+          <tr><td>Likes</td><td>Until the record or either account is deleted</td></tr>
+          <tr><td>Follows</td><td>Viewing a followed user's records ends after 30 days. There is no feature that deletes ended follow entries. We delete them when one user blocks the other or either account is deleted. Retention period: Ended follow entries are also kept until the follower's or the followed user's account is deleted.</td></tr>
+          <tr><td>Reports</td><td>Until the reported record or the reporter's account is deleted. Retention period: Until the reporter or the record owner deletes their account. We need reports to keep reported records out of the reporter's feed.</td></tr>
+          <tr><td>Blocks</td><td>Until either account is deleted</td></tr>
+          <tr><td>Server logs</td><td>1 day (Supabase Free plan). According to Supabase's documentation, the Free plan keeps logs for 1 day.</td></tr>
+          <tr><td>Server backups</td><td>We do not make server backups. According to Supabase's documentation, the Free plan does not include automatic backups.</td></tr>
+          <tr><td>Contact emails</td><td>1 year after we finish handling the inquiry</td></tr>
+          <tr><td>Information stored only on your device</td><td>When you sign out or delete your account, the app deletes the cache and the scheduled daily reminder on your device.</td></tr>
+        </tbody>
+      </table></div>
+      <p>The periods for server logs, server backups, and sign-in session information above are based on the Supabase Free plan that runs our server. If we change the plan (for example, to the Pro plan), these periods may change. In that case, we will update this policy first and announce the change as described in <a href="#en-privacy-s19">Section 19</a>.</p>
+      <p>Information kept separately as required by law: If a law requires us to keep certain information, we keep it apart from other information, only for the period that law sets. We use it only for that purpose.</p>
+    </section>
+
+    <section id="en-privacy-s9">
+      <h2>9. Deletion and account deletion</h2>
+
+      <h3>How we delete information</h3>
+      <ul>
+        <li>When a retention period ends or the purpose of processing is achieved, we delete that information without delay.</li>
+        <li>We delete server information from the database. Deleted information cannot be restored in the app.</li>
+        <li>Places where some information may remain for a while after deletion are listed below under "What may remain after deletion".</li>
+      </ul>
+
+      <h3>Deleting your account</h3>
+      <ol>
+        <li>In the app, go to Settings › Account › Delete Account.</li>
+        <li>In the confirmation window, tap "Delete Permanently".</li>
+        <li>Confirm with your Apple Account once more. If you cancel here, nothing is deleted.</li>
+      </ol>
+      <ul>
+        <li>Deletion happens right away. There is no waiting period (grace period). A deleted account cannot be restored.</li>
+        <li>Deleted together: account information (account ID, Apple sign-in information, Anonymous ID, time zone, starting city coordinates, Base Direction), sign-in session information, all records (virtual position, step count, distance, messages, and so on), streak and totals, follows you made and follows you received, likes you gave and likes on your records, reports you made and reports on your records, and blocks you made and blocks you received</li>
+        <li>After deletion, the server asks Apple to remove this app's Sign in with Apple connection (token revocation). If this request fails, the account deletion is still treated as complete. If the connection remains, you can remove it yourself on your iPhone. Go to Settings › [your name] › Sign in with Apple, choose this app, and tap "Delete".</li>
+        <li>After deletion, the app signs you out and deletes the cache and the scheduled daily reminder on your device.</li>
+      </ul>
+
+      <h3>Deleting a single record</h3>
+      <ul>
+        <li>You can delete only the record you made today. A deleted record cannot be restored.</li>
+        <li>You cannot delete past records. This is because today's virtual position continues from yesterday's virtual position. If a record in the middle is deleted, every position after it becomes wrong.</li>
+        <li>You can make past records private in the Log tab.</li>
+        <li>To delete all past records, please delete your account.</li>
+      </ul>
+
+      <h3>What may remain after deletion</h3>
+      <ul>
+        <li>Feed caches on other users' devices: until their next refresh</li>
+        <li>Old data in the database: until the database finishes its automatic cleanup</li>
+        <li>Server backups: We do not make server backups. So deleted information does not remain in our backups (<a href="#en-privacy-s8">Section 8</a>).</li>
+        <li>Server logs: 1 day (Supabase Free plan)</li>
+        <li>Contact emails the operator received: account deletion does not delete them. If you want them deleted, please ask by email.</li>
+        <li>Information on Apple's side (original Health app data, your Apple Account): the app does not delete it. Original Health app data was never on our server.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s10">
+      <h2>10. Sharing with third parties</h2>
+      <ul>
+        <li>The operator does not share your personal information with third parties.</li>
+        <li>However, we may share it if a law specifically requires it, or if an investigative agency asks for it through a legal procedure.</li>
+        <li>Records you make public are visible to other users. What they can see is in <a href="#en-privacy-s7">Section 7</a>.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s11">
+      <h2>11. Service providers and outside services</h2>
+
+      <h3>Service providers</h3>
+      <p>The operator uses the company below to run the server.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Company</th><th>Work</th><th>Server location</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase Pte. Ltd.</td><td>Running the server, database, sign-in (authentication), and server functions; keeping server logs</td><td>Seoul, Republic of Korea (ap-northeast-2)</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>We confirmed the company name in Supabase's Privacy Policy (<a href="https://supabase.com/privacy">supabase.com/privacy</a>) and Data Processing Addendum (<a href="https://supabase.com/legal/dpa">supabase.com/legal/dpa</a>).</li>
+        <li>Service agreement: The Data Processing Addendum (DPA), which is part of Supabase's Terms of Service, applies. Under it, Supabase processes personal information only on the operator's instructions. Supabase limits access to staff who need it for their work and requires them to keep it confidential. Supabase keeps technical and organizational security measures. Supabase deletes all copies of the data 30 days after the service agreement ends.</li>
+      </ul>
+
+      <h3>Apple services</h3>
+      <p>The app uses the Apple features below. This is the information that goes to Apple for each feature.</p>
+      <ul>
+        <li><strong>Sign in with Apple:</strong> The app communicates with Apple's servers when you sign in and when you delete your account. When you confirm the deletion with your Apple Account, the app receives a one-time code from Apple and sends it to the server. The server then asks Apple to remove this app's Sign in with Apple connection (token revocation). If this request fails, the account deletion is still complete (<a href="#en-privacy-s9">Section 9</a>).</li>
+        <li><strong>Geocoding:</strong> At sign-up, the app sends your device coordinates to Apple to find your starting city. If your location is not available, it sends only a public city name and its coordinates.</li>
+        <li><strong>Apple Maps (MapKit):</strong> Used for the Home map, the record detail map, and the satellite map when you zoom into the globe. Map images come from Apple's servers. The map shows your virtual position. It does not show your real current location.</li>
+        <li><strong>HealthKit:</strong> Health data is read on your device. See <a href="#en-privacy-s6">Section 6</a>.</li>
+        <li><strong>App Store:</strong> "Write a Review" in Settings opens this app's page in the App Store.</li>
+        <li><strong>Mail app:</strong> Contact Us opens the Mail app on your device.</li>
+      </ul>
+
+      <h3>Other outside services</h3>
+      <ul>
+        <li>The program that draws the globe and the Earth images are included in the app. The app does not download them from outside servers while you use it.</li>
+        <li>Apart from the services above, the app does not send information to any outside service.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s12">
+      <h2>12. Transfers outside Korea</h2>
+      <p>This policy treats the two kinds of processing below as transfers outside Korea. For each, we list the items that the Korean Personal Information Protection Act requires us to tell you.</p>
+
+      <h3>Supabase (server)</h3>
+      <p>The server is in Seoul, Republic of Korea. Supabase Pte. Ltd., which runs the server, lists an office address in Singapore in its Data Processing Addendum. The details are as follows.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Item</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Recipient</td><td>Supabase Pte. Ltd. (contact: <a href="mailto:privacy@supabase.com">privacy@supabase.com</a>)</td></tr>
+          <tr><td>Country</td><td>United States, Singapore, and Hungary. These are the countries of the companies in the subprocessor list that Supabase publishes (<a href="https://supabase.com/legal/customer-resources/subprocessor-list">as of October 12, 2026</a>). The list does not say whether each company actually handles this app's data.</td></tr>
+          <tr><td>Items transferred</td><td>All "Information stored on the server" in <a href="#en-privacy-s2">Section 2</a></td></tr>
+          <tr><td>When and how</td><td>Sent through encrypted communication (HTTPS) each time you use the app</td></tr>
+          <tr><td>Purpose</td><td>Running the server, database, sign-in, and server functions</td></tr>
+          <tr><td>Retention period</td><td>Same as in <a href="#en-privacy-s8">Section 8</a></td></tr>
+          <tr><td>How to refuse, and what happens</td><td>Stop using the app or delete your account. The app cannot record without the server, so if you refuse, you cannot use the app.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Apple services</h3>
+      <p>The app sends information to Apple when it uses the Apple features in <a href="#en-privacy-s11">Section 11</a>. The details are as follows.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Item</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Recipient</td><td>Apple Inc. and other Apple entities (contact: <a href="https://www.apple.com/legal/privacy/contact/">apple.com/legal/privacy/contact</a>). Apple's Privacy Policy says that the Apple entity that controls your personal data may differ depending on where you live. It also says that for people who do not live in the United States, Apple Inc. and Apple affiliates may process personal data. Apple's Privacy Policy does not say which Apple entity receives the information this app sends.</td></tr>
+          <tr><td>Country</td><td>United States and other countries. Apple's Privacy Policy says that personal data Apple collects is generally stored by Apple Inc. in the United States. The annex for users in Korea in the Korean version of Apple's Privacy Policy also lists servers in the United States, the EU, the United Kingdom, and countries in the Global Cross-Border Privacy Rules (CBPR) system.</td></tr>
+          <tr><td>Items transferred</td><td>Sign in with Apple: a sign-in request. When you delete your account, the server also sends a request to remove this app's Sign in with Apple connection (token revocation, <a href="#en-privacy-s11">Section 11</a>). Geocoding: your device coordinates, only if you allow location access (accuracy of about 100 m). If your location is not available, only a public city name and its coordinates are sent. Apple Maps: requests for map images, including the area shown on the map. The map shows your virtual position. It does not show your real current location.</td></tr>
+          <tr><td>When and how</td><td>When you sign in and when you delete your account; when the app finds your starting city at sign-up (including when you tap "Try Again"); and when you view a map. Sent over the internet.</td></tr>
+          <tr><td>Purpose</td><td>Signing you in with your Apple Account, finding a city name from coordinates for your starting city, and showing maps</td></tr>
+          <tr><td>Retention period</td><td>As set in <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. It says that Apple keeps personal data only as long as needed for the purposes for which it was collected.</td></tr>
+          <tr><td>How to refuse, and what happens</td><td>Geocoding: If you do not allow location access, we do not send your device coordinates to Apple. Your starting city is then set to the main city of your device's time zone. You can still sign up and record. Sign in with Apple: If you refuse, you cannot sign up, because the app supports only Sign in with Apple. Apple Maps: There is no setting that turns off only the maps. To refuse, stop using the app.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="en-privacy-s13">
+      <h2>13. Your rights and how to use them</h2>
+      <p>You can ask at any time to see, correct, or delete your personal information, or to stop its processing. You can also withdraw your consent.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Right</th><th>In the app</th><th>By email</th></tr></thead>
+        <tbody>
+          <tr><td>See your information</td><td>See your records in the Log tab. See your saved time zone in Settings.</td><td>For information not shown in the app, please ask by email.</td></tr>
+          <tr><td>Correct</td><td>Change a record between public and private in the Log tab.</td><td>For other corrections, please ask by email.</td></tr>
+          <tr><td>Delete</td><td>Delete today's record. Deleting your account deletes all your information (<a href="#en-privacy-s9">Section 9</a>).</td><td>For other deletions, please ask by email.</td></tr>
+          <tr><td>Stop processing</td><td>Turn off location and Health access in the iPhone Settings app. Turn off the daily reminder. Make records private.</td><td>For other requests to stop processing, please ask by email.</td></tr>
+          <tr><td>Withdraw consent</td><td>Turn off permissions or delete your account.</td><td>You can also ask by email.</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>Email: <a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>The app has no feature to download your data as a file.</li>
+        <li>You can also make a request through a representative.</li>
+        <li>How we confirm your identity: The app does not ask for your email address. So for requests by email, we check that your Anonymous ID (shown in Settings in the app) and the date and step count of two recent records match your account. If a record has a message, we also check the message. For requests that could send information to someone else, such as sending a copy of your data, we check once more: we ask you by email to switch one record that we choose between public and private in the app, and we go ahead after we see the change. You can switch it back afterward. You can delete today's record, switch records between public and private, and delete your account directly in the app (see the table above). A representative must also send proof of authorization, such as a letter of authorization.</li>
+        <li>How long we take to reply: We reply within 10 days from the day we receive your request.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s14">
+      <h2>14. Children under 14</h2>
+      <ul>
+        <li>You must be 14 or older to use the app.</li>
+        <li>Children under 14 cannot sign up for or use the app.</li>
+        <li>If we learn that a child under 14 has signed up, we delete that account within 7 days from the day we learn about it.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s15">
+      <h2>15. How we protect your information</h2>
+      <p>The operator takes the steps below to protect personal information.</p>
+      <ul>
+        <li><strong>Encryption in transit:</strong> Communication between the app and the server is encrypted with HTTPS.</li>
+        <li><strong>Access control:</strong> RLS is turned on for every table in the database. RLS is a database feature that checks, row by row, who can read and write data. So users can read and write only the information they are allowed to.</li>
+        <li><strong>Column limits:</strong> The app cannot read who liked a record or the content of reports. Only server functions can read them.</li>
+        <li><strong>Separating identifiers:</strong> Other users receive only your Anonymous ID, not your account ID. We change the Anonymous ID every 90 days.</li>
+        <li><strong>Blurring location:</strong> The app does not read your location when you record. The starting point is moved to a city center, or to the center of an area of about 39 km × 20 km if no city is found.</li>
+        <li><strong>Managing secrets:</strong> We do not put the server's admin secret key in the app or in the source code repository. The Apple sign-in key is kept only as a secret value on the server.</li>
+        <li><strong>Minimal logging:</strong> Error logs do not include messages you write. Account deletion logs do not include tokens or keys.</li>
+        <li><strong>Administrative measures:</strong> We use two-step verification for the operator's accounts (Supabase, GitHub, Apple Developer, and email). Only one person, the operator, has admin access. We keep secret values only on the server.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s16">
+      <h2>16. Automatic collection tools</h2>
+      <ul>
+        <li>The app does not use analytics, advertising, or crash reporting tools.</li>
+        <li>The app does not read the advertising identifier, and it does not track you across other companies' apps or websites.</li>
+        <li>The app stores on your device only the settings it needs to work (<a href="#en-privacy-s2">Section 2</a>). We do not send these to the server.</li>
+        <li>If we add such tools in the future, we will update this policy first.</li>
+        <li>This web page does not use cookies, scripts, or tracking code.</li>
+        <li>Access logs of the hosting service that provides this web page: This web page is provided through GitHub Pages (GitHub, Inc.). According to <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub's documentation</a>, GitHub logs and stores visitors' IP addresses for security purposes.</li>
+      </ul>
+    </section>
+
+    <section id="en-privacy-s17">
+      <h2>17. Privacy officer</h2>
+      <p>The app is run by an individual developer, so the operator is the privacy officer.</p>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><th>Name</th><td>YoungBeom Seo</td></tr>
+          <tr><th>Role</th><td>Operator (individual developer)</td></tr>
+          <tr><th>Email</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+        </tbody>
+      </table></div>
+      <p>Please send questions, complaints, and requests for remedies about personal information to this email address.</p>
+    </section>
+
+    <section id="en-privacy-s18">
+      <h2>18. Where to get help</h2>
+      <p>If you need to report or get advice about a privacy violation, you can contact the organizations below. All of them are in the Republic of Korea.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Organization</th><th>Phone</th><th>Website</th></tr></thead>
+        <tbody>
+          <tr><td>Personal Information Infringement Report Center (Korea Internet &amp; Security Agency)</td><td>118 (in Korea, no area code)</td><td><a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a></td></tr>
+          <tr><td>Personal Information Dispute Mediation Committee</td><td>1833-6972</td><td><a href="https://www.kopico.go.kr">www.kopico.go.kr</a></td></tr>
+          <tr><td>Prosecution Service (formerly the Supreme Prosecutors' Office)</td><td>1301 (in Korea, no area code)</td><td><a href="https://www.spo.go.kr">www.spo.go.kr</a></td></tr>
+          <tr><td>Korean National Police Agency</td><td>182 (in Korea, no area code)</td><td><a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="en-privacy-s19">
+      <h2>19. Changes to this policy</h2>
+      <ul>
+        <li>Before we change this policy, we will announce the effective date and what will change, at least 7 days before the effective date.</li>
+        <li>If a change is unfavorable to you (for example, if we process more types of information or use it for more purposes), we will announce it at least 30 days before the effective date.</li>
+        <li>How changes are announced: We post the new policy and the changes on this web page. If the policy changes with an app update, we also write this in the App Store "What's New" notes.</li>
+        <li>The effective date and last updated date are shown at the top of this page.</li>
+      </ul>
+    </section>
+  </div>
+  <div class="doc" id="en-terms">
+    <h1>Terms of Service</h1>
+    <p class="meta">Effective date: 2026-10-23 · Last updated: 2026-10-23</p>
+
+    <nav class="toc" aria-label="Contents">
+      <ol>
+        <li><a href="#en-terms-s1">Purpose and scope</a></li>
+        <li><a href="#en-terms-s2">Definitions</a></li>
+        <li><a href="#en-terms-s3">Who can use the service</a></li>
+        <li><a href="#en-terms-s4">Your account</a></li>
+        <li><a href="#en-terms-s5">What the service does</a></li>
+        <li><a href="#en-terms-s6">Recording rules</a></li>
+        <li><a href="#en-terms-s7">Public records and the feed</a></li>
+        <li><a href="#en-terms-s8">Rights to messages and content</a></li>
+        <li><a href="#en-terms-s9">What you must not do</a></li>
+        <li><a href="#en-terms-s10">Filter, reports, auto-hide, and blocking</a></li>
+        <li><a href="#en-terms-s11">Actions the operator can take</a></li>
+        <li><a href="#en-terms-s12">About health information</a></li>
+        <li><a href="#en-terms-s13">About your virtual position</a></li>
+        <li><a href="#en-terms-s14">Changes to the service and interruptions</a></li>
+        <li><a href="#en-terms-s15">Deleting your account</a></li>
+        <li><a href="#en-terms-s16">Limits of responsibility</a></li>
+        <li><a href="#en-terms-s17">Changes to these terms</a></li>
+        <li><a href="#en-terms-s18">Apple</a></li>
+        <li><a href="#en-terms-s19">Governing law and courts</a></li>
+        <li><a href="#en-terms-s20">Operator and contact</a></li>
+        <li><a href="#en-terms-s21">Language versions</a></li>
+      </ol>
+    </nav>
+
+    <section id="en-terms-s1">
+      <h2>1. Purpose and scope</h2>
+      <ul>
+        <li>These terms set the rules for using the StepStella service.</li>
+        <li>These terms apply to everyone who uses the service.</li>
+        <li>If you continue with Sign in with Apple on the sign-up screen, you agree to these terms and the Privacy Policy. The sign-up screen also says this.</li>
+        <li>How the operator handles personal information is explained in the <a href="#en-privacy">Privacy Policy</a>.</li>
+        <li>Anything not covered by these terms follows the applicable laws of the Republic of Korea.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s2">
+      <h2>2. Definitions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Service</td><td>The StepStella app and the servers it uses. The Korean name of the app is 걸음별자리.</td></tr>
+            <tr><td>Operator</td><td>The individual developer who runs the service. Contact details are in Section 20.</td></tr>
+            <tr><td>User</td><td>A person who agrees to these terms and uses the service. In these terms, "you" means the user.</td></tr>
+            <tr><td>Record</td><td>A set of steps, distance, direction, and message that you save once a day.</td></tr>
+            <tr><td>Message</td><td>Text of up to 140 characters that you add to a record. It is optional.</td></tr>
+            <tr><td>Public record / private record</td><td>A public record appears in the feed of your Journey Neighbors. Only you can see a private record.</td></tr>
+            <tr><td>Starting City</td><td>The city where your virtual position starts. It is set once when you sign up.</td></tr>
+            <tr><td>Virtual position</td><td>An imaginary point on Earth. It starts at your Starting City and moves in the direction you choose by the distance you walked. It is not your real location.</td></tr>
+            <tr><td>Base Direction</td><td>One of eight compass directions that you choose with your first record. The range of directions you can choose for later records is based on it.</td></tr>
+            <tr><td>Journey Neighbors</td><td>Other users whose virtual positions are close to yours.</td></tr>
+            <tr><td>Feed</td><td>The screen that shows public records of your Journey Neighbors.</td></tr>
+            <tr><td>Discovery Radius</td><td>The distance range used to show records in your feed. It is centered on your virtual position. It starts at about 5 km and can grow to 50 km.</td></tr>
+            <tr><td>Anonymous ID</td><td>A random name that identifies you in the feed, for example #A3F29C01. It changes automatically every 90 days.</td></tr>
+            <tr><td>Streak</td><td>The number of days in a row that you have recorded.</td></tr>
+            <tr><td>Streak Freeze</td><td>A feature you can use once a month. It counts today as recorded to protect your streak.</td></tr>
+            <tr><td>Follow</td><td>A feature that lets you see a Journey Neighbor's constellation for up to 30 days.</td></tr>
+            <tr><td>Constellation</td><td>The shape made by connecting your daily records on the globe.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="en-terms-s3">
+      <h2>3. Who can use the service</h2>
+      <ul>
+        <li>You must be 14 or older to sign up and use the service.</li>
+        <li>If you are under 14, you cannot sign up or use the service.</li>
+        <li>If the operator learns that a user is under 14, the operator can delete that account.</li>
+        <li>You need an Apple Account.</li>
+        <li>You need an iPhone with iOS 17 or later.</li>
+        <li>You need an internet connection.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s4">
+      <h2>4. Your account</h2>
+      <ul>
+        <li>You sign up and sign in only with Sign in with Apple (a feature that lets you sign in with your Apple Account). There is no email and password sign-in.</li>
+        <li>The operator does not ask for the name or email address of your Apple Account when you sign up.</li>
+        <li>You must not sign up with another person's Apple Account.</li>
+        <li>You cannot give or lend your account to another person.</li>
+        <li>You must keep your Apple Account and iPhone secure. If someone else uses the service on your device, their records stay in your account.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s5">
+      <h2>5. What the service does</h2>
+      <p>The service provides these features:</p>
+      <ul>
+        <li>Once a day, it reads yesterday's step count and walking and running distance from the Apple Health app and saves them as a record.</li>
+        <li>It moves your virtual position by that distance in the direction you choose.</li>
+        <li>You can add a short message to your record.</li>
+        <li>It shows your daily records on a globe, connected like a constellation. A total of 40,075 km is one trip around the Earth.</li>
+        <li>It shows public records of your Journey Neighbors anonymously in the feed. In the feed, you can like, follow, report, and block.</li>
+        <li>You can turn on a daily reminder at a time you choose. Your iPhone shows this reminder by itself.</li>
+      </ul>
+      <ul>
+        <li>The service is free. It has no ads and no in-app purchases.</li>
+        <li>If paid features are added in the future, the operator will update these terms first and give notice as described in Section 17.</li>
+        <li>There are no comments and no direct messages.</li>
+      </ul>
+      <p>The operator handles location information as described in <a href="#en-privacy-s5">Section 5 of the Privacy Policy</a>.</p>
+    </section>
+
+    <section id="en-terms-s6">
+      <h2>6. Recording rules</h2>
+      <h3>Dates and internet connection</h3>
+      <ul>
+        <li>You can save only one record per local day.</li>
+        <li>The date is set by the server's clock, not your device's clock. The server time is converted to the local date in the time zone saved when you signed up.</li>
+        <li>This rule stops people from changing their device clock to cheat on streaks.</li>
+        <li>So you cannot record without an internet connection. The feed shows the content it loaded last.</li>
+        <li>In the current version of the app, you cannot change your saved time zone. Changing your device's time zone does not change the date rule.</li>
+      </ul>
+      <h3>Steps and distance</h3>
+      <ul>
+        <li>Today's record uses the final step count and distance from midnight to midnight yesterday.</li>
+        <li>Steps and distance that you entered by hand in the Health app are not counted.</li>
+        <li>A daily record can hold up to 100 km and up to 200,000 steps. Higher values are capped at these limits.</li>
+        <li>You can record on days with 0 steps. Recording a 0-step day keeps your streak.</li>
+      </ul>
+      <h3>Direction and streaks</h3>
+      <ul>
+        <li>Your first record stays in your Starting City. Your virtual position starts moving with your next record.</li>
+        <li>You choose your Base Direction once, with your first record. You cannot change it later.</li>
+        <li>If you miss a day, your streak starts again from day 1.</li>
+        <li>You can use Streak Freeze free of charge once a month. A streak that has been broken for two or more days cannot be restored.</li>
+      </ul>
+      <h3>Deleting records and changing visibility</h3>
+      <ul>
+        <li>You can delete only today's record.</li>
+        <li>Today's position continues from yesterday's position. So deleting a past record would make every later position wrong. This is why you cannot delete past records.</li>
+        <li>A deleted record cannot be restored.</li>
+        <li>You can switch past records between public and private in the Log tab.</li>
+        <li>To delete all past records, you must delete your account (Section 15).</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s7">
+      <h2>7. Public records and the feed</h2>
+      <ul>
+        <li>You choose whether a record is public when you save it. The default is public.</li>
+        <li>A public record appears for 7 days in the feed of Journey Neighbors within the Discovery Radius.</li>
+        <li>A feed card shows your Anonymous ID, the distance range between virtual positions, steps, distance, message, number of likes, and date.</li>
+        <li>Steps and distance are shown as exact values.</li>
+        <li>The feed shows no real names and no profile photos.</li>
+        <li>Even the owner of a record cannot see who liked it. Only the number of likes is shown.</li>
+        <li>A person who follows you can see your public records from the last 30 days on the globe, for up to 30 days. They see an approximate position and rounded distance and steps. They do not see your messages.</li>
+        <li>You are not notified when someone follows you.</li>
+        <li>Public records may be stored temporarily (cached) on other users' devices. If you make a record private or delete it, it may stay on those devices until they refresh the feed.</li>
+        <li>Do not put information that can identify you, such as your real name, address, or contact details, in a message.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s8">
+      <h2>8. Rights to messages and content</h2>
+      <h3>Your messages</h3>
+      <ul>
+        <li>You keep the rights (such as copyright) to the messages you write.</li>
+        <li>You allow the operator to use your messages within these limits:
+          <ul>
+            <li>Purpose: only to run the service. This means storing your messages, showing them to you, and showing them to Journey Neighbors if the record is public.</li>
+            <li>Methods: storing, sending, and displaying. This includes copies needed for these tasks (on servers and in device caches).</li>
+            <li>Payment: none.</li>
+            <li>The operator does not pass this permission to anyone else. However, this permission covers the company that runs the servers for the operator when it stores and sends messages.</li>
+            <li>The operator does not use your messages for ads, promotion, or sale.</li>
+            <li>Duration: until the message is deleted. If the message is deleted by deleting today's record or your account, this permission ends. However, the message may stay for a while in caches on other users' devices.</li>
+          </ul>
+        </li>
+        <li>Write only content that you have the right to use.</li>
+        <li>Do not use other people's works or personal information without permission.</li>
+      </ul>
+      <h3>Rights to the app</h3>
+      <ul>
+        <li>The rights to the app's screens, design, and code belong to the operator or their original owners.</li>
+        <li>These terms give you only the right to use the app. They do not give you the right to copy or sell the app.</li>
+        <li>You can see the licenses for the open source software and Earth images (NASA) in the app, under Settings › Privacy › Data Policy › Open Source Licenses.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s9">
+      <h2>9. What you must not do</h2>
+      <p>The service has no tolerance for objectionable content or abusive users. You must not do any of the following.</p>
+      <h3>Messages and content</h3>
+      <ul>
+        <li>Use profanity, hate speech, or discriminatory language</li>
+        <li>Harass or threaten other people</li>
+        <li>Post sexual content, violent content, or content that is offensive to others</li>
+        <li>Post illegal content, or help or encourage illegal acts</li>
+        <li>Reveal other people's personal information (such as names, addresses, phone numbers, or locations)</li>
+        <li>Infringe copyright or other rights of others</li>
+        <li>Post spam, ads, or the same content again and again</li>
+        <li>Pretend to be another person or the operator</li>
+      </ul>
+      <h3>Use of the service</h3>
+      <ul>
+        <li>Access the servers or collect data by any means other than the app (such as automated programs or scripts)</li>
+        <li>Send altered values, such as steps, distance, or dates, to the servers</li>
+        <li>Send too many requests to the servers, or disrupt the service</li>
+        <li>Create multiple accounts or send false reports to misuse reports or auto-hide</li>
+        <li>Get around security measures, or try to access other users' accounts</li>
+        <li>Do anything else that breaks the law</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s10">
+      <h2>10. Filter, reports, auto-hide, and blocking</h2>
+      <h3>Word filter</h3>
+      <ul>
+        <li>If a message contains profanity or hate speech, the app and the server do not save it.</li>
+        <li>Messages in private records are also checked, because you can make them public later.</li>
+        <li>The filter cannot catch every expression. It may also block harmless expressions by mistake.</li>
+      </ul>
+      <h3>Reports</h3>
+      <ul>
+        <li>To report a record, tap More (…) › Report on a feed card.</li>
+        <li>Choose one reason: Spam, Inappropriate Content, Privacy Violation, or Other.</li>
+        <li>A record you report is removed from your feed right away.</li>
+        <li>You can send up to 10 reports in 24 hours.</li>
+        <li>Reporting the same record more than once counts as one report.</li>
+        <li>You can also report an inappropriate record by email from Settings › Support › Contact Us.</li>
+      </ul>
+      <h3>Auto-hide</h3>
+      <ul>
+        <li>If three different users report the same record, the record is hidden automatically.</li>
+        <li>Only reports from accounts with at least one record are counted.</li>
+        <li>A hidden record is removed from the feed and from followers' globes. The owner can still see it.</li>
+        <li>The owner is not notified when a record is hidden.</li>
+        <li>If you think your record was hidden by mistake, contact the operator (Section 20). The operator will check it.</li>
+      </ul>
+      <h3>Review by the operator</h3>
+      <ul>
+        <li>The operator checks reported records. Records that break these terms are hidden, or their messages are deleted.</li>
+        <li>Review time: Reports are checked within 48 hours after they are received.</li>
+      </ul>
+      <h3>Blocking</h3>
+      <ul>
+        <li>To block a user, tap More (…) › Block User on a feed card.</li>
+        <li>After blocking, each person's records are removed from the other's feed.</li>
+        <li>All follows between the two of you end, and you cannot follow each other again.</li>
+        <li>The other person is not told that you blocked them.</li>
+        <li>You cannot undo a block in the app.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s11">
+      <h2>11. Actions the operator can take</h2>
+      <ul>
+        <li>If you break these terms, the operator can do the following:
+          <ul>
+            <li>Hide records or delete messages.</li>
+            <li>Delete your account.</li>
+          </ul>
+        </li>
+        <li>The operator decides the action based on how serious the violation is and whether it was repeated.</li>
+        <li>For illegal content, or content that may harm others right away, the record can be hidden or its message deleted at once without notice.</li>
+        <li>The service does not ask for your email address. So the operator may not be able to tell you directly about an action.</li>
+        <li>If you disagree with an action, contact the operator (Section 20). The operator will check it again and reply.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s12">
+      <h2>12. About health information</h2>
+      <ul>
+        <li>The service is not a medical service.</li>
+        <li>The values the service shows are not medical information or medical advice.</li>
+        <li>Steps and distance are read from values stored in the Apple Health app. The operator does not measure them.</li>
+        <li>So the saved values may differ from how much you actually walked.</li>
+        <li>Because of the daily limits and the rule that excludes values entered by hand (Section 6), the saved values may also differ from the Health app.</li>
+        <li>The service does not write data to the Health app. It only reads.</li>
+        <li>If you do not allow access to health data, your steps and distance are saved as 0. iOS does not tell the app whether you allowed access.</li>
+        <li>If you have a health problem or plan to start a new exercise routine, talk to a doctor or another qualified professional.</li>
+        <li>Do not push yourself too hard to keep a streak or grow your Discovery Radius.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s13">
+      <h2>13. About your virtual position</h2>
+      <ul>
+        <li>Your virtual position is not your real location. It is an imaginary point on Earth calculated from your records.</li>
+        <li>Your virtual position is not navigation. It does not ask you to actually travel there.</li>
+        <li>Journey Neighbors are based on virtual positions. Their real locations may be different from yours.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s14">
+      <h2>14. Changes to the service and interruptions</h2>
+      <ul>
+        <li>The operator can add, change, or remove features to improve the service.</li>
+        <li>The operator will announce changes that are important to you at least 7 days before the change. How: The operator posts a notice on this web page. If the change comes with an app update, the operator also writes this in the App Store "What's New" notes.</li>
+        <li>The service may stop for a while in these cases:
+          <ul>
+            <li>When the servers are maintained or replaced</li>
+            <li>When there is an outage at the company that runs the servers or at Apple services</li>
+            <li>When there is a power outage, network failure, or natural disaster</li>
+            <li>When there is a sudden surge in use</li>
+          </ul>
+        </li>
+        <li>The operator can end the whole service. The operator will announce this at least 30 days before the service ends, in the same way as changes are announced.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s15">
+      <h2>15. Deleting your account</h2>
+      <ul>
+        <li>You can delete your account in the app at any time.</li>
+        <li>How: Settings › Account › Delete Account › Delete Permanently › confirm with your Apple Account</li>
+        <li>If you cancel the Apple Account confirmation, nothing is deleted.</li>
+        <li>Deletion happens right away. There is no waiting period.</li>
+        <li>When you delete your account, the following data is deleted with it:
+          <ul>
+            <li>All records (including steps, distance, direction, messages, and positions)</li>
+            <li>Your streak and total distance and steps</li>
+            <li>Your account ID and Apple sign-in information</li>
+            <li>Your sign-in session information</li>
+            <li>Your Anonymous ID, time zone, Starting City, and Base Direction</li>
+            <li>Follows, likes, reports, and blocks that you made, and those made about you or your records</li>
+          </ul>
+        </li>
+        <li>A deleted account and its records cannot be restored.</li>
+        <li>The app has no feature to export your records to a file.</li>
+        <li>If you sign up again, you start from the beginning with a new account.</li>
+        <li>After deletion, data may stay for a while in the places below. See the <a href="#en-privacy">Privacy Policy</a> for details.
+          <ul>
+            <li>Feed caches on other users' devices: until those devices refresh the feed</li>
+            <li>Server backups: The operator does not make server backups. So deleted data does not remain in the operator's backups. The Supabase Free plan that runs the server has no automatic backups.</li>
+            <li>Server logs (request records that the server keeps automatically): 1 day (Supabase Free plan)</li>
+            <li>Emails you sent to the operator</li>
+          </ul>
+        </li>
+        <li>The app does not delete your Apple Health data or your Apple Account.</li>
+        <li>When you delete your account, the operator asks Apple to remove this app's Sign in with Apple connection. If this request fails, the account deletion is still complete. If the connection remains, you can remove it yourself on your iPhone. Go to Settings › [your name] › Sign in with Apple, choose this app, and tap "Delete".</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s16">
+      <h2>16. Limits of responsibility</h2>
+      <ul>
+        <li>If the operator causes you harm on purpose or through negligence, the operator is responsible as required by law.</li>
+        <li>The operator is not responsible for harm in the cases below. However, the operator is responsible if the operator acted on purpose or was negligent.
+          <ul>
+            <li>Harm caused by events the operator cannot prevent, such as natural disasters, war, power outages, or network failures</li>
+            <li>Harm caused by outages of other companies' services, such as Apple, the company that runs the servers, or mobile carriers</li>
+            <li>Harm caused by your own fault (for example, not keeping your device or Apple Account secure)</li>
+            <li>Harm caused because values in the Apple Health app were different from reality</li>
+            <li>Harm caused by messages written by other users. However, the operator is responsible if the operator received a report and failed to act without a good reason.</li>
+          </ul>
+        </li>
+        <li>If you break these terms and cause harm to the operator or others, you are responsible for that harm.</li>
+        <li>This section does not reduce any rights that consumer protection laws or other laws give you.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s17">
+      <h2>17. Changes to these terms</h2>
+      <ul>
+        <li>The operator can change these terms within the limits of the law.</li>
+        <li>Before a change, the operator will announce the effective date, what will change, and why, at least 7 days before the effective date.</li>
+        <li>If a change is unfavorable to you, the operator will announce it at least 30 days before the effective date.</li>
+        <li>How changes are announced: The operator posts the new terms and the changes on this web page. If the terms change with an app update, the operator also writes this in the App Store "What's New" notes.</li>
+        <li>The new terms apply from the effective date.</li>
+        <li>If you do not agree with the new terms, you can stop using the service by deleting your account before the effective date.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s18">
+      <h2>18. Apple</h2>
+      <p>This app is distributed through Apple's App Store. The following terms are included as Apple requires. In this section, "Apple" means Apple Inc. and its subsidiaries.</p>
+      <p>The operator does not provide a separate end user license agreement (EULA) for this app. Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a> applies to the app. These terms set the conditions for using the service.</p>
+      <ul>
+        <li>These terms are an agreement between you and the operator only. Apple is not a party to these terms.</li>
+        <li>The operator, not Apple, is responsible for the app and its content.</li>
+        <li>You can use the app on Apple devices that you own or control. You must follow the App Store usage rules (the Usage Rules in the Apple Media Services Terms and Conditions).</li>
+        <li>You cannot transfer your right to use the app to another person. Family Sharing and other uses allowed by Apple's Usage Rules are exceptions.</li>
+        <li>The operator provides maintenance and support for the app. Apple has no duty to support the app.</li>
+        <li>If the app fails to meet a warranty required by law, you can tell Apple and get a refund of the purchase price. The app is free, so there is no amount to refund.</li>
+        <li>To the extent the law allows, Apple has no other warranty duties for the app.</li>
+        <li>The operator, not Apple, handles claims about the app. Examples: product liability claims, claims that the app does not meet legal or regulatory requirements, and claims under consumer protection or privacy laws (including about the use of HealthKit).</li>
+        <li>If someone claims that the app infringes their intellectual property rights, the operator, not Apple, investigates and responds.</li>
+        <li>You confirm that you are not in a country under a U.S. government embargo or a country the U.S. government has named as supporting terrorism.</li>
+        <li>You confirm that you are not on any U.S. government list of prohibited or restricted parties.</li>
+        <li>When you use the app, you must follow the terms of other companies that apply (for example, your mobile carrier's data plan terms).</li>
+        <li>Apple is a third-party beneficiary of these terms. A third-party beneficiary is someone who is not a party to an agreement but has rights under it.</li>
+        <li>Once you accept these terms, Apple can enforce these terms against you.</li>
+        <li>The operator's name and contact details are in Section 20.</li>
+      </ul>
+      <p>Sources: Apple, <a href="https://www.apple.com/legal/internet-services/itunes/dev/minterms/">Minimum Terms of Developer's End-User License Agreement</a> · <a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms and Conditions</a></p>
+    </section>
+
+    <section id="en-terms-s19">
+      <h2>19. Governing law and courts</h2>
+      <ul>
+        <li>These terms are governed by the laws of the Republic of Korea.</li>
+        <li>If a dispute about the service arises, the operator and you will first try to resolve it through discussion.</li>
+        <li>If a lawsuit is needed, it will be handled by the court that has jurisdiction under the Korean Civil Procedure Act.</li>
+      </ul>
+    </section>
+
+    <section id="en-terms-s20">
+      <h2>20. Operator and contact</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th scope="row">Operator</th><td>Individual developer YoungBeom Seo</td></tr>
+            <tr><th scope="row">Email</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+            <tr><th scope="row">In the app</th><td>Settings › Support › Contact Us</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Send questions, complaints, reports of inappropriate records, and claims using the contact details above.</p>
+    </section>
+
+    <section id="en-terms-s21">
+      <h2>21. Language versions</h2>
+      <ul>
+        <li>These terms are available in Korean, English, and Japanese.</li>
+        <li>The Korean version is the original. If the language versions differ, the Korean version applies.</li>
+      </ul>
+    </section>
+  </div>
+</article>
+<article id="ko" lang="ko" class="lang-section">
+  <nav class="doc-nav" aria-label="문서"><a href="#ko-privacy">개인정보처리방침</a><a href="#ko-terms">이용약관</a></nav>
+  <div class="doc" id="ko-privacy">
+    <h1>개인정보처리방침</h1>
+    <p class="meta">시행일: 2026-10-23 · 최종 수정: 2026-10-23</p>
+
+    <nav class="toc" aria-label="목차">
+      <ol>
+        <li><a href="#ko-privacy-s1">이 방침에 대해</a></li>
+        <li><a href="#ko-privacy-s2">처리하는 개인정보</a></li>
+        <li><a href="#ko-privacy-s3">처리 목적</a></li>
+        <li><a href="#ko-privacy-s4">수집하지 않는 정보</a></li>
+        <li><a href="#ko-privacy-s5">위치 정보</a></li>
+        <li><a href="#ko-privacy-s6">건강 데이터(HealthKit)</a></li>
+        <li><a href="#ko-privacy-s7">다른 이용자에게 보이는 정보</a></li>
+        <li><a href="#ko-privacy-s8">보유 기간</a></li>
+        <li><a href="#ko-privacy-s9">파기와 계정 삭제</a></li>
+        <li><a href="#ko-privacy-s10">제3자 제공</a></li>
+        <li><a href="#ko-privacy-s11">처리 위탁과 외부 서비스</a></li>
+        <li><a href="#ko-privacy-s12">국외 이전</a></li>
+        <li><a href="#ko-privacy-s13">이용자의 권리와 행사 방법</a></li>
+        <li><a href="#ko-privacy-s14">만 14세 미만 아동</a></li>
+        <li><a href="#ko-privacy-s15">안전성 확보 조치</a></li>
+        <li><a href="#ko-privacy-s16">자동 수집 장치</a></li>
+        <li><a href="#ko-privacy-s17">개인정보 보호책임자</a></li>
+        <li><a href="#ko-privacy-s18">권익침해 구제 방법</a></li>
+        <li><a href="#ko-privacy-s19">방침 변경</a></li>
+      </ol>
+    </nav>
+
+    <section id="ko-privacy-s1">
+      <h2>1. 이 방침에 대해</h2>
+      <p>이 방침은 iPhone 앱 걸음별자리(영어 · 일본어 이름 StepStella)가 이용자의 개인정보를 어떻게 처리하는지 설명합니다.</p>
+      <ul>
+        <li>걸음별자리는 하루 한 번 Apple 건강 앱에서 어제의 걸음 수와 거리를 읽습니다. 그 거리만큼 지구 위의 가상 위치를 옮기고, 짧은 메시지를 남기는 앱입니다.</li>
+        <li>앱은 개인 개발자가 운영합니다. 이 방침에서는 이 개발자를 "운영자"라고 부릅니다.</li>
+        <li>운영자 이름: YoungBeom Seo</li>
+        <li>연락처: <a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>앱은 무료입니다. 광고와 앱 안 결제가 없습니다.</li>
+        <li>앱은 만 14세 이상만 이용할 수 있습니다. 자세한 내용은 <a href="#ko-privacy-s14">14절</a>에 있습니다.</li>
+        <li>앱의 가입 화면과 설정 › 개인정보 › 데이터 정책에 이 방침으로 가는 링크가 있습니다.</li>
+        <li>가입 화면에서 계속하면 이 방침과 이용약관에 동의한 것으로 봅니다.</li>
+      </ul>
+      <p>이 방침은 한국어, 영어, 일본어로 제공합니다. 한국어판이 기준 문서이고, 영어판과 일본어판은 같은 내용입니다. 언어판끼리 내용이 다르면 한국어판을 따릅니다.</p>
+    </section>
+
+    <section id="ko-privacy-s2">
+      <h2>2. 처리하는 개인정보</h2>
+      <p>아래 표는 앱이 처리하는 정보 전부입니다. "필수"는 앱을 쓰려면 꼭 필요한 정보입니다. "선택"은 이용자가 허용하거나 그 기능을 쓸 때만 처리하는 정보입니다.</p>
+
+      <h3>서버에 저장하는 정보</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>필수 · 선택</th><th>어떻게 얻나요</th></tr></thead>
+        <tbody>
+          <tr><td>계정 ID</td><td>필수</td><td>Apple로 로그인할 때 서버가 무작위로 만드는 식별 번호입니다.</td></tr>
+          <tr><td>Apple 로그인 정보</td><td>필수</td><td>Apple로 로그인할 때 Apple이 보내 주는 로그인 확인 값입니다. 서버의 인증 기능(Supabase Auth)은 이 값에서 Apple이 이 앱에 주는 사용자 식별 값과 토큰 정보(발급자 등)를 저장합니다. 가입 시각과 최근 로그인 시각도 함께 저장합니다. 앱은 Apple로 로그인할 때 이름과 이메일을 요청하지 않습니다. 다만 Apple이 이메일 주소(또는 Apple의 "이메일 가리기" 주소)를 함께 보내면, 그 주소도 서버의 인증 기능에 저장될 수 있습니다.</td></tr>
+          <tr><td>로그인 세션 정보</td><td>필수</td><td>로그인하면 서버의 인증 기능(Supabase Auth)이 로그인 상태를 유지하려고 세션 정보를 만듭니다. 이 정보에는 접속한 IP 주소와 기기 · 앱 정보(User-Agent)가 들어갑니다. 세션을 만든 시각과 갱신한 시각도 저장합니다.</td></tr>
+          <tr><td>익명 ID</td><td>필수</td><td>가입할 때 서버가 무작위로 만듭니다. 예: <code>#A3F29C01</code></td></tr>
+          <tr><td>타임존</td><td>필수</td><td>가입할 때 기기 설정에서 가져옵니다. 예: <code>Asia/Seoul</code></td></tr>
+          <tr><td>시작 도시 좌표</td><td>필수</td><td>가입할 때 정합니다. 위치 권한이 있으면 기기 위치로 찾은 도시의 중심입니다(도시를 찾지 못하면 약 39km × 20km 칸의 중심). 위치 권한이 없으면 기기 시간대의 대표 도시입니다. <a href="#ko-privacy-s5">5절</a>을 보세요.</td></tr>
+          <tr><td>기록 날짜, 걸음 수, 거리(어제 하루 합계)</td><td>필수(건강 권한을 허용하지 않으면 0으로 기록)</td><td>Apple 건강 앱(HealthKit)에서 읽습니다. <a href="#ko-privacy-s6">6절</a>을 보세요.</td></tr>
+          <tr><td>방향</td><td>필수</td><td>이용자가 고릅니다. 첫 기록 때 고르는 기준 방향과 기록마다 고르는 방향이 있습니다. 0km 기록에는 방향이 없습니다.</td></tr>
+          <tr><td>가상 위치</td><td>필수</td><td>서버가 어제의 가상 위치, 고른 방향, 어제 거리로 계산합니다.</td></tr>
+          <tr><td>공개 여부</td><td>필수</td><td>기록마다 이용자가 고릅니다. 기본값은 공개입니다.</td></tr>
+          <tr><td>메시지(최대 140자)</td><td>선택</td><td>이용자가 기록에 직접 씁니다.</td></tr>
+          <tr><td>연속 기록과 누적 값</td><td>필수</td><td>서버가 계산합니다. 현재 · 최장 연속 기록, 마지막 기록일, 이번 달 연속 기록 보호 사용 여부, 누적 거리 · 걸음 수입니다. 당일 기록을 지울 때 되돌리려고 기록 전 연속 기록 값도 저장합니다.</td></tr>
+          <tr><td>좋아요, 팔로우, 신고(사유 포함), 차단</td><td>선택(그 기능을 쓸 때)</td><td>이용자의 동작으로 만들어집니다. 누가, 어떤 기록이나 이용자에게, 언제 했는지를 저장합니다.</td></tr>
+          <tr><td>서버 기록(로그)</td><td>자동</td><td>서버 함수에 오류가 나면 함수 이름, 단계 이름, 오류 내용을 남깁니다. 이용자가 쓴 메시지 같은 요청 본문은 남기지 않습니다. 서버 서비스(Supabase)도 요청 주소 같은 요청 기록을 자동으로 남깁니다. Supabase 문서에 따르면 이 요청 기록에는 요청 시각과 요청 주소(주소 뒤에 붙는 조회 값 포함)가 들어갈 수 있습니다. 접속한 IP 주소와 국가, 기기 · 앱 정보(User-Agent)도 들어갈 수 있습니다.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>운영자 메일함에 남는 정보</h3>
+      <ul>
+        <li>설정 › 지원 › 문의하기는 기기의 메일 앱을 엽니다. 앱이 서버로 보내는 정보는 없습니다.</li>
+        <li>이용자가 메일을 보내면 운영자는 보낸 사람의 메일 주소와 메일 내용을 받습니다.</li>
+        <li>메일 본문에는 앱 버전, iOS 버전, 기기 모델 식별자(예: iPhone18,1), 앱 언어가 미리 들어갑니다. 이용자는 보내기 전에 이 내용을 보고 지울 수 있습니다.</li>
+        <li>기기 이름, 기기 식별 번호, 익명 ID는 미리 넣지 않습니다.</li>
+      </ul>
+
+      <h3>기기에만 저장하는 정보</h3>
+      <p>아래 정보는 이용자의 iPhone에만 저장합니다. 서버로 보내지 않습니다.</p>
+      <ul>
+        <li>설정 값: 온보딩 완료 여부, 매일 알림의 켜짐 여부와 시각, 지도 위치 모양, 화면 모드, 알림 권한을 다시 묻는 시각, 캐시 주인의 계정 ID</li>
+        <li>캐시(빠르게 보여 주려고 기기에 잠시 저장한 사본): 내 기록과 여정 이웃 피드의 내용</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s3">
+      <h2>3. 처리 목적</h2>
+      <p>운영자는 아래 목적으로만 개인정보를 처리합니다. 목적이 바뀌면 이 방침을 먼저 고칩니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>목적</th><th>쓰는 정보</th></tr></thead>
+        <tbody>
+          <tr><td>로그인과 로그인 상태 유지, 내 기록 구분</td><td>계정 ID, Apple 로그인 정보, 로그인 세션 정보</td></tr>
+          <tr><td>기록 날짜 정하기. 서버 시각을 저장한 타임존의 현지 날짜로 바꿉니다. 건강 앱의 "어제" 범위도 이 타임존 기준입니다.</td><td>타임존</td></tr>
+          <tr><td>가상 위치 계산과 기록 표시(지구본 · 지도 · 기록 탭)</td><td>시작 도시 좌표, 걸음 수, 거리, 방향, 가상 위치, 메시지</td></tr>
+          <tr><td>연속 기록, 탐색 반경, 연속 기록 보호 계산</td><td>연속 기록과 누적 값, 기록 날짜, 거리</td></tr>
+          <tr><td>여정 이웃 피드 운영(가상 위치가 가까운 이용자의 공개 기록 보여 주기)</td><td>익명 ID, 공개 기록, 가상 위치, 좋아요, 팔로우</td></tr>
+          <tr><td>부적절한 기록 처리: 금칙어 검사, 신고, 자동 숨김, 차단</td><td>메시지, 신고, 차단, 계정 ID</td></tr>
+          <tr><td>문의에 답하기</td><td>문의 메일</td></tr>
+          <tr><td>서버 오류 확인</td><td>서버 기록(로그)</td></tr>
+        </tbody>
+      </table></div>
+      <p>항목별 처리 근거는 아래와 같습니다.</p>
+      <ul>
+        <li><strong>필수 항목과 서버 기록(로그):</strong> <a href="#ko-privacy-s2">2절</a>에서 "필수"로 적은 정보는 이용자와 맺은 서비스 이용 계약을 이행하기 위해 처리합니다(개인정보 보호법 제15조 제1항 제4호). 로그인 세션 정보도 로그인에 꼭 필요하므로 여기에 들어갑니다. 걸음 수와 거리는 아래에 따로 적습니다.</li>
+        <li><strong>걸음 수와 거리(건강 앱 데이터):</strong> 이용자가 건강 앱 접근을 허용할 때의 동의를 근거로 처리합니다(같은 법 제15조 제1항 제1호). 허용하지 않으면 0으로 기록합니다.</li>
+        <li><strong>기기 위치:</strong> 이용자가 위치 권한을 허용할 때의 동의를 근거로, 가입할 때 시작 도시를 찾는 데만 씁니다(같은 법 제15조 제1항 제1호).</li>
+        <li><strong>선택 항목(메시지, 좋아요, 팔로우, 신고, 차단):</strong> 이용자가 그 기능을 쓸 때의 동의를 근거로 처리합니다(같은 법 제15조 제1항 제1호).</li>
+        <li><strong>문의 메일:</strong> 이용자가 메일을 보낼 때의 동의를 근거로 처리합니다(같은 법 제15조 제1항 제1호).</li>
+        <li><strong>매일 알림 설정:</strong> 이용자가 알림을 켜면, 켜짐 여부와 시각을 기기에만 저장합니다. 서버로 보내지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s4">
+      <h2>4. 수집하지 않는 정보</h2>
+      <ul>
+        <li><strong>이름과 이메일:</strong> Apple로 로그인할 때 이름과 이메일을 요청하지 않습니다. 다만 Apple이 이메일 주소를 함께 보내면, 서버의 인증 기능에 저장될 수 있습니다(<a href="#ko-privacy-s2">2절</a>).</li>
+        <li><strong>광고 식별자:</strong> 기기의 광고 식별자를 읽지 않습니다. 앱은 이용자를 추적하지 않습니다.</li>
+        <li><strong>분석 · 광고 · 오류 수집 도구:</strong> 이런 도구(SDK)를 앱에 넣지 않았습니다.</li>
+        <li><strong>원격 푸시 토큰:</strong> 앱은 서버에서 보내는 푸시 알림을 쓰지 않습니다. 그래서 푸시 알림용 기기 토큰을 수집하지 않습니다. 매일 알림은 기기가 스스로 띄우는 로컬 알림입니다.</li>
+        <li><strong>정확한 위치:</strong> 기기의 정확한 좌표를 서버에 저장하지 않습니다. 기록을 저장할 때는 위치를 읽지 않습니다. <a href="#ko-privacy-s5">5절</a>을 보세요.</li>
+        <li><strong>건강 데이터 원본:</strong> 건강 앱의 원본 기록은 서버로 보내지 않습니다. 하루 합계만 보냅니다.</li>
+        <li><strong>그 밖의 권한:</strong> 사진, 카메라, 연락처 권한을 요청하지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s5">
+      <h2>5. 위치 정보</h2>
+      <p>앱은 가입할 때 시작 도시를 정하는 데만 기기 위치를 씁니다. 집 위치 같은 정확한 위치가 드러나지 않도록, 서버에는 대략적인 위치(보통 시작 도시의 중심)만 저장합니다.</p>
+
+      <h3>위치 권한</h3>
+      <ul>
+        <li>"앱을 사용하는 동안" 권한만 요청합니다. 앱을 쓰지 않을 때(백그라운드)는 위치를 읽지 않습니다.</li>
+        <li>위치는 필요할 때 한 번씩만 읽습니다. 정확도는 약 100m 수준으로 요청합니다.</li>
+        <li>위치는 가입할 때 시작 도시를 정할 때만 읽습니다(그 화면에서 "다시 찾기"를 누를 때 포함). 기록을 저장할 때는 위치를 읽지 않습니다.</li>
+        <li>위치 권한은 허용하지 않아도 됩니다. 허용하지 않아도 가입하고 기록할 수 있습니다.</li>
+        <li>권한은 iPhone 설정 앱에서 언제든 바꿀 수 있습니다.</li>
+        <li>지도에 이용자의 실제 현재 위치를 표시하지 않습니다.</li>
+      </ul>
+
+      <h3>가입할 때: 시작 도시</h3>
+      <p>geohash는 지구 표면을 칸으로 나누고, 칸마다 짧은 문자열을 붙이는 방식입니다. 자리 수가 적을수록 칸이 큽니다.</p>
+      <ul>
+        <li>기기의 정확한 좌표는 시작점으로 쓰지 않습니다.</li>
+        <li>앱은 기기 좌표를 Apple의 지오코딩 서비스로 보냅니다. 지오코딩은 좌표로 도시 이름을 찾는 기능입니다.</li>
+        <li>도시를 찾으면 그 도시의 중심 좌표를 씁니다.</li>
+        <li>도시를 찾지 못하면 geohash 4자리 칸(약 39km × 20km)의 중심 좌표를 씁니다.</li>
+        <li>위치를 얻지 못하면 기기 시간대의 대표 도시를 씁니다. 이때는 공개된 도시 이름과 그 좌표만 Apple에 보냅니다. 이용자 위치는 보내지 않습니다.</li>
+        <li>서버에는 이렇게 고른 좌표만 저장합니다. 기기 좌표와 도시 이름은 서버로 보내지 않습니다.</li>
+        <li>시작 도시 좌표를 바꾸는 기능은 없습니다.</li>
+      </ul>
+
+      <h3>기록할 때</h3>
+      <ul>
+        <li>기록을 저장할 때 기기 위치를 읽지 않습니다.</li>
+        <li>기록에는 실제 위치가 아니라 가상 위치(아래)를 저장합니다.</li>
+        <li>앞으로 기록할 때 위치를 쓰는 기능을 더하면, 그 전에 이 방침을 먼저 고칩니다(<a href="#ko-privacy-s19">19절</a>).</li>
+      </ul>
+
+      <h3>가상 위치</h3>
+      <ul>
+        <li>가상 위치는 실제 위치가 아닙니다.</li>
+        <li>가상 위치는 시작 도시에서 출발해, 이용자가 고른 방향으로 걸은 거리만큼 움직이는 지구 위의 점입니다.</li>
+        <li>첫 기록은 움직이지 않고 시작 도시에 남습니다.</li>
+        <li>서버가 계산해 좌표로 저장합니다. 다른 이용자에게 보이는 범위는 <a href="#ko-privacy-s7">7절</a>에 있습니다.</li>
+      </ul>
+
+      <h3>위치정보의 보호 및 이용 등에 관한 법률</h3>
+      <ul>
+        <li>앱은 가입할 때 시작 도시를 찾는 데만 기기 위치를 읽습니다. 기록할 때는 위치를 읽지 않습니다.</li>
+        <li>서버에는 대략적인 위치만 저장합니다. 보통 도시의 중심이고, 도시를 찾지 못하면 약 39km × 20km 칸의 중심입니다.</li>
+        <li>이 법에 따라 운영자가 해야 할 일이 확인되면, 이 방침과 <a href="#ko-terms">이용약관</a>을 먼저 고칩니다. 그리고 이 방침 <a href="#ko-privacy-s19">19절</a>과 이용약관 <a href="#ko-terms-s17">17절</a>의 방법으로 알립니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s6">
+      <h2>6. 건강 데이터(HealthKit)</h2>
+      <p>HealthKit은 iPhone의 건강 앱에 저장된 데이터를 앱이 읽을 수 있게 하는 Apple의 기능입니다.</p>
+
+      <h3>읽는 데이터</h3>
+      <ul>
+        <li>앱은 두 가지만 읽습니다. 걸음 수와 걷기 + 달리기 거리입니다.</li>
+        <li>심박수, 수면 같은 다른 건강 데이터는 읽지 않습니다.</li>
+        <li>건강 앱에 데이터를 쓰지 않습니다.</li>
+        <li>저장한 타임존 기준으로 어제 0시~24시의 하루 합계만 읽습니다. 기록 화면을 열 때 읽습니다.</li>
+        <li>이용자가 건강 앱에 직접 입력한 값은 빼고 계산합니다.</li>
+        <li>하루 거리가 100km를 넘으면 100km로, 걸음 수가 200,000걸음을 넘으면 200,000걸음으로 기록합니다.</li>
+      </ul>
+
+      <h3>저장과 공개</h3>
+      <ul>
+        <li>서버에는 하루 합계만 보냅니다. 건강 앱의 원본 기록은 보내지 않습니다.</li>
+        <li>서버는 기록마다의 걸음 수와 거리, 그리고 누적 값을 저장합니다.</li>
+        <li>기록의 기본값은 공개입니다. 공개 기록이면 여정 이웃 피드에 정확한 걸음 수와 거리가 다른 이용자에게 보입니다.</li>
+        <li>나를 팔로우한 이용자에게는 거리를 1km 단위로, 걸음 수를 1,000걸음 단위로 반올림해 보여 줍니다.</li>
+        <li>비공개 기록의 걸음 수와 거리는 다른 이용자에게 보이지 않습니다.</li>
+      </ul>
+
+      <h3>쓰지 않는 곳</h3>
+      <ul>
+        <li>건강 데이터는 기록 계산과 표시에만 씁니다.</li>
+        <li>건강 데이터를 광고, 마케팅, 사용 패턴 분석(데이터 마이닝)에 쓰지 않습니다.</li>
+        <li>건강 데이터를 팔지 않습니다.</li>
+        <li>건강 데이터를 광고 회사나 데이터 중개 회사 같은 제3자에게 제공하지 않습니다. 서버 운영을 맡긴 곳은 <a href="#ko-privacy-s11">11절</a>에 있습니다.</li>
+      </ul>
+
+      <h3>권한</h3>
+      <ul>
+        <li>건강 권한은 허용하지 않아도 됩니다. 허용하지 않으면 값이 0으로 읽히고, 0걸음으로 기록할 수 있습니다.</li>
+        <li>iOS는 건강 권한의 허용 여부를 앱에 알려 주지 않습니다.</li>
+        <li>권한은 설정 › 개인정보 보호 및 보안 › 건강 › 걸음별자리에서 바꿀 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s7">
+      <h2>7. 다른 이용자에게 보이는 정보</h2>
+
+      <h3>여정 이웃 피드</h3>
+      <p>여정 이웃 피드는 내 가상 위치에서 탐색 반경(5km~50km) 안에 있는 다른 이용자의 공개 기록을 보여 주는 화면입니다. 최근 7일 동안의 기록만 보입니다.</p>
+      <ul>
+        <li>피드 카드에 보이는 것: 익명 ID, 가상 위치끼리의 거리 범위("1km 이내" · "5km 이내" · "10km 이내" · "반경 안"), 거리, 걸음 수, 메시지, 좋아요 수, 날짜</li>
+        <li>보이지 않는 것: 계정 ID, 이름, 이메일, 가상 위치 좌표, 방향, 타임존</li>
+        <li>비공개 기록은 다른 이용자에게 보이지 않습니다.</li>
+        <li>공개 여부는 기록마다 정합니다. 지난 기록도 기록 탭에서 공개와 비공개를 바꿀 수 있습니다.</li>
+        <li>다른 이용자의 기기에는 피드 캐시가 다음 새로 고침까지 남을 수 있습니다.</li>
+      </ul>
+
+      <h3>좋아요</h3>
+      <ul>
+        <li>기록 주인은 좋아요 개수만 봅니다.</li>
+        <li>누가 좋아요를 눌렀는지는 기록 주인도 볼 수 없습니다.</li>
+      </ul>
+
+      <h3>팔로우</h3>
+      <ul>
+        <li>내 피드에 보이는 기록에서만 그 이용자를 팔로우할 수 있습니다.</li>
+        <li>팔로우는 30일 동안 유지됩니다.</li>
+        <li>팔로우하거나 팔로우가 끝나도 상대에게 알리지 않습니다.</li>
+        <li>나를 팔로우한 이용자는 내 최근 30일 공개 기록을 지구본에서 봅니다.</li>
+        <li>이때 위치는 geohash 5자리 칸(약 4.9km × 4.9km)의 중심으로 보입니다. 실제 가상 위치와 최대 약 2.4km 차이가 납니다.</li>
+        <li>거리는 1km 단위로, 걸음 수는 1,000걸음 단위로 반올림해 보입니다. 메시지는 보이지 않습니다.</li>
+        <li>첫 기록은 시작 도시에 남습니다. 그래서 첫 기록이 최근 30일 안에 있으면, 팔로워가 시작 도시의 대략적인 위치를 알 수 있습니다.</li>
+      </ul>
+
+      <h3>숨김과 차단</h3>
+      <ul>
+        <li>한 기록에 3명이 신고하면 그 기록을 자동으로 숨깁니다. 숨긴 기록은 피드와 팔로워의 지구본에서 빠집니다. 기록 주인에게는 그대로 보입니다.</li>
+        <li>다른 이용자를 차단하면 서로의 기록이 서로의 피드에서 빠집니다. 두 사람 사이의 팔로우도 끊깁니다.</li>
+        <li>차단 사실은 상대에게 알리지 않습니다. 앱에서는 차단을 되돌릴 수 없습니다.</li>
+      </ul>
+
+      <h3>익명 ID</h3>
+      <ul>
+        <li>피드에는 이름 대신 익명 ID가 보입니다. 익명 ID는 <code>#</code> 뒤에 16진수 8자리가 붙은 무작위 값입니다.</li>
+        <li>익명 ID는 90일마다 새 값으로 바뀝니다. 서버가 매일 한 번 확인해서 90일이 지난 ID를 바꿉니다.</li>
+        <li>이렇게 하는 이유는 오래 지켜봐도 한 사람을 따라가기 어렵게 하기 위해서입니다.</li>
+        <li>지난 ID는 데이터베이스 표에 남기지 않습니다.</li>
+        <li>다만 지난 ID는 아래 곳에 한동안 남을 수 있습니다: 데이터베이스가 자동 정리를 마치기 전의 옛 데이터, 서버 요청 기록(로그), 다른 이용자 기기의 피드 캐시</li>
+        <li>팔로우, 좋아요, 신고, 차단은 익명 ID가 아니라 계정 ID로 저장합니다. 그래서 익명 ID가 바뀌어도 그대로 남습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s8">
+      <h2>8. 보유 기간</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>정보</th><th>보유 기간</th></tr></thead>
+        <tbody>
+          <tr><td>계정 정보(계정 ID, Apple 로그인 정보, 익명 ID, 타임존, 시작 도시 좌표, 기준 방향)</td><td>계정을 삭제할 때까지</td></tr>
+          <tr><td>로그인 세션 정보</td><td>로그아웃하거나 계정을 삭제할 때까지. 로그아웃하면 이 계정으로 로그인한 모든 기기의 세션을 끝냅니다. 끝난 세션의 정보는 지웁니다. 계정을 삭제하면 세션 정보도 함께 지웁니다. Supabase 문서에 따르면 세션은 기본으로 기한 없이 유지됩니다. 세션 시간을 제한하는 기능은 Pro 플랜 이상에서만 쓸 수 있습니다. 그래서 로그아웃하지 않고 앱만 지우면 서버의 세션 정보가 남습니다. 인터넷 연결 문제 등으로 로그아웃 요청이 서버에 닿지 않을 때도 남을 수 있습니다. 이때는 다시 로그인한 뒤 로그아웃하거나 계정을 삭제하면 지워집니다.</td></tr>
+          <tr><td>기록(날짜, 걸음 수, 거리, 방향, 가상 위치, 메시지, 공개 여부)</td><td>계정을 삭제할 때까지. 당일 기록을 지우면 그때 바로 지웁니다.</td></tr>
+          <tr><td>연속 기록과 누적 값</td><td>계정을 삭제할 때까지</td></tr>
+          <tr><td>익명 ID 하나하나</td><td>90일. 그 뒤 새 ID로 바꿉니다.</td></tr>
+          <tr><td>좋아요</td><td>그 기록이나 어느 한쪽 계정이 지워질 때까지</td></tr>
+          <tr><td>팔로우</td><td>팔로우한 기록 보기는 30일 뒤 끝납니다. 끝난 팔로우 기록을 따로 지우는 기능은 없습니다. 차단하거나 어느 한쪽 계정이 지워지면 지웁니다. 보관 기간: 끝난 팔로우 기록도 팔로우한 사람이나 팔로우된 사람이 계정을 지울 때까지 보관합니다.</td></tr>
+          <tr><td>신고</td><td>신고한 기록이나 신고한 사람의 계정이 지워질 때까지. 보관 기간: 신고한 사람이나 기록 주인이 계정을 지울 때까지입니다. 신고한 기록을 신고한 사람의 피드에서 계속 빼려면 신고 정보가 필요합니다.</td></tr>
+          <tr><td>차단</td><td>어느 한쪽 계정이 지워질 때까지</td></tr>
+          <tr><td>서버 기록(로그)</td><td>1일(Supabase 무료 플랜 기준). Supabase 문서에 따르면 무료 플랜은 로그를 1일 동안 보관합니다.</td></tr>
+          <tr><td>서버 백업</td><td>서버 백업을 만들지 않습니다. Supabase 문서에 따르면 무료 플랜에는 자동 백업이 없습니다.</td></tr>
+          <tr><td>문의 메일</td><td>문의를 처리한 뒤 1년</td></tr>
+          <tr><td>기기에만 저장하는 정보</td><td>로그아웃하거나 계정을 삭제하면 기기의 캐시와 등록된 매일 알림을 지웁니다.</td></tr>
+        </tbody>
+      </table></div>
+      <p>위 서버 기록(로그), 서버 백업, 로그인 세션 정보의 보유 기간은 서버가 쓰는 Supabase 무료 플랜을 기준으로 적었습니다. 플랜을 바꾸면(예: Pro 플랜) 이 기간이 달라질 수 있습니다. 그때는 이 방침을 먼저 고치고 <a href="#ko-privacy-s19">19절</a>의 방법으로 알립니다.</p>
+      <p>법령에 따라 따로 보관하는 정보: 법령이 보관을 요구하는 정보는 그 법령이 정한 기간 동안만 다른 정보와 따로 보관합니다. 그 정보는 그 목적으로만 씁니다.</p>
+    </section>
+
+    <section id="ko-privacy-s9">
+      <h2>9. 파기와 계정 삭제</h2>
+
+      <h3>파기 절차와 방법</h3>
+      <ul>
+        <li>보유 기간이 끝나거나 처리 목적을 이루면 그 정보를 지체 없이 파기합니다.</li>
+        <li>서버의 정보는 데이터베이스에서 지웁니다. 지운 정보는 앱에서 되살릴 수 없습니다.</li>
+        <li>지운 뒤에도 일부 정보가 한동안 남을 수 있는 곳은 아래 "삭제 뒤에 남을 수 있는 것"에 적었습니다.</li>
+      </ul>
+
+      <h3>계정 삭제</h3>
+      <ol>
+        <li>앱에서 설정 › 계정 관리 › 계정 삭제를 누릅니다.</li>
+        <li>확인 창에서 "영구 삭제"를 누릅니다.</li>
+        <li>Apple 계정 확인을 한 번 더 합니다. 이 창에서 취소하면 아무것도 지우지 않습니다.</li>
+      </ol>
+      <ul>
+        <li>삭제는 바로 실행됩니다. 기다리는 기간(유예 기간)은 없습니다. 삭제한 계정은 되살릴 수 없습니다.</li>
+        <li>함께 지워지는 정보: 계정 정보(계정 ID, Apple 로그인 정보, 익명 ID, 타임존, 시작 도시 좌표, 기준 방향), 로그인 세션 정보, 모든 기록(가상 위치, 걸음 수, 거리, 메시지 등), 연속 기록과 누적 값, 내가 한 팔로우와 나를 팔로우한 기록, 내가 누른 좋아요와 내 기록에 받은 좋아요, 내가 한 신고와 내 기록에 대한 신고, 내가 한 차단과 나를 차단한 기록</li>
+        <li>삭제가 끝나면 서버가 Apple에 이 앱의 Apple로 로그인 연결을 끊어 달라고(토큰 취소) 요청합니다. 이 요청이 실패해도 계정 삭제는 끝난 것으로 처리합니다. 연결이 남아 있으면 iPhone에서 직접 해제할 수 있습니다. 설정 › [사용자 이름] › Apple로 로그인에서 이 앱을 고른 뒤 "삭제"를 누릅니다.</li>
+        <li>삭제가 끝나면 앱은 로그아웃하고, 기기의 캐시와 등록된 매일 알림을 지웁니다.</li>
+      </ul>
+
+      <h3>기록 하나 삭제</h3>
+      <ul>
+        <li>오늘 남긴 기록만 지울 수 있습니다. 지운 기록은 되살릴 수 없습니다.</li>
+        <li>지난 기록은 지울 수 없습니다. 오늘의 가상 위치는 어제의 가상 위치에서 이어지기 때문입니다. 중간 기록을 지우면 그 뒤의 위치가 모두 틀어집니다.</li>
+        <li>지난 기록은 기록 탭에서 비공개로 바꿀 수 있습니다.</li>
+        <li>지난 기록을 모두 지우려면 계정을 삭제해 주세요.</li>
+      </ul>
+
+      <h3>삭제 뒤에 남을 수 있는 것</h3>
+      <ul>
+        <li>다른 이용자 기기의 피드 캐시: 다음 새로 고침까지</li>
+        <li>데이터베이스의 옛 데이터: 데이터베이스가 자동 정리를 마칠 때까지</li>
+        <li>서버 백업: 서버 백업을 만들지 않습니다. 그래서 지운 정보는 운영자의 백업에 남지 않습니다(<a href="#ko-privacy-s8">8절</a>).</li>
+        <li>서버 기록(로그): 1일(Supabase 무료 플랜 기준)</li>
+        <li>운영자가 받은 문의 메일: 계정 삭제로 지워지지 않습니다. 지우기를 원하면 메일로 요청해 주세요.</li>
+        <li>Apple 쪽 정보(건강 앱의 원본 데이터, Apple 계정)는 앱이 지우지 않습니다. 건강 앱의 원본 데이터는 처음부터 서버에 없습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s10">
+      <h2>10. 제3자 제공</h2>
+      <ul>
+        <li>운영자는 이용자의 개인정보를 제3자에게 제공하지 않습니다.</li>
+        <li>다만 법률에 특별한 규정이 있거나, 수사기관이 법에서 정한 절차에 따라 요구하면 제공할 수 있습니다.</li>
+        <li>이용자가 공개로 남긴 기록은 다른 이용자에게 보입니다. 보이는 범위는 <a href="#ko-privacy-s7">7절</a>에 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s11">
+      <h2>11. 처리 위탁과 외부 서비스</h2>
+
+      <h3>처리 위탁</h3>
+      <p>운영자는 서버 운영을 아래 회사에 맡깁니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>맡은 회사</th><th>맡긴 일</th><th>서버 위치</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase Pte. Ltd.</td><td>서버, 데이터베이스, 로그인(인증), 서버 함수 운영, 서버 기록(로그) 보관</td><td>대한민국 서울(ap-northeast-2)</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>회사 이름은 Supabase 개인정보처리방침(<a href="https://supabase.com/privacy">supabase.com/privacy</a>)과 데이터 처리 계약(<a href="https://supabase.com/legal/dpa">supabase.com/legal/dpa</a>)에서 확인했습니다.</li>
+        <li>위탁 계약: Supabase 서비스 약관에 포함된 데이터 처리 계약(DPA)이 적용됩니다. 이 계약에 따라 Supabase는 운영자의 지시에 따라서만 개인정보를 처리합니다. Supabase는 개인정보에 접근하는 직원을 업무에 필요한 사람으로 제한하고, 그 직원에게 비밀 유지 의무를 지웁니다. Supabase는 기술적 · 관리적 보안 조치를 유지합니다. 서비스 계약이 끝나고 30일이 지나면 Supabase는 데이터 사본을 모두 지웁니다.</li>
+      </ul>
+
+      <h3>Apple 서비스</h3>
+      <p>앱은 아래 Apple 기능을 씁니다. 각 기능에서 Apple로 가는 정보는 다음과 같습니다.</p>
+      <ul>
+        <li><strong>Sign in with Apple(Apple로 로그인):</strong> 로그인할 때와 계정을 삭제할 때 Apple 서버와 통신합니다. 계정 삭제를 Apple 계정으로 확인하면, 앱이 Apple에서 한 번만 쓸 수 있는 확인 코드를 받아 서버로 보냅니다. 그러면 서버가 Apple에 이 앱의 Apple로 로그인 연결을 끊어 달라고(토큰 취소) 요청합니다. 이 요청이 실패해도 계정 삭제는 끝납니다(<a href="#ko-privacy-s9">9절</a>).</li>
+        <li><strong>지오코딩:</strong> 가입할 때 시작 도시를 찾으려고 기기 좌표를 Apple로 보냅니다. 위치를 얻지 못한 경우에는 공개된 도시 이름과 그 좌표만 보냅니다.</li>
+        <li><strong>Apple 지도(MapKit):</strong> 홈 지도, 기록 상세 지도, 지구본을 확대했을 때의 위성 지도에 씁니다. 지도 그림을 Apple 서버에서 받습니다. 지도에는 가상 위치를 그립니다. 실제 현재 위치는 그리지 않습니다.</li>
+        <li><strong>HealthKit:</strong> 건강 데이터는 기기 안에서 읽습니다. <a href="#ko-privacy-s6">6절</a>을 보세요.</li>
+        <li><strong>App Store:</strong> 설정의 "앱 리뷰 쓰기"는 App Store의 이 앱 페이지를 엽니다.</li>
+        <li><strong>메일 앱:</strong> 문의하기는 기기의 메일 앱을 엽니다.</li>
+      </ul>
+
+      <h3>그 밖의 외부 서비스</h3>
+      <ul>
+        <li>지구본을 그리는 프로그램과 지구 사진은 앱 안에 들어 있습니다. 앱을 쓰는 중에 외부 서버에서 받지 않습니다.</li>
+        <li>위에 적은 곳 말고 앱이 정보를 보내는 외부 서비스는 없습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s12">
+      <h2>12. 국외 이전</h2>
+      <p>이 방침은 아래 두 가지 처리를 국외 이전으로 보고, 개인정보 보호법이 알리도록 정한 사항을 각각 적습니다.</p>
+
+      <h3>Supabase(서버)</h3>
+      <p>서버는 대한민국 서울에 있습니다. 서버 운영을 맡은 Supabase Pte. Ltd.는 데이터 처리 계약에 싱가포르 사무소 주소를 적고 있습니다. 자세한 내용은 아래와 같습니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>이전받는 자</td><td>Supabase Pte. Ltd. (연락처: <a href="mailto:privacy@supabase.com">privacy@supabase.com</a>)</td></tr>
+          <tr><td>이전되는 국가</td><td>미국, 싱가포르, 헝가리. Supabase가 공개한 하위 처리자 목록(<a href="https://supabase.com/legal/customer-resources/subprocessor-list">2026년 10월 12일 기준</a>)에 적힌 회사들의 나라입니다. 이 목록에는 각 회사가 이 앱의 데이터를 실제로 다루는지는 적혀 있지 않습니다.</td></tr>
+          <tr><td>이전 항목</td><td><a href="#ko-privacy-s2">2절</a>의 "서버에 저장하는 정보" 전부</td></tr>
+          <tr><td>이전 시기와 방법</td><td>앱을 쓸 때마다 암호화된 통신(HTTPS)으로 보냅니다.</td></tr>
+          <tr><td>이전 목적</td><td>서버, 데이터베이스, 로그인, 서버 함수 운영</td></tr>
+          <tr><td>보유 기간</td><td><a href="#ko-privacy-s8">8절</a>의 보유 기간과 같습니다.</td></tr>
+          <tr><td>거부 방법과 영향</td><td>앱을 쓰지 않거나 계정을 삭제하면 됩니다. 앱은 서버 없이 기록할 수 없으므로, 거부하면 앱을 이용할 수 없습니다.</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Apple 서비스</h3>
+      <p>앱은 <a href="#ko-privacy-s11">11절</a>에 적은 Apple 기능을 쓸 때 Apple로 정보를 보냅니다. 자세한 내용은 아래와 같습니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>이전받는 자</td><td>Apple Inc. 등 Apple 법인 (연락처: <a href="https://www.apple.com/kr/legal/privacy/contact/">apple.com/kr/legal/privacy/contact</a>). Apple 개인정보처리방침은 개인 데이터를 관리하는 Apple 법인이 사는 곳에 따라 다를 수 있다고 적습니다. 또 미국에 살지 않는 고객의 개인 데이터는 Apple Inc.와 Apple 계열사가 처리할 수 있다고 적습니다. 이 앱이 보내는 정보를 어느 Apple 법인이 받는지는 Apple 개인정보처리방침에 적혀 있지 않습니다.</td></tr>
+          <tr><td>이전되는 국가</td><td>미국 등. Apple 개인정보처리방침은 Apple이 수집한 개인 데이터를 보통 미국의 Apple Inc.가 저장한다고 적습니다. 같은 방침의 대한민국 사용자를 위한 부칙은 미국, EU, 영국, 국경 간 개인정보 보호 규칙(CBPR) 체계에 참여하는 나라에 있는 서버도 적습니다.</td></tr>
+          <tr><td>이전 항목</td><td>Apple로 로그인: 로그인 요청. 계정을 삭제할 때는 서버가 이 앱의 Apple로 로그인 연결을 끊어 달라는 요청(토큰 취소 요청, <a href="#ko-privacy-s11">11절</a>)도 보냅니다. 지오코딩: 위치 권한을 허용한 경우에만 기기 좌표(정확도 약 100m 수준)를 보냅니다. 위치를 얻지 못하면 공개된 도시 이름과 그 좌표만 보냅니다. Apple 지도: 지도 그림 요청(지도에 보이는 지역 포함). 지도에는 가상 위치를 그리고, 실제 현재 위치는 그리지 않습니다.</td></tr>
+          <tr><td>이전 시기와 방법</td><td>로그인할 때와 계정을 삭제할 때, 가입할 때 시작 도시를 찾을 때("다시 찾기"를 누를 때 포함), 지도를 볼 때 보냅니다. 인터넷(통신망)으로 보냅니다.</td></tr>
+          <tr><td>이전 목적</td><td>Apple 계정으로 로그인, 시작 도시를 정하려고 좌표로 도시 이름 찾기, 지도 표시</td></tr>
+          <tr><td>보유 기간</td><td><a href="https://www.apple.com/kr/legal/privacy/">Apple 개인정보처리방침</a>에 따릅니다. 이 방침은 Apple이 개인 데이터를 수집 목적을 이루는 데 필요한 기간 동안만 보관한다고 적습니다.</td></tr>
+          <tr><td>거부 방법과 영향</td><td>지오코딩: 위치 권한을 허용하지 않으면 기기 좌표를 Apple로 보내지 않습니다. 이때 시작 도시는 기기 시간대의 대표 도시로 정합니다. 가입과 기록은 그대로 할 수 있습니다. Apple로 로그인: 거부하면 가입할 수 없습니다. 앱은 Apple로 로그인만 지원합니다. Apple 지도: 지도만 따로 끄는 설정은 없습니다. 거부하려면 앱을 쓰지 않아야 합니다.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="ko-privacy-s13">
+      <h2>13. 이용자의 권리와 행사 방법</h2>
+      <p>이용자는 언제든 자기 개인정보의 열람, 정정, 삭제, 처리 정지를 요구할 수 있습니다. 동의를 철회할 수도 있습니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>권리</th><th>앱 안에서 하는 방법</th><th>메일로 하는 방법</th></tr></thead>
+        <tbody>
+          <tr><td>열람</td><td>기록 탭에서 내 기록을 봅니다. 설정에서 저장된 타임존을 봅니다.</td><td>앱에 보이지 않는 정보는 메일로 요청해 주세요.</td></tr>
+          <tr><td>정정</td><td>기록 탭에서 기록의 공개 여부를 바꿉니다.</td><td>그 밖의 정정은 메일로 요청해 주세요.</td></tr>
+          <tr><td>삭제</td><td>오늘 남긴 기록을 지웁니다. 계정을 삭제하면 모든 정보를 지웁니다(<a href="#ko-privacy-s9">9절</a>).</td><td>그 밖의 삭제는 메일로 요청해 주세요.</td></tr>
+          <tr><td>처리 정지</td><td>iPhone 설정 앱에서 위치 · 건강 권한을 끕니다. 매일 알림을 끕니다. 기록을 비공개로 바꿉니다.</td><td>그 밖의 처리 정지는 메일로 요청해 주세요.</td></tr>
+          <tr><td>동의 철회</td><td>권한을 끄거나 계정을 삭제합니다.</td><td>메일로도 요청할 수 있습니다.</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>메일 주소: <a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>앱에는 내 데이터를 파일로 내려받는 기능이 없습니다.</li>
+        <li>대리인을 통해서도 요청할 수 있습니다.</li>
+        <li>본인 확인 방법: 앱은 이용자의 이메일 주소를 요청하지 않습니다. 그래서 메일로 요청하면, 앱 설정에 보이는 익명 ID와 최근 기록 두 개의 날짜와 걸음 수가 계정과 맞는지 확인합니다. 메시지가 있는 기록이면 메시지도 함께 확인합니다. 데이터 사본을 보내는 것처럼 다른 사람에게 정보가 갈 수 있는 요청은 한 번 더 확인합니다. 운영자가 정한 기록 하나의 공개 여부를 앱에서 바꿔 달라고 메일로 부탁하고, 바뀐 것을 확인한 뒤 처리합니다. 확인이 끝나면 원래대로 되돌려도 됩니다. 오늘 기록 삭제, 기록의 공개 여부 바꾸기, 계정 삭제는 앱에서 직접 할 수 있습니다(위 표). 대리인이 요청할 때는 위임 내용(위임장 등)을 함께 보내야 합니다.</li>
+        <li>답하는 기간: 요청을 받은 날부터 10일 안에 답합니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s14">
+      <h2>14. 만 14세 미만 아동</h2>
+      <ul>
+        <li>앱은 만 14세 이상만 이용할 수 있습니다.</li>
+        <li>만 14세 미만은 가입하거나 앱을 이용할 수 없습니다.</li>
+        <li>만 14세 미만 아동이 가입한 사실을 알게 되면, 알게 된 날부터 7일 안에 그 계정을 삭제합니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s15">
+      <h2>15. 안전성 확보 조치</h2>
+      <p>운영자는 개인정보를 보호하려고 아래 조치를 합니다.</p>
+      <ul>
+        <li><strong>전송 암호화:</strong> 앱과 서버 사이의 통신은 HTTPS로 암호화합니다.</li>
+        <li><strong>접근 통제:</strong> 데이터베이스의 모든 표에 RLS를 켰습니다. RLS는 데이터베이스가 행마다 누가 읽고 쓸 수 있는지 검사하는 기능입니다. 그래서 이용자는 허락된 정보만 읽고 쓸 수 있습니다.</li>
+        <li><strong>열 단위 제한:</strong> 좋아요를 누가 눌렀는지와 신고 내용은 앱에서 읽을 수 없습니다. 서버 함수만 읽을 수 있습니다.</li>
+        <li><strong>식별 정보 분리:</strong> 다른 이용자에게는 계정 ID 대신 익명 ID만 보냅니다. 익명 ID는 90일마다 바꿉니다.</li>
+        <li><strong>위치 흐리게 하기:</strong> 기록할 때는 위치를 읽지 않습니다. 시작점은 도시 중심으로 옮기고, 도시를 찾지 못하면 약 39km × 20km 칸의 중심으로 옮깁니다.</li>
+        <li><strong>비밀 값 관리:</strong> 서버 관리용 비밀 키는 앱과 소스 코드 저장소에 넣지 않습니다. Apple 로그인용 키는 서버의 비밀 값으로만 둡니다.</li>
+        <li><strong>기록(로그) 최소화:</strong> 오류 기록에 이용자가 쓴 메시지를 남기지 않습니다. 계정 삭제 기록에 토큰과 키를 남기지 않습니다.</li>
+        <li><strong>관리적 조치:</strong> 운영자 계정(Supabase · GitHub · Apple Developer · 메일)에 2단계 인증을 씁니다. 관리 권한은 운영자 1명만 가집니다. 비밀 값은 서버에만 둡니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s16">
+      <h2>16. 자동 수집 장치</h2>
+      <ul>
+        <li>앱은 분석 도구, 광고 도구, 오류 수집 도구를 쓰지 않습니다.</li>
+        <li>앱은 광고 식별자를 읽지 않고, 다른 회사의 앱이나 웹사이트에 걸쳐 이용자를 추적하지 않습니다.</li>
+        <li>앱은 기능에 필요한 설정 값만 기기에 저장합니다(<a href="#ko-privacy-s2">2절</a>). 이 값은 서버로 보내지 않습니다.</li>
+        <li>이런 도구를 새로 넣게 되면 이 방침을 먼저 고칩니다.</li>
+        <li>이 웹 페이지는 쿠키, 스크립트, 추적 코드를 쓰지 않습니다.</li>
+        <li>이 웹 페이지를 제공하는 호스팅 서비스의 접속 기록: 이 웹 페이지는 GitHub Pages(GitHub, Inc.)로 제공합니다. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub 문서</a>에 따르면 GitHub는 보안을 위해 방문자의 IP 주소를 기록하고 보관합니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-privacy-s17">
+      <h2>17. 개인정보 보호책임자</h2>
+      <p>앱은 개인 개발자가 운영하므로 운영자 본인이 개인정보 보호책임자입니다.</p>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><th>이름</th><td>YoungBeom Seo</td></tr>
+          <tr><th>직책</th><td>운영자(개인 개발자)</td></tr>
+          <tr><th>이메일</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+        </tbody>
+      </table></div>
+      <p>개인정보에 관한 문의, 불만, 피해 구제 요청은 이 메일로 보내 주세요.</p>
+    </section>
+
+    <section id="ko-privacy-s18">
+      <h2>18. 권익침해 구제 방법</h2>
+      <p>개인정보 침해에 대한 신고나 상담이 필요하면 아래 기관에 문의할 수 있습니다. 모두 대한민국의 기관입니다.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>기관</th><th>전화</th><th>웹사이트</th></tr></thead>
+        <tbody>
+          <tr><td>개인정보침해신고센터(한국인터넷진흥원)</td><td>국번 없이 118</td><td><a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a></td></tr>
+          <tr><td>개인정보분쟁조정위원회</td><td>1833-6972</td><td><a href="https://www.kopico.go.kr">www.kopico.go.kr</a></td></tr>
+          <tr><td>공소청(옛 대검찰청)</td><td>국번 없이 1301</td><td><a href="https://www.spo.go.kr">www.spo.go.kr</a></td></tr>
+          <tr><td>경찰청</td><td>국번 없이 182</td><td><a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="ko-privacy-s19">
+      <h2>19. 방침 변경</h2>
+      <ul>
+        <li>이 방침을 바꿀 때는 시행일과 바뀌는 내용을 시행일 7일 전부터 알립니다.</li>
+        <li>이용자에게 불리하게 바꿀 때(예: 처리하는 개인정보 항목이나 처리 목적이 늘어날 때)는 시행일 30일 전부터 알립니다.</li>
+        <li>알리는 방법: 이 웹 페이지에 바뀐 방침과 바뀌는 내용을 올립니다. 앱 업데이트와 함께 바뀌면 App Store의 업데이트 안내에도 적습니다.</li>
+        <li>이 페이지 맨 위에 시행일과 최종 수정일을 적습니다.</li>
+      </ul>
+    </section>
+  </div>
+  <div class="doc" id="ko-terms">
+    <h1>이용약관</h1>
+    <p class="meta">시행일: 2026-10-23 · 최종 수정: 2026-10-23</p>
+
+    <nav class="toc" aria-label="목차">
+      <ol>
+        <li><a href="#ko-terms-s1">약관의 목적과 적용</a></li>
+        <li><a href="#ko-terms-s2">용어의 뜻</a></li>
+        <li><a href="#ko-terms-s3">이용 자격</a></li>
+        <li><a href="#ko-terms-s4">계정</a></li>
+        <li><a href="#ko-terms-s5">서비스 내용</a></li>
+        <li><a href="#ko-terms-s6">기록 규칙</a></li>
+        <li><a href="#ko-terms-s7">공개 기록과 피드</a></li>
+        <li><a href="#ko-terms-s8">메시지와 콘텐츠의 권리</a></li>
+        <li><a href="#ko-terms-s9">금지 행위</a></li>
+        <li><a href="#ko-terms-s10">필터 · 신고 · 자동 숨김 · 차단</a></li>
+        <li><a href="#ko-terms-s11">운영자의 조치</a></li>
+        <li><a href="#ko-terms-s12">건강 정보에 관한 안내</a></li>
+        <li><a href="#ko-terms-s13">가상 위치에 관한 안내</a></li>
+        <li><a href="#ko-terms-s14">서비스의 변경과 중단</a></li>
+        <li><a href="#ko-terms-s15">계정 삭제</a></li>
+        <li><a href="#ko-terms-s16">책임의 범위</a></li>
+        <li><a href="#ko-terms-s17">약관의 변경</a></li>
+        <li><a href="#ko-terms-s18">Apple과의 관계</a></li>
+        <li><a href="#ko-terms-s19">준거법과 관할 법원</a></li>
+        <li><a href="#ko-terms-s20">운영자 정보와 연락처</a></li>
+        <li><a href="#ko-terms-s21">언어판</a></li>
+      </ol>
+    </nav>
+
+    <section id="ko-terms-s1">
+      <h2>1. 약관의 목적과 적용</h2>
+      <ul>
+        <li>이 약관은 걸음별자리 서비스를 쓰는 규칙을 정합니다.</li>
+        <li>이 약관은 서비스를 쓰는 모든 이용자에게 적용됩니다.</li>
+        <li>가입 화면에서 Apple로 로그인을 계속하면 이 약관과 개인정보처리방침에 동의한 것으로 봅니다. 가입 화면에도 이 내용이 적혀 있습니다.</li>
+        <li>개인정보를 다루는 방법은 <a href="#ko-privacy">개인정보처리방침</a>에 있습니다.</li>
+        <li>이 약관에 없는 내용은 대한민국의 관련 법을 따릅니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s2">
+      <h2>2. 용어의 뜻</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>용어</th><th>뜻</th></tr></thead>
+          <tbody>
+            <tr><td>서비스</td><td>걸음별자리 앱과 앱이 쓰는 서버입니다. 영어와 일본어 이름은 StepStella입니다.</td></tr>
+            <tr><td>운영자</td><td>서비스를 운영하는 개인 개발자입니다. 연락처는 20절에 있습니다.</td></tr>
+            <tr><td>이용자</td><td>이 약관에 동의하고 서비스를 쓰는 사람입니다.</td></tr>
+            <tr><td>기록</td><td>하루에 한 번 남기는 걸음 수, 거리, 방향, 메시지의 묶음입니다.</td></tr>
+            <tr><td>메시지</td><td>기록에 남기는 140자 이하의 글입니다. 쓰지 않아도 됩니다.</td></tr>
+            <tr><td>공개 기록 · 비공개 기록</td><td>공개 기록은 여정 이웃의 피드에 보입니다. 비공개 기록은 이용자 본인만 봅니다.</td></tr>
+            <tr><td>시작 도시</td><td>가상 위치가 처음 출발하는 도시입니다. 가입할 때 한 번 정합니다.</td></tr>
+            <tr><td>가상 위치</td><td>시작 도시에서 출발해, 고른 방향으로 걸은 거리만큼 움직이는 지구 위의 가상의 점입니다. 실제 위치가 아닙니다.</td></tr>
+            <tr><td>기준 방향</td><td>첫 기록 때 8방위 가운데 하나로 고르는 방향입니다. 이후 기록에서 고를 수 있는 방향 범위가 이 방향을 기준으로 정해집니다.</td></tr>
+            <tr><td>여정 이웃</td><td>가상 위치가 가까운 다른 이용자입니다.</td></tr>
+            <tr><td>피드</td><td>여정 이웃의 공개 기록을 모아 보여 주는 화면입니다.</td></tr>
+            <tr><td>탐색 반경</td><td>피드에 기록을 보여 주는 거리 범위입니다. 가상 위치를 중심으로 약 5km에서 시작해 최대 50km까지 넓어집니다.</td></tr>
+            <tr><td>익명 ID</td><td>피드에서 이용자를 가리키는 무작위 이름입니다. 예: #A3F29C01. 90일마다 자동으로 바뀝니다.</td></tr>
+            <tr><td>연속 기록(streak)</td><td>하루도 빠지지 않고 기록한 날의 수입니다.</td></tr>
+            <tr><td>연속 기록 보호</td><td>한 달에 한 번, 오늘을 기록한 것으로 처리해 연속 기록을 지키는 기능입니다.</td></tr>
+            <tr><td>팔로우</td><td>여정 이웃의 별자리를 최대 30일 동안 볼 수 있게 하는 기능입니다.</td></tr>
+            <tr><td>별자리</td><td>매일의 기록을 지구본 위에 이어 그린 모양입니다.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ko-terms-s3">
+      <h2>3. 이용 자격</h2>
+      <ul>
+        <li>만 14세 이상만 가입하고 이용할 수 있습니다.</li>
+        <li>만 14세 미만은 가입할 수 없고, 서비스를 이용할 수 없습니다.</li>
+        <li>운영자는 이용자가 만 14세 미만인 것을 알게 되면 계정을 삭제할 수 있습니다.</li>
+        <li>Apple 계정이 있어야 합니다.</li>
+        <li>iOS 17 이상의 iPhone에서 쓸 수 있습니다.</li>
+        <li>인터넷 연결이 필요합니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s4">
+      <h2>4. 계정</h2>
+      <ul>
+        <li>가입과 로그인은 Sign in with Apple(Apple 계정으로 로그인하는 기능)로만 합니다. 이메일과 비밀번호로 로그인하는 방법은 없습니다.</li>
+        <li>운영자는 가입할 때 Apple 계정의 이름과 이메일을 요청하지 않습니다.</li>
+        <li>다른 사람의 Apple 계정으로 가입하면 안 됩니다.</li>
+        <li>계정을 다른 사람에게 넘기거나 빌려줄 수 없습니다.</li>
+        <li>이용자는 자신의 Apple 계정과 iPhone을 안전하게 관리해야 합니다. 다른 사람이 이용자의 기기로 서비스를 쓰면, 그 기록은 이용자의 계정에 남습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s5">
+      <h2>5. 서비스 내용</h2>
+      <p>서비스는 아래 기능을 제공합니다.</p>
+      <ul>
+        <li>하루에 한 번, Apple 건강 앱에서 어제 하루의 걸음 수와 걷기 · 달리기 거리를 읽어 기록합니다.</li>
+        <li>이용자가 고른 방향으로 그 거리만큼 가상 위치를 옮깁니다.</li>
+        <li>기록에 짧은 메시지를 남길 수 있습니다.</li>
+        <li>매일의 기록을 지구본 위에 별자리처럼 이어 보여 줍니다. 누적 40,075km가 지구 한 바퀴입니다.</li>
+        <li>여정 이웃의 공개 기록을 피드에서 익명으로 보여 줍니다. 피드에서 좋아요, 팔로우, 신고, 차단을 할 수 있습니다.</li>
+        <li>매일 정한 시각에 기록을 알려 주는 알림을 켤 수 있습니다. 이 알림은 iPhone이 스스로 띄웁니다.</li>
+      </ul>
+      <ul>
+        <li>서비스는 무료입니다. 광고와 앱 안 결제가 없습니다.</li>
+        <li>앞으로 유료 기능을 더하면, 그 전에 이 약관을 바꾸고 17절에 따라 알립니다.</li>
+        <li>댓글과 1:1 메시지 기능은 없습니다.</li>
+      </ul>
+      <p>운영자는 위치정보를 <a href="#ko-privacy-s5">개인정보처리방침 5절</a>에 적은 방법으로 다룹니다.</p>
+    </section>
+
+    <section id="ko-terms-s6">
+      <h2>6. 기록 규칙</h2>
+      <h3>날짜와 인터넷 연결</h3>
+      <ul>
+        <li>기록은 현지 날짜를 기준으로 하루에 한 번만 남길 수 있습니다.</li>
+        <li>날짜는 기기 시계가 아니라 서버 시각으로 정합니다. 서버 시각을 가입할 때 저장한 타임존(시간대)의 현지 날짜로 바꿔 씁니다.</li>
+        <li>기기 시계를 바꿔 연속 기록을 조작하지 못하게 하려고 이렇게 정했습니다.</li>
+        <li>그래서 인터넷에 연결되어 있지 않으면 기록할 수 없습니다. 피드는 마지막으로 불러온 내용을 보여 줍니다.</li>
+        <li>저장한 타임존은 지금 버전의 앱에서 바꿀 수 없습니다. 기기의 타임존을 바꿔도 기록 날짜의 기준은 바뀌지 않습니다.</li>
+      </ul>
+      <h3>걸음 수와 거리</h3>
+      <ul>
+        <li>오늘 기록에는 어제 0시부터 24시까지 확정된 걸음 수와 거리를 씁니다.</li>
+        <li>건강 앱에 직접 입력한 걸음 수와 거리는 세지 않습니다.</li>
+        <li>하루 거리는 100km까지, 걸음 수는 200,000걸음까지 기록합니다. 이 값을 넘으면 상한 값으로 기록합니다.</li>
+        <li>걸음 수가 0인 날도 기록할 수 있습니다. 0걸음 날도 기록하면 연속 기록이 이어집니다.</li>
+      </ul>
+      <h3>방향과 연속 기록</h3>
+      <ul>
+        <li>첫 기록은 시작 도시에 남습니다. 가상 위치는 다음 기록부터 움직입니다.</li>
+        <li>기준 방향은 첫 기록 때 한 번 고릅니다. 고른 뒤에는 바꿀 수 없습니다.</li>
+        <li>하루를 놓치면 연속 기록은 1일부터 다시 시작합니다.</li>
+        <li>연속 기록 보호는 한 달에 한 번 무료로 쓸 수 있습니다. 이틀 이상 끊긴 연속 기록은 되살릴 수 없습니다.</li>
+      </ul>
+      <h3>기록 삭제와 공개 여부 변경</h3>
+      <ul>
+        <li>기록은 당일 기록만 삭제할 수 있습니다.</li>
+        <li>오늘 위치는 어제 위치에서 이어집니다. 그래서 지난 기록을 지우면 그 뒤의 위치가 모두 틀어집니다. 이것이 지난 기록을 삭제할 수 없는 이유입니다.</li>
+        <li>삭제한 기록은 복구할 수 없습니다.</li>
+        <li>지난 기록은 기록 탭에서 공개와 비공개를 바꿀 수 있습니다.</li>
+        <li>지난 기록을 모두 지우려면 계정을 삭제해야 합니다(15절).</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s7">
+      <h2>7. 공개 기록과 피드</h2>
+      <ul>
+        <li>기록을 남길 때 공개 여부를 고릅니다. 처음 값은 공개입니다.</li>
+        <li>공개 기록은 기록한 뒤 7일 동안, 탐색 반경 안에 있는 여정 이웃의 피드에 보입니다.</li>
+        <li>피드 카드에는 익명 ID, 가상 위치 사이의 거리 범위, 걸음 수, 거리, 메시지, 좋아요 수, 날짜가 보입니다.</li>
+        <li>걸음 수와 거리는 정확한 값 그대로 보입니다.</li>
+        <li>피드에는 실명과 프로필 사진이 없습니다.</li>
+        <li>좋아요를 누가 눌렀는지는 기록 주인에게도 보이지 않습니다. 개수만 보입니다.</li>
+        <li>이용자를 팔로우한 사람은 최대 30일 동안 이용자의 최근 30일 공개 기록을 지구본에서 볼 수 있습니다. 위치는 대략적인 위치로, 거리와 걸음 수는 반올림한 값으로 보입니다. 메시지는 보이지 않습니다.</li>
+        <li>누가 이용자를 팔로우해도 이용자에게 알림이 가지 않습니다.</li>
+        <li>공개 기록은 다른 이용자의 기기에 임시로 저장(캐시)될 수 있습니다. 기록을 비공개로 바꾸거나 지워도, 그 기기에서 피드를 새로 고치기 전까지는 남을 수 있습니다.</li>
+        <li>메시지에 실명, 주소, 연락처처럼 이용자를 알아볼 수 있는 정보를 쓰지 마세요.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s8">
+      <h2>8. 메시지와 콘텐츠의 권리</h2>
+      <h3>이용자의 메시지</h3>
+      <ul>
+        <li>이용자가 쓴 메시지의 권리(저작권 등)는 이용자에게 있습니다.</li>
+        <li>이용자는 운영자가 아래 범위 안에서 메시지를 쓰도록 허락합니다.
+          <ul>
+            <li>목적: 서비스를 운영하는 데에만 씁니다. 메시지를 저장하고, 이용자 본인에게 보여 주고, 공개 기록이면 여정 이웃에게 보여 줍니다.</li>
+            <li>방법: 저장, 전송, 화면 표시를 합니다. 이를 위해 필요한 복사(서버, 기기 캐시)도 포함합니다.</li>
+            <li>대가: 없습니다.</li>
+            <li>운영자는 이 허락을 다른 사람에게 넘기지 않습니다. 다만 운영자가 서버 운영을 맡긴 회사가 메시지를 저장하고 전송하는 일은 포함합니다.</li>
+            <li>운영자는 메시지를 광고, 홍보, 판매에 쓰지 않습니다.</li>
+            <li>기간: 메시지가 지워질 때까지입니다. 당일 기록 삭제나 계정 삭제로 메시지가 지워지면 허락도 끝납니다. 다만 다른 이용자 기기의 캐시에는 한동안 남을 수 있습니다.</li>
+          </ul>
+        </li>
+        <li>이용자는 자신이 쓸 권리가 있는 내용만 메시지로 써야 합니다.</li>
+        <li>다른 사람의 저작물이나 개인정보를 허락 없이 쓰면 안 됩니다.</li>
+      </ul>
+      <h3>앱의 권리</h3>
+      <ul>
+        <li>앱의 화면, 디자인, 코드에 대한 권리는 운영자나 원래 권리자에게 있습니다.</li>
+        <li>이 약관은 이용자에게 앱을 쓸 권리만 줍니다. 앱을 복제하거나 팔 권리는 주지 않습니다.</li>
+        <li>앱에 들어 있는 오픈소스 소프트웨어와 지구 사진(NASA)의 라이선스는 앱의 설정 › 개인정보 › 데이터 정책 › 오픈소스 라이선스에서 볼 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s9">
+      <h2>9. 금지 행위</h2>
+      <p>서비스는 부적절한 글과 다른 이용자를 괴롭히는 행위를 허용하지 않습니다. 이용자는 아래 행위를 하면 안 됩니다.</p>
+      <h3>메시지와 콘텐츠</h3>
+      <ul>
+        <li>욕설, 혐오 표현, 차별하는 표현을 쓰는 행위</li>
+        <li>다른 사람을 괴롭히거나 위협하는 행위</li>
+        <li>성적인 내용, 폭력적인 내용, 다른 사람에게 불쾌감을 주는 내용을 쓰는 행위</li>
+        <li>불법인 내용을 쓰거나, 불법 행위를 돕거나 부추기는 행위</li>
+        <li>다른 사람의 개인정보(이름, 주소, 전화번호, 위치 등)를 드러내는 행위</li>
+        <li>다른 사람의 저작권 등 권리를 침해하는 행위</li>
+        <li>스팸, 광고, 같은 내용을 되풀이해 올리는 행위</li>
+        <li>다른 사람이나 운영자인 척하는 행위</li>
+      </ul>
+      <h3>서비스 이용</h3>
+      <ul>
+        <li>앱이 아닌 방법(자동화 프로그램, 스크립트 등)으로 서버에 접근하거나 데이터를 모으는 행위</li>
+        <li>걸음 수, 거리, 날짜 같은 값을 조작해 서버에 보내는 행위</li>
+        <li>서버에 지나치게 많은 요청을 보내거나 서비스를 방해하는 행위</li>
+        <li>신고나 자동 숨김을 악용하려고 여러 계정을 만들거나 거짓으로 신고하는 행위</li>
+        <li>보안 장치를 피하거나, 다른 이용자의 계정에 접근하려는 행위</li>
+        <li>그 밖에 법을 어기는 행위</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s10">
+      <h2>10. 필터 · 신고 · 자동 숨김 · 차단</h2>
+      <h3>금칙어 필터</h3>
+      <ul>
+        <li>메시지에 욕설이나 혐오 표현이 있으면 앱과 서버가 저장을 막습니다.</li>
+        <li>비공개 기록의 메시지도 검사합니다. 나중에 공개로 바꿀 수 있기 때문입니다.</li>
+        <li>필터는 모든 표현을 막지 못합니다. 문제가 없는 표현을 잘못 막을 수도 있습니다.</li>
+      </ul>
+      <h3>신고</h3>
+      <ul>
+        <li>피드 카드의 더 보기(…) › 신고에서 기록을 신고할 수 있습니다.</li>
+        <li>신고 사유는 스팸, 부적절한 내용, 개인정보 침해, 기타 가운데 하나를 고릅니다.</li>
+        <li>신고한 기록은 이용자의 피드에서 바로 빠집니다.</li>
+        <li>신고는 24시간 동안 10건까지 할 수 있습니다.</li>
+        <li>같은 기록을 여러 번 신고해도 한 번으로 셉니다.</li>
+        <li>부적절한 기록은 설정 › 지원 › 문의하기에서 메일로도 알릴 수 있습니다.</li>
+      </ul>
+      <h3>자동 숨김</h3>
+      <ul>
+        <li>한 기록을 서로 다른 이용자 3명이 신고하면 그 기록은 자동으로 숨겨집니다.</li>
+        <li>기록이 하나 이상 있는 계정의 신고만 셉니다.</li>
+        <li>숨겨진 기록은 피드와 팔로워의 지구본에서 빠집니다. 기록 주인에게는 그대로 보입니다.</li>
+        <li>기록이 숨겨져도 기록 주인에게 따로 알리지 않습니다.</li>
+        <li>기록이 잘못 숨겨졌다고 생각하면 20절의 연락처로 알려 주세요. 운영자가 확인합니다.</li>
+      </ul>
+      <h3>운영자의 검토</h3>
+      <ul>
+        <li>운영자는 신고된 기록을 확인합니다. 이 약관을 어긴 기록은 숨기거나 메시지를 지웁니다.</li>
+        <li>검토 시간: 신고를 받은 뒤 48시간 안에 확인합니다.</li>
+      </ul>
+      <h3>차단</h3>
+      <ul>
+        <li>피드 카드의 더 보기(…) › 이 사용자 차단에서 차단할 수 있습니다.</li>
+        <li>차단하면 두 사람의 기록이 서로의 피드에서 빠집니다.</li>
+        <li>두 사람 사이의 팔로우가 모두 끊기고, 다시 팔로우할 수 없습니다.</li>
+        <li>차단한 사실을 상대에게 알리지 않습니다.</li>
+        <li>차단은 앱 안에서 되돌릴 수 없습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s11">
+      <h2>11. 운영자의 조치</h2>
+      <ul>
+        <li>이용자가 이 약관을 어기면 운영자는 아래 조치를 할 수 있습니다.
+          <ul>
+            <li>기록을 숨기거나 메시지를 지웁니다.</li>
+            <li>계정을 삭제합니다.</li>
+          </ul>
+        </li>
+        <li>운영자는 위반의 정도와 되풀이 여부를 보고 조치를 정합니다.</li>
+        <li>법을 어긴 내용이나 다른 사람에게 바로 피해를 줄 수 있는 내용은 미리 알리지 않고 바로 기록을 숨기거나 메시지를 지울 수 있습니다.</li>
+        <li>서비스는 이용자의 이메일 주소를 요청하지 않습니다. 그래서 운영자가 조치를 이용자에게 직접 알리지 못할 수 있습니다.</li>
+        <li>조치에 의견이 있으면 20절의 연락처로 알려 주세요. 운영자가 다시 확인하고 답합니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s12">
+      <h2>12. 건강 정보에 관한 안내</h2>
+      <ul>
+        <li>서비스는 의료 서비스가 아닙니다.</li>
+        <li>서비스가 보여 주는 값은 의료 정보나 의학적 조언이 아닙니다.</li>
+        <li>걸음 수와 거리는 Apple 건강 앱에 저장된 값을 읽어 씁니다. 운영자가 직접 재지 않습니다.</li>
+        <li>그래서 기록된 값은 실제로 걸은 양과 다를 수 있습니다.</li>
+        <li>하루 상한과 직접 입력 값 제외 규칙(6절) 때문에, 기록된 값이 건강 앱의 값과 다를 수도 있습니다.</li>
+        <li>서비스는 건강 앱에 데이터를 쓰지 않습니다. 읽기만 합니다.</li>
+        <li>건강 데이터 읽기를 허용하지 않으면 걸음 수와 거리가 0으로 기록됩니다. iOS는 허용 여부를 앱에 알려 주지 않습니다.</li>
+        <li>건강에 문제가 있거나 운동을 새로 시작하려면 의사나 전문가와 상의하세요.</li>
+        <li>연속 기록이나 탐색 반경을 위해 무리하게 걷지 마세요.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s13">
+      <h2>13. 가상 위치에 관한 안내</h2>
+      <ul>
+        <li>가상 위치는 실제 위치가 아닙니다. 기록에 따라 계산한 지구 위의 가상의 점입니다.</li>
+        <li>가상 위치는 길 안내가 아닙니다. 가상 위치로 실제로 이동하라는 뜻이 아닙니다.</li>
+        <li>여정 이웃은 가상 위치를 기준으로 정합니다. 여정 이웃의 실제 위치는 이용자와 다를 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s14">
+      <h2>14. 서비스의 변경과 중단</h2>
+      <ul>
+        <li>운영자는 서비스를 개선하려고 기능을 더하거나, 바꾸거나, 뺄 수 있습니다.</li>
+        <li>이용자에게 중요한 변경은 바꾸는 날 7일 전부터 미리 알립니다. 알리는 방법: 이 웹 페이지에 공지를 올립니다. 앱 업데이트와 함께 바뀌면 App Store의 업데이트 안내에도 적습니다.</li>
+        <li>아래 경우에는 서비스가 잠시 멈출 수 있습니다.
+          <ul>
+            <li>서버를 점검하거나 바꿀 때</li>
+            <li>서버 운영을 맡긴 회사나 Apple 서비스에 장애가 생겼을 때</li>
+            <li>정전, 통신 장애, 천재지변이 생겼을 때</li>
+            <li>사용량이 갑자기 많이 몰렸을 때</li>
+          </ul>
+        </li>
+        <li>운영자는 서비스 전체를 끝낼 수 있습니다. 끝내는 날 30일 전부터, 변경을 알릴 때와 같은 방법으로 알립니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s15">
+      <h2>15. 계정 삭제</h2>
+      <ul>
+        <li>이용자는 언제든지 앱에서 계정을 삭제할 수 있습니다.</li>
+        <li>삭제 경로: 설정 › 계정 관리 › 계정 삭제 › 영구 삭제 › Apple 계정 확인</li>
+        <li>Apple 계정 확인에서 취소하면 아무것도 지우지 않습니다.</li>
+        <li>삭제는 바로 실행됩니다. 유예 기간은 없습니다.</li>
+        <li>계정을 삭제하면 아래 데이터가 함께 지워집니다.
+          <ul>
+            <li>모든 기록(걸음 수, 거리, 방향, 메시지, 위치 포함)</li>
+            <li>연속 기록과 누적 거리 · 걸음 수</li>
+            <li>계정 ID와 Apple 로그인 정보</li>
+            <li>로그인 세션 정보</li>
+            <li>익명 ID, 타임존, 시작 도시, 기준 방향</li>
+            <li>이용자가 한 팔로우 · 좋아요 · 신고 · 차단, 그리고 이용자가 받은 팔로우 · 좋아요 · 신고 · 차단</li>
+          </ul>
+        </li>
+        <li>삭제한 계정과 기록은 되돌릴 수 없습니다.</li>
+        <li>앱에는 기록을 파일로 내보내는 기능이 없습니다.</li>
+        <li>다시 가입하면 새 계정으로 처음부터 시작합니다.</li>
+        <li>삭제한 뒤에도 아래 곳에는 한동안 남을 수 있습니다. 자세한 내용은 <a href="#ko-privacy">개인정보처리방침</a>에 있습니다.
+          <ul>
+            <li>다른 이용자 기기의 피드 캐시: 그 기기에서 피드를 새로 고칠 때까지</li>
+            <li>서버 백업: 운영자는 서버 백업을 만들지 않습니다. 그래서 지운 데이터는 운영자의 백업에 남지 않습니다. 서버가 쓰는 Supabase 무료 플랜에는 자동 백업이 없습니다.</li>
+            <li>서버 로그(서버가 자동으로 남기는 요청 기록): 1일(Supabase 무료 플랜 기준)</li>
+            <li>이용자가 운영자에게 보낸 문의 메일</li>
+          </ul>
+        </li>
+        <li>Apple 건강 앱의 데이터와 Apple 계정은 앱이 지우지 않습니다.</li>
+        <li>계정을 삭제하면 운영자는 Apple에 이 앱의 Apple로 로그인 연결을 끊어 달라고 요청합니다. 이 요청이 실패해도 계정 삭제는 끝납니다. 연결이 남아 있으면 iPhone에서 직접 해제할 수 있습니다. 설정 › [사용자 이름] › Apple로 로그인에서 이 앱을 고른 뒤 "삭제"를 누릅니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s16">
+      <h2>16. 책임의 범위</h2>
+      <ul>
+        <li>운영자는 고의나 과실로 이용자에게 손해를 입히면 관련 법에 따라 책임집니다.</li>
+        <li>아래 경우의 손해는 운영자가 책임지지 않습니다. 다만 운영자에게 고의나 과실이 있으면 책임집니다.
+          <ul>
+            <li>천재지변, 전쟁, 정전, 통신 장애처럼 운영자가 막을 수 없는 일로 생긴 손해</li>
+            <li>Apple, 서버 운영을 맡긴 회사, 통신사 같은 다른 회사의 서비스 장애로 생긴 손해</li>
+            <li>이용자의 잘못으로 생긴 손해(예: 기기나 Apple 계정을 제대로 관리하지 않은 경우)</li>
+            <li>Apple 건강 앱의 값이 실제와 달라서 생긴 손해</li>
+            <li>다른 이용자가 쓴 메시지 때문에 생긴 손해. 다만 운영자가 신고를 받고도 정당한 이유 없이 조치하지 않았으면 책임집니다.</li>
+          </ul>
+        </li>
+        <li>이용자가 이 약관을 어겨 운영자나 다른 사람에게 손해를 입히면, 이용자가 그 손해를 책임집니다.</li>
+        <li>이 절은 소비자 보호에 관한 법 등 관련 법이 이용자에게 보장하는 권리를 줄이지 않습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s17">
+      <h2>17. 약관의 변경</h2>
+      <ul>
+        <li>운영자는 관련 법을 어기지 않는 범위에서 이 약관을 바꿀 수 있습니다.</li>
+        <li>약관을 바꿀 때는 시행일, 바뀌는 내용, 바꾸는 이유를 시행일 7일 전부터 알립니다.</li>
+        <li>이용자에게 불리하게 바꿀 때는 시행일 30일 전부터 알립니다.</li>
+        <li>알리는 방법: 이 웹 페이지에 바뀐 약관과 바뀌는 내용을 올립니다. 앱 업데이트와 함께 바뀌면 App Store의 업데이트 안내에도 적습니다.</li>
+        <li>바뀐 약관은 시행일부터 적용됩니다.</li>
+        <li>바뀐 약관에 동의하지 않으면, 시행일 전에 계정을 삭제해 이용을 끝낼 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s18">
+      <h2>18. Apple과의 관계</h2>
+      <p>이 앱은 Apple의 App Store에서 배포합니다. Apple이 정한 조건에 따라 아래 내용을 둡니다. 이 절에서 "Apple"은 Apple Inc.와 그 자회사를 가리킵니다.</p>
+      <p>운영자는 이 앱에 별도의 최종 사용자 사용권 계약(EULA)을 두지 않습니다. 앱에는 Apple의 표준 사용권 계약(<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a>)이 적용됩니다. 이 약관은 서비스를 이용하는 조건을 정합니다.</p>
+      <ul>
+        <li>이 약관은 이용자와 운영자 사이의 약속입니다. Apple은 이 약관의 당사자가 아닙니다.</li>
+        <li>앱과 앱 콘텐츠에 대한 책임은 Apple이 아니라 운영자에게 있습니다.</li>
+        <li>이용자는 자신이 소유하거나 관리하는 Apple 기기에서 앱을 쓸 수 있습니다. 이때 App Store 이용 조건(Apple 미디어 서비스 이용약관의 사용 규칙)을 따릅니다.</li>
+        <li>앱을 쓸 권리는 다른 사람에게 넘길 수 없습니다. 다만 Apple의 사용 규칙이 허용하는 가족 공유 등은 예외입니다.</li>
+        <li>앱의 유지보수와 지원은 운영자가 합니다. Apple은 앱을 지원할 의무가 없습니다.</li>
+        <li>앱이 법이 정한 보증을 지키지 못하면, 이용자는 Apple에 알리고 앱 구입 가격을 돌려받을 수 있습니다. 이 앱은 무료이므로 돌려받을 금액은 없습니다.</li>
+        <li>법이 허용하는 범위에서, Apple은 앱에 대해 그 밖의 보증 책임을 지지 않습니다.</li>
+        <li>앱에 관한 청구는 Apple이 아니라 운영자가 처리합니다. 예: 제조물 책임 청구, 앱이 법이나 규제를 지키지 않는다는 청구, 소비자 보호나 개인정보 보호에 관한 청구(HealthKit 사용 포함)</li>
+        <li>앱이 다른 사람의 지식재산권을 침해한다는 청구가 있으면, Apple이 아니라 운영자가 조사하고 대응합니다.</li>
+        <li>이용자는 미국 정부가 교역을 금지한 국가나 테러 지원국으로 지정한 국가에 있지 않음을 확인합니다.</li>
+        <li>이용자는 미국 정부의 거래 금지 · 제한 대상 명단에 없음을 확인합니다.</li>
+        <li>이용자는 앱을 쓸 때 관련된 다른 회사의 약관(예: 통신사의 데이터 요금 약관)을 지켜야 합니다.</li>
+        <li>Apple은 이 약관의 제3자 수익자입니다. 제3자 수익자는 약관의 당사자가 아니지만 약관에 따른 권리를 갖는 사람을 뜻합니다.</li>
+        <li>이용자가 이 약관에 동의하면, Apple은 이 약관을 근거로 이용자에게 권리를 행사할 수 있습니다.</li>
+        <li>운영자의 이름과 연락처는 20절에 있습니다.</li>
+      </ul>
+      <p>근거: Apple, <a href="https://www.apple.com/legal/internet-services/itunes/dev/minterms/">Minimum Terms of Developer's End-User License Agreement</a> · <a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms and Conditions</a></p>
+    </section>
+
+    <section id="ko-terms-s19">
+      <h2>19. 준거법과 관할 법원</h2>
+      <ul>
+        <li>이 약관은 대한민국 법을 따릅니다.</li>
+        <li>서비스와 관련해 분쟁이 생기면, 운영자와 이용자는 먼저 대화로 풀려고 노력합니다.</li>
+        <li>소송이 필요하면 민사소송법에 따른 관할 법원에서 다룹니다.</li>
+      </ul>
+    </section>
+
+    <section id="ko-terms-s20">
+      <h2>20. 운영자 정보와 연락처</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th scope="row">운영자</th><td>개인 개발자 YoungBeom Seo</td></tr>
+            <tr><th scope="row">이메일</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+            <tr><th scope="row">앱 안</th><td>설정 › 지원 › 문의하기</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>질문, 불만, 부적절한 기록 신고, 청구는 위 연락처로 보내 주세요.</p>
+    </section>
+
+    <section id="ko-terms-s21">
+      <h2>21. 언어판</h2>
+      <ul>
+        <li>이 약관은 한국어, 영어, 일본어로 제공합니다.</li>
+        <li>한국어판이 기준 문서입니다. 언어판끼리 내용이 다르면 한국어판을 따릅니다.</li>
+      </ul>
+    </section>
+  </div>
+</article>
+<article id="ja" lang="ja" class="lang-section">
+  <nav class="doc-nav" aria-label="文書"><a href="#ja-privacy">プライバシーポリシー</a><a href="#ja-terms">利用規約</a></nav>
+  <div class="doc" id="ja-privacy">
+    <h1>プライバシーポリシー</h1>
+    <p class="meta">施行日：2026-10-23 · 最終更新日：2026-10-23</p>
+
+    <nav class="toc" aria-label="目次">
+      <ol>
+        <li><a href="#ja-privacy-s1">このポリシーについて</a></li>
+        <li><a href="#ja-privacy-s2">取り扱う個人情報</a></li>
+        <li><a href="#ja-privacy-s3">利用目的</a></li>
+        <li><a href="#ja-privacy-s4">収集しない情報</a></li>
+        <li><a href="#ja-privacy-s5">位置情報</a></li>
+        <li><a href="#ja-privacy-s6">ヘルスケアデータ（HealthKit）</a></li>
+        <li><a href="#ja-privacy-s7">ほかの利用者に表示される情報</a></li>
+        <li><a href="#ja-privacy-s8">保有期間</a></li>
+        <li><a href="#ja-privacy-s9">破棄とアカウント削除</a></li>
+        <li><a href="#ja-privacy-s10">第三者への提供</a></li>
+        <li><a href="#ja-privacy-s11">取り扱いの委託と外部サービス</a></li>
+        <li><a href="#ja-privacy-s12">国外への移転</a></li>
+        <li><a href="#ja-privacy-s13">利用者の権利と行使方法</a></li>
+        <li><a href="#ja-privacy-s14">14歳未満の子ども</a></li>
+        <li><a href="#ja-privacy-s15">安全管理措置</a></li>
+        <li><a href="#ja-privacy-s16">自動収集の仕組み</a></li>
+        <li><a href="#ja-privacy-s17">個人情報保護責任者</a></li>
+        <li><a href="#ja-privacy-s18">権利侵害の救済方法</a></li>
+        <li><a href="#ja-privacy-s19">ポリシーの変更</a></li>
+      </ol>
+    </nav>
+
+    <section id="ja-privacy-s1">
+      <h2>1. このポリシーについて</h2>
+      <p>このポリシーは、iPhoneアプリStepStella（韓国語名：걸음별자리）が利用者の個人情報をどのように取り扱うかを説明します。</p>
+      <ul>
+        <li>StepStellaは、1日に1回、Appleの「ヘルスケア」Appから昨日の歩数と距離を読み取ります。その距離だけ地球上の仮想位置を動かし、短いメッセージを残すアプリです。</li>
+        <li>アプリは個人の開発者が運営しています。このポリシーでは、この開発者を「運営者」と呼びます。</li>
+        <li>運営者の名前：YoungBeom Seo</li>
+        <li>連絡先：<a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>アプリは無料です。広告とアプリ内課金はありません。</li>
+        <li>アプリを利用できるのは満14歳以上の方だけです。詳しくは<a href="#ja-privacy-s14">第14項</a>をご覧ください。</li>
+        <li>アプリの登録画面と、設定 › プライバシー › データポリシーに、このポリシーへのリンクがあります。</li>
+        <li>登録画面で続けると、このポリシーと利用規約に同意したものとみなします。</li>
+      </ul>
+      <p>このポリシーは韓国語、英語、日本語で提供します。韓国語版が基準の文書で、英語版と日本語版は同じ内容です。言語版の間で内容が異なる場合は、韓国語版に従います。</p>
+    </section>
+
+    <section id="ja-privacy-s2">
+      <h2>2. 取り扱う個人情報</h2>
+      <p>下の表は、アプリが取り扱う情報のすべてです。「必須」は、アプリを使うために必ず必要な情報です。「任意」は、利用者が許可したときやその機能を使うときだけ取り扱う情報です。</p>
+
+      <h3>サーバーに保存する情報</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>項目</th><th>必須・任意</th><th>取得方法</th></tr></thead>
+        <tbody>
+          <tr><td>アカウントID</td><td>必須</td><td>Appleでサインインしたときに、サーバーがランダムに生成する識別番号です。</td></tr>
+          <tr><td>Appleサインイン情報</td><td>必須</td><td>Appleでサインインしたときに、Appleが送るサインイン確認の値です。サーバーの認証機能（Supabase Auth）は、この値から、Appleがこのアプリに割り当てるユーザー識別子と、トークンの情報（発行者など）を保存します。登録した日時と、最後にサインインした日時もあわせて保存します。アプリは、Appleでサインインするときに名前とメールアドレスを求めません。ただし、Appleがメールアドレス（またはAppleの「メールを非公開」のアドレス）を一緒に送った場合は、そのアドレスもサーバーの認証機能に保存されることがあります。</td></tr>
+          <tr><td>サインインのセッション情報</td><td>必須</td><td>サインインすると、サーバーの認証機能（Supabase Auth）が、サインインした状態を保つためにセッション情報を作ります。この情報には、接続元のIPアドレスと、端末・アプリの情報（User-Agent）が含まれます。セッションを作った日時と、更新した日時も保存します。</td></tr>
+          <tr><td>匿名ID</td><td>必須</td><td>登録したときにサーバーがランダムに生成します。例：<code>#A3F29C01</code></td></tr>
+          <tr><td>タイムゾーン</td><td>必須</td><td>登録したときに端末の設定から取得します。例：<code>Asia/Seoul</code></td></tr>
+          <tr><td>出発都市の座標</td><td>必須</td><td>登録したときに決めます。位置情報の許可があれば、端末の位置から見つけた都市の中心です（都市が見つからなければ、約39km × 20kmのマスの中心）。許可がなければ、端末のタイムゾーンの代表都市です。<a href="#ja-privacy-s5">第5項</a>をご覧ください。</td></tr>
+          <tr><td>記録日、歩数、距離（昨日1日の合計）</td><td>必須（ヘルスケアの許可がなければ0として記録）</td><td>Appleの「ヘルスケア」App（HealthKit）から読み取ります。<a href="#ja-privacy-s6">第6項</a>をご覧ください。</td></tr>
+          <tr><td>方向</td><td>必須</td><td>利用者が選びます。最初の記録で選ぶ基準方向と、記録ごとに選ぶ方向があります。0kmの記録には方向がありません。</td></tr>
+          <tr><td>仮想位置</td><td>必須</td><td>サーバーが、昨日の仮想位置、選んだ方向、昨日の距離から計算します。</td></tr>
+          <tr><td>公開・非公開の設定</td><td>必須</td><td>記録ごとに利用者が選びます。初期設定は公開です。</td></tr>
+          <tr><td>メッセージ（最大140文字）</td><td>任意</td><td>利用者が記録に書きます。</td></tr>
+          <tr><td>連続記録と累計</td><td>必須</td><td>サーバーが計算します。現在と最長の連続記録、最後の記録日、今月の連続記録の保護を使ったかどうか、累計の距離と歩数です。当日の記録を削除したときに戻すため、記録する前の連続記録の値も保存します。</td></tr>
+          <tr><td>いいね、フォロー、報告（理由を含む）、ブロック</td><td>任意（その機能を使うとき）</td><td>利用者の操作で作られます。だれが、どの記録や利用者に、いつ行ったかを保存します。</td></tr>
+          <tr><td>サーバーの記録（ログ）</td><td>自動</td><td>サーバー関数でエラーが起きると、関数名、段階名、エラーの内容を記録します。利用者が書いたメッセージなどのリクエスト本文は記録しません。サーバーサービス（Supabase）も、リクエストのアドレスなどのリクエスト記録を自動で残します。Supabaseの文書によると、このリクエスト記録には、リクエストの日時とリクエストのアドレス（アドレスの後ろに付くクエリ文字列を含む）が含まれることがあります。接続元のIPアドレスと国、端末・アプリの情報（User-Agent）も含まれることがあります。</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>運営者のメールボックスに残る情報</h3>
+      <ul>
+        <li>設定 › サポート › お問い合わせは、端末の「メール」Appを開きます。アプリがサーバーに送る情報はありません。</li>
+        <li>利用者がメールを送ると、運営者は送信者のメールアドレスとメールの内容を受け取ります。</li>
+        <li>メール本文には、アプリのバージョン、iOSのバージョン、端末のモデル識別子（例：iPhone18,1）、アプリの言語があらかじめ入力されます。利用者は送る前にこの内容を確認して削除できます。</li>
+        <li>端末名、端末の識別番号、匿名IDはあらかじめ入力しません。</li>
+      </ul>
+
+      <h3>端末にだけ保存する情報</h3>
+      <p>下の情報は利用者のiPhoneにだけ保存します。サーバーには送りません。</p>
+      <ul>
+        <li>設定値：オンボーディングを終えたかどうか、毎日の通知のオン・オフと時刻、地図マーカー、外観モード、通知の許可をもう一度たずねる時刻、キャッシュの持ち主のアカウントID</li>
+        <li>キャッシュ（画面をすばやく表示するために端末に一時的に保存する写し）：自分の記録と、旅の隣人フィードの内容</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s3">
+      <h2>3. 利用目的</h2>
+      <p>運営者は、下の目的だけに個人情報を利用します。目的が変わる場合は、先にこのポリシーを改定します。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>目的</th><th>利用する情報</th></tr></thead>
+        <tbody>
+          <tr><td>サインインとサインイン状態の維持、自分の記録の区別</td><td>アカウントID、Appleサインイン情報、サインインのセッション情報</td></tr>
+          <tr><td>記録日の決定。サーバーの時刻を、保存したタイムゾーンの現地の日付に変換します。「ヘルスケア」Appの「昨日」の範囲も、このタイムゾーンを基準にします。</td><td>タイムゾーン</td></tr>
+          <tr><td>仮想位置の計算と記録の表示（地球儀・地図・記録タブ）</td><td>出発都市の座標、歩数、距離、方向、仮想位置、メッセージ</td></tr>
+          <tr><td>連続記録、探索半径、連続記録の保護の計算</td><td>連続記録と累計、記録日、距離</td></tr>
+          <tr><td>旅の隣人フィードの運営（仮想位置が近い利用者の公開記録を表示）</td><td>匿名ID、公開記録、仮想位置、いいね、フォロー</td></tr>
+          <tr><td>不適切な記録への対応：禁止語の確認、報告、自動非表示、ブロック</td><td>メッセージ、報告、ブロック、アカウントID</td></tr>
+          <tr><td>お問い合わせへの回答</td><td>お問い合わせメール</td></tr>
+          <tr><td>サーバーのエラーの確認</td><td>サーバーの記録（ログ）</td></tr>
+        </tbody>
+      </table></div>
+      <p>項目ごとの取り扱いの根拠は次のとおりです。</p>
+      <ul>
+        <li><strong>必須の項目とサーバーの記録（ログ）：</strong><a href="#ja-privacy-s2">第2項</a>で「必須」とした情報は、利用者と結んだサービス利用契約を履行するために取り扱います（韓国の個人情報保護法第15条第1項第4号）。サインインのセッション情報も、サインインに欠かせないため、ここに含まれます。歩数と距離は下に別に記載します。</li>
+        <li><strong>歩数と距離（ヘルスケアのデータ）：</strong>利用者がヘルスケアへのアクセスを許可したときの同意にもとづいて取り扱います（同法第15条第1項第1号）。許可しない場合は0として記録します。</li>
+        <li><strong>端末の位置：</strong>利用者が位置情報を許可したときの同意にもとづいて、登録時に出発都市を探すためだけに使います（同法第15条第1項第1号）。</li>
+        <li><strong>任意の項目（メッセージ、いいね、フォロー、報告、ブロック）：</strong>利用者がその機能を使うときの同意にもとづいて取り扱います（同法第15条第1項第1号）。</li>
+        <li><strong>お問い合わせのメール：</strong>利用者がメールを送るときの同意にもとづいて取り扱います（同法第15条第1項第1号）。</li>
+        <li><strong>毎日の通知の設定：</strong>利用者が通知をオンにすると、オンかどうかと時刻を端末にだけ保存します。サーバーには送りません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s4">
+      <h2>4. 収集しない情報</h2>
+      <ul>
+        <li><strong>名前とメールアドレス：</strong>Appleでサインインするときに、名前とメールアドレスを求めません。ただし、Appleがメールアドレスを一緒に送った場合は、サーバーの認証機能に保存されることがあります（<a href="#ja-privacy-s2">第2項</a>）。</li>
+        <li><strong>広告識別子：</strong>端末の広告識別子を読み取りません。アプリは利用者を追跡しません。</li>
+        <li><strong>分析・広告・エラー収集のツール：</strong>このようなツール（SDK）はアプリに組み込んでいません。</li>
+        <li><strong>リモートプッシュのトークン：</strong>アプリはサーバーから送るプッシュ通知を使いません。そのため、プッシュ通知用の端末トークンを収集しません。毎日の通知は、端末自体が表示するローカル通知です。</li>
+        <li><strong>正確な位置：</strong>端末の正確な座標をサーバーに保存しません。記録を保存するときは位置を読み取りません。<a href="#ja-privacy-s5">第5項</a>をご覧ください。</li>
+        <li><strong>ヘルスケアデータの元の記録：</strong>「ヘルスケア」Appの元の記録はサーバーに送りません。1日の合計だけを送ります。</li>
+        <li><strong>そのほかの許可：</strong>写真、カメラ、連絡先へのアクセスを求めません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s5">
+      <h2>5. 位置情報</h2>
+      <p>アプリが端末の位置を使うのは、登録時に出発都市を決めるときだけです。自宅などの正確な位置がわからないように、サーバーにはおおよその位置（ふつうは出発都市の中心）だけを保存します。</p>
+
+      <h3>位置情報の許可</h3>
+      <ul>
+        <li>「アプリの使用中」の許可だけを求めます。アプリを使っていないとき（バックグラウンド）は位置を読み取りません。</li>
+        <li>位置は、必要なときに1回ずつだけ読み取ります。約100mの精度を求めます。</li>
+        <li>位置を読み取るのは、登録時に出発都市を決めるときだけです（その画面で「もう一度探す」を押したときを含みます）。記録を保存するときは位置を読み取りません。</li>
+        <li>位置情報は許可しなくてもかまいません。許可しなくても、登録して記録できます。</li>
+        <li>許可はiPhoneの「設定」Appでいつでも変更できます。</li>
+        <li>地図に利用者の実際の現在地は表示しません。</li>
+      </ul>
+
+      <h3>登録するとき：出発都市</h3>
+      <p>geohashは、地球の表面をマスに分け、マスごとに短い文字列を付ける方式です。桁数が少ないほど、マスが大きくなります。</p>
+      <ul>
+        <li>端末の正確な座標は出発点に使いません。</li>
+        <li>アプリは端末の座標をAppleのジオコーディングサービスに送ります。ジオコーディングは、座標から都市名を探す機能です。</li>
+        <li>都市が見つかれば、その都市の中心の座標を使います。</li>
+        <li>都市が見つからなければ、geohash 4桁のマス（約39km × 20km）の中心の座標を使います。</li>
+        <li>位置を取得できなければ、端末のタイムゾーンの代表都市を使います。この場合は、公開されている都市名とその座標だけをAppleに送ります。利用者の位置は送りません。</li>
+        <li>サーバーには、このように選んだ座標だけを保存します。端末の座標と都市名はサーバーに送りません。</li>
+        <li>出発都市の座標を変更する機能はありません。</li>
+      </ul>
+
+      <h3>記録するとき</h3>
+      <ul>
+        <li>記録を保存するとき、端末の位置は読み取りません。</li>
+        <li>記録には、実際の位置ではなく仮想位置（下記）を保存します。</li>
+        <li>今後、記録するときに位置を使う機能を追加する場合は、その前にこのポリシーを改定します（<a href="#ja-privacy-s19">第19項</a>）。</li>
+      </ul>
+
+      <h3>仮想位置</h3>
+      <ul>
+        <li>仮想位置は実際の位置ではありません。</li>
+        <li>仮想位置は、出発都市から出発し、利用者が選んだ方向に歩いた距離だけ動く地球上の点です。</li>
+        <li>最初の記録は動かず、出発都市に残ります。</li>
+        <li>サーバーが計算し、座標として保存します。ほかの利用者に表示される範囲は<a href="#ja-privacy-s7">第7項</a>にあります。</li>
+      </ul>
+
+      <h3>韓国の位置情報の保護及び利用等に関する法律</h3>
+      <ul>
+        <li>アプリが端末の位置を読み取るのは、登録時に出発都市を探すときだけです。記録するときは位置を読み取りません。</li>
+        <li>サーバーには、おおよその位置だけを保存します。ふつうは都市の中心で、都市が見つからなければ約39km × 20kmのマスの中心です。</li>
+        <li>この法律にもとづいて運営者が行うべきことがわかった場合は、先にこのポリシーと<a href="#ja-terms">利用規約</a>を改定します。そして、このポリシーの<a href="#ja-privacy-s19">第19項</a>と利用規約の<a href="#ja-terms-s17">第17項</a>の方法でお知らせします。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s6">
+      <h2>6. ヘルスケアデータ（HealthKit）</h2>
+      <p>HealthKitは、iPhoneの「ヘルスケア」Appに保存されたデータをアプリが読み取れるようにするAppleの機能です。</p>
+
+      <h3>読み取るデータ</h3>
+      <ul>
+        <li>アプリが読み取るのは2種類だけです。歩数と、ウォーキング＋ランニングの距離です。</li>
+        <li>心拍数や睡眠など、ほかのヘルスケアデータは読み取りません。</li>
+        <li>「ヘルスケア」Appにデータを書き込みません。</li>
+        <li>保存したタイムゾーンを基準に、昨日0時〜24時の1日の合計だけを読み取ります。記録画面を開いたときに読み取ります。</li>
+        <li>利用者が「ヘルスケア」Appに手で入力した値は除いて計算します。</li>
+        <li>1日の距離が100kmを超えると100km、歩数が200,000歩を超えると200,000歩として記録します。</li>
+      </ul>
+
+      <h3>保存と公開</h3>
+      <ul>
+        <li>サーバーには1日の合計だけを送ります。「ヘルスケア」Appの元の記録は送りません。</li>
+        <li>サーバーは、記録ごとの歩数と距離、そして累計を保存します。</li>
+        <li>記録の初期設定は公開です。公開の記録では、旅の隣人フィードで、正確な歩数と距離がほかの利用者に表示されます。</li>
+        <li>自分をフォローした利用者には、距離を1km単位、歩数を1,000歩単位に四捨五入して表示します。</li>
+        <li>非公開の記録の歩数と距離は、ほかの利用者には表示されません。</li>
+      </ul>
+
+      <h3>使わない目的</h3>
+      <ul>
+        <li>ヘルスケアデータは、記録の計算と表示だけに使います。</li>
+        <li>ヘルスケアデータを、広告、マーケティング、利用傾向の分析（データマイニング）に使いません。</li>
+        <li>ヘルスケアデータを販売しません。</li>
+        <li>ヘルスケアデータを、広告会社やデータ仲介業者などの第三者に提供しません。サーバーの運営を任せている会社は<a href="#ja-privacy-s11">第11項</a>にあります。</li>
+      </ul>
+
+      <h3>許可</h3>
+      <ul>
+        <li>ヘルスケアへのアクセスは許可しなくてもかまいません。許可しないと値が0として読み取られ、0歩で記録できます。</li>
+        <li>iOSは、ヘルスケアの許可の有無をアプリに知らせません。</li>
+        <li>許可は、設定 › プライバシーとセキュリティ › ヘルスケア › StepStellaで変更できます。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s7">
+      <h2>7. ほかの利用者に表示される情報</h2>
+
+      <h3>旅の隣人フィード</h3>
+      <p>旅の隣人フィードは、自分の仮想位置から探索半径（5km〜50km）の中にある、ほかの利用者の公開記録を表示する画面です。直近7日間の記録だけが表示されます。</p>
+      <ul>
+        <li>フィードのカードに表示されるもの：匿名ID、仮想位置どうしの距離の範囲（「1km以内」・「5km以内」・「10km以内」・「半径内」）、距離、歩数、メッセージ、いいねの数、日付</li>
+        <li>表示されないもの：アカウントID、名前、メールアドレス、仮想位置の座標、方向、タイムゾーン</li>
+        <li>非公開の記録は、ほかの利用者には表示されません。</li>
+        <li>公開・非公開は記録ごとに決めます。過去の記録も、記録タブで公開と非公開を切り替えられます。</li>
+        <li>ほかの利用者の端末には、次に更新するまでフィードのキャッシュが残ることがあります。</li>
+      </ul>
+
+      <h3>いいね</h3>
+      <ul>
+        <li>記録の持ち主に見えるのは、いいねの数だけです。</li>
+        <li>だれがいいねを押したかは、記録の持ち主にも見えません。</li>
+      </ul>
+
+      <h3>フォロー</h3>
+      <ul>
+        <li>自分のフィードに表示された記録からだけ、その利用者をフォローできます。</li>
+        <li>フォローは30日間続きます。</li>
+        <li>フォローしたときも、フォローが終わったときも、相手には知らせません。</li>
+        <li>自分をフォローした利用者は、自分の直近30日間の公開記録を地球儀で見られます。</li>
+        <li>このときの位置は、geohash 5桁のマス（約4.9km × 4.9km）の中心として表示されます。実際の仮想位置と最大約2.4kmの差があります。</li>
+        <li>距離は1km単位、歩数は1,000歩単位に四捨五入して表示されます。メッセージは表示されません。</li>
+        <li>最初の記録は出発都市に残ります。そのため、最初の記録が直近30日以内にあると、フォロワーは出発都市のおおよその位置を知ることができます。</li>
+      </ul>
+
+      <h3>非表示とブロック</h3>
+      <ul>
+        <li>1つの記録を3人が報告すると、その記録を自動で非表示にします。非表示の記録は、フィードとフォロワーの地球儀から消えます。記録の持ち主にはそのまま表示されます。</li>
+        <li>ほかの利用者をブロックすると、お互いの記録がお互いのフィードから消えます。2人の間のフォローも解除されます。</li>
+        <li>ブロックしたことは相手に知らせません。アプリではブロックを取り消せません。</li>
+      </ul>
+
+      <h3>匿名ID</h3>
+      <ul>
+        <li>フィードには、名前の代わりに匿名IDが表示されます。匿名IDは、<code>#</code>のあとに16進数8桁が付いたランダムな値です。</li>
+        <li>匿名IDは90日ごとに新しい値に変わります。サーバーが1日に1回確認し、90日を過ぎたIDを変えます。</li>
+        <li>これは、長期間にわたって同じ人を追跡しにくくするためです。</li>
+        <li>過去のIDはデータベースのテーブルに残しません。</li>
+        <li>ただし、過去のIDは次の場所にしばらく残ることがあります：データベースが自動整理を終える前の古いデータ、サーバーのリクエスト記録（ログ）、ほかの利用者の端末のフィードのキャッシュ</li>
+        <li>フォロー、いいね、報告、ブロックは、匿名IDではなくアカウントIDで保存します。そのため、匿名IDが変わってもそのまま残ります。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s8">
+      <h2>8. 保有期間</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>情報</th><th>保有期間</th></tr></thead>
+        <tbody>
+          <tr><td>アカウント情報（アカウントID、Appleサインイン情報、匿名ID、タイムゾーン、出発都市の座標、基準方向）</td><td>アカウントを削除するまで</td></tr>
+          <tr><td>サインインのセッション情報</td><td>サインアウトするか、アカウントを削除するまで。サインアウトすると、このアカウントでサインインしているすべての端末のセッションを終了します。終了したセッションの情報は削除します。アカウントを削除すると、セッション情報もあわせて削除します。Supabaseの文書によると、セッションは初期設定では期限なく続きます。セッションの時間を制限する機能は、Proプラン以上でだけ使えます。そのため、サインアウトせずにアプリだけを削除すると、サーバーのセッション情報が残ります。ネットワークの問題などでサインアウトの要求がサーバーに届かなかった場合も、残ることがあります。その場合は、もう一度サインインしてからサインアウトするか、アカウントを削除すると削除されます。</td></tr>
+          <tr><td>記録（日付、歩数、距離、方向、仮想位置、メッセージ、公開・非公開の設定）</td><td>アカウントを削除するまで。当日の記録を削除すると、その時点ですぐに削除します。</td></tr>
+          <tr><td>連続記録と累計</td><td>アカウントを削除するまで</td></tr>
+          <tr><td>各匿名ID</td><td>90日。その後、新しいIDに変えます。</td></tr>
+          <tr><td>いいね</td><td>その記録か、どちらかのアカウントが削除されるまで</td></tr>
+          <tr><td>フォロー</td><td>フォローした相手の記録を見られる期間は、30日で終わります。終わったフォローの記録を別に削除する機能はありません。どちらかがブロックしたとき、またはどちらかのアカウントが削除されたときに削除します。保管期間：終わったフォローの記録も、フォローした人かフォローされた人がアカウントを削除するまで保管します。</td></tr>
+          <tr><td>報告</td><td>報告した記録か、報告した人のアカウントが削除されるまで。保管期間：報告した人か記録の持ち主がアカウントを削除するまでです。報告した記録を、報告した人のフィードから外し続けるために必要です。</td></tr>
+          <tr><td>ブロック</td><td>どちらかのアカウントが削除されるまで</td></tr>
+          <tr><td>サーバーの記録（ログ）</td><td>1日（Supabaseの無料プランの場合）。Supabaseの文書によると、無料プランではログを1日間保管します。</td></tr>
+          <tr><td>サーバーのバックアップ</td><td>サーバーのバックアップは作成しません。Supabaseの文書によると、無料プランには自動バックアップがありません。</td></tr>
+          <tr><td>お問い合わせメール</td><td>お問い合わせへの対応を終えてから1年</td></tr>
+          <tr><td>端末にだけ保存する情報</td><td>サインアウトするか、アカウントを削除すると、端末のキャッシュと登録された毎日の通知を削除します。</td></tr>
+        </tbody>
+      </table></div>
+      <p>上のサーバーの記録（ログ）、サーバーのバックアップ、サインインのセッション情報の保有期間は、サーバーで使っているSupabaseの無料プランにもとづいて記載しています。プランを変更すると（例：Proプラン）、この期間が変わることがあります。その場合は、先にこのポリシーを改定し、<a href="#ja-privacy-s19">第19項</a>の方法でお知らせします。</p>
+      <p>法令に従って別に保管する情報：法令が保管を求める情報は、その法令が定めた期間だけ、ほかの情報と分けて保管します。その情報は、その目的にだけ使います。</p>
+    </section>
+
+    <section id="ja-privacy-s9">
+      <h2>9. 破棄とアカウント削除</h2>
+
+      <h3>破棄の手順と方法</h3>
+      <ul>
+        <li>保有期間が終わったとき、または利用目的を達成したときは、その情報を遅滞なく破棄します。</li>
+        <li>サーバーの情報はデータベースから削除します。削除した情報はアプリで元に戻せません。</li>
+        <li>削除した後も一部の情報がしばらく残る場所は、下の「削除後に残ることがあるもの」に記載しています。</li>
+      </ul>
+
+      <h3>アカウントの削除</h3>
+      <ol>
+        <li>アプリで「設定 › アカウント › アカウントを削除」を押します。</li>
+        <li>確認の画面で「完全に削除」を押します。</li>
+        <li>Appleアカウントの確認をもう一度行います。この画面でキャンセルすると、何も削除されません。</li>
+      </ol>
+      <ul>
+        <li>削除はすぐに実行されます。待つ期間（猶予期間）はありません。削除したアカウントは元に戻せません。</li>
+        <li>一緒に削除される情報：アカウント情報（アカウントID、Appleサインイン情報、匿名ID、タイムゾーン、出発都市の座標、基準方向）、サインインのセッション情報、すべての記録（仮想位置、歩数、距離、メッセージなど）、連続記録と累計、自分がしたフォローと自分へのフォロー、自分が押したいいねと自分の記録へのいいね、自分がした報告と自分の記録への報告、自分がしたブロックと自分へのブロック</li>
+        <li>削除が終わると、サーバーがAppleに、このアプリの「Appleでサインイン」の連携の解除（トークンの取り消し）を依頼します。この依頼が失敗しても、アカウントの削除は完了として扱います。連携が残っている場合は、iPhoneでご自分で解除できます。「設定 › [ユーザ名] › Appleでサインイン」でこのアプリを選び、「削除」を押します。</li>
+        <li>削除が終わると、アプリはサインアウトし、端末のキャッシュと登録された毎日の通知を削除します。</li>
+      </ul>
+
+      <h3>記録を1件だけ削除</h3>
+      <ul>
+        <li>削除できるのは、今日残した記録だけです。削除した記録は元に戻せません。</li>
+        <li>過去の記録は削除できません。今日の仮想位置は、昨日の仮想位置から続いているためです。途中の記録を削除すると、その後の位置がすべてずれます。</li>
+        <li>過去の記録は、記録タブで非公開に変えられます。</li>
+        <li>過去の記録をすべて削除するには、アカウントを削除してください。</li>
+      </ul>
+
+      <h3>削除後に残ることがあるもの</h3>
+      <ul>
+        <li>ほかの利用者の端末のフィードのキャッシュ：次に更新するまで</li>
+        <li>データベースの古いデータ：データベースが自動整理を終えるまで</li>
+        <li>サーバーのバックアップ：サーバーのバックアップは作成しません。そのため、削除した情報が運営者のバックアップに残ることはありません（<a href="#ja-privacy-s8">第8項</a>）。</li>
+        <li>サーバーの記録（ログ）：1日（Supabaseの無料プランの場合）</li>
+        <li>運営者が受け取ったお問い合わせメール：アカウントを削除しても削除されません。削除を希望する場合は、メールでご依頼ください。</li>
+        <li>Apple側の情報（「ヘルスケア」Appの元のデータ、Appleアカウント）：アプリは削除しません。「ヘルスケア」Appの元のデータは、はじめからサーバーにありません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s10">
+      <h2>10. 第三者への提供</h2>
+      <ul>
+        <li>運営者は、利用者の個人情報を第三者に提供しません。</li>
+        <li>ただし、法律に特別な定めがある場合や、捜査機関が法律で定めた手続きに従って求めた場合は、提供することがあります。</li>
+        <li>利用者が公開で残した記録は、ほかの利用者に表示されます。表示される範囲は<a href="#ja-privacy-s7">第7項</a>にあります。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s11">
+      <h2>11. 取り扱いの委託と外部サービス</h2>
+
+      <h3>取り扱いの委託</h3>
+      <p>運営者は、サーバーの運営を下の会社に任せています。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>任せている会社</th><th>任せている業務</th><th>サーバーの場所</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase Pte. Ltd.</td><td>サーバー、データベース、サインイン（認証）、サーバー関数の運営、サーバーの記録（ログ）の保管</td><td>大韓民国ソウル（ap-northeast-2）</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>会社名は、Supabaseのプライバシーポリシー（<a href="https://supabase.com/privacy">supabase.com/privacy</a>）とデータ処理契約（<a href="https://supabase.com/legal/dpa">supabase.com/legal/dpa</a>）で確認しました。</li>
+        <li>委託契約：Supabaseの利用規約の一部であるデータ処理契約（DPA）が適用されます。この契約により、Supabaseは運営者の指示に従ってのみ個人情報を取り扱います。Supabaseは、個人情報にアクセスする従業員を業務に必要な人に限り、その従業員に秘密保持の義務を課します。Supabaseは、技術的・組織的な安全管理措置を維持します。サービス契約が終わってから30日がたつと、Supabaseはデータの写しをすべて削除します。</li>
+      </ul>
+
+      <h3>Appleのサービス</h3>
+      <p>アプリは下のAppleの機能を使います。それぞれの機能でAppleに送られる情報は次のとおりです。</p>
+      <ul>
+        <li><strong>Sign in with Apple（Appleでサインイン）：</strong>サインインするときとアカウントを削除するときに、Appleのサーバーと通信します。アカウントの削除をAppleアカウントで確認すると、アプリがAppleから1回だけ使える確認コードを受け取り、サーバーに送ります。そのあと、サーバーがAppleに、このアプリの「Appleでサインイン」の連携の解除（トークンの取り消し）を依頼します。この依頼が失敗しても、アカウントの削除は完了します（<a href="#ja-privacy-s9">第9項</a>）。</li>
+        <li><strong>ジオコーディング：</strong>登録するときに出発都市を探すため、端末の座標をAppleに送ります。位置を取得できない場合は、公開されている都市名とその座標だけを送ります。</li>
+        <li><strong>Appleマップ（MapKit）：</strong>ホームの地図、記録の詳細の地図、地球儀を拡大したときの衛星地図に使います。地図の画像はAppleのサーバーから受け取ります。地図には仮想位置を表示します。実際の現在地は表示しません。</li>
+        <li><strong>HealthKit：</strong>ヘルスケアデータは端末の中で読み取ります。<a href="#ja-privacy-s6">第6項</a>をご覧ください。</li>
+        <li><strong>App Store：</strong>設定の「レビューを書く」は、App Storeのこのアプリのページを開きます。</li>
+        <li><strong>「メール」App：</strong>お問い合わせは端末の「メール」Appを開きます。</li>
+      </ul>
+
+      <h3>そのほかの外部サービス</h3>
+      <ul>
+        <li>地球儀を描くプログラムと地球の画像はアプリの中に入っています。アプリを使っている間に外部のサーバーから受け取ることはありません。</li>
+        <li>上に書いたもののほかに、アプリが情報を送る外部サービスはありません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s12">
+      <h2>12. 国外への移転</h2>
+      <p>このポリシーは、下の2つの取り扱いを国外への移転として扱い、韓国の個人情報保護法が知らせるよう定めている事項をそれぞれ記載します。</p>
+
+      <h3>Supabase（サーバー）</h3>
+      <p>サーバーは大韓民国ソウルにあります。サーバーの運営を任せているSupabase Pte. Ltd.は、データ処理契約にシンガポールの事務所の住所を記載しています。詳しい内容は下のとおりです。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>移転を受ける者</td><td>Supabase Pte. Ltd.（連絡先：<a href="mailto:privacy@supabase.com">privacy@supabase.com</a>）</td></tr>
+          <tr><td>移転先の国</td><td>アメリカ、シンガポール、ハンガリー。Supabaseが公開している再委託先の一覧（<a href="https://supabase.com/legal/customer-resources/subprocessor-list">2026年10月12日時点</a>）に載っている会社の国です。この一覧には、それぞれの会社がこのアプリのデータを実際に取り扱うかどうかは書かれていません。</td></tr>
+          <tr><td>移転する項目</td><td><a href="#ja-privacy-s2">第2項</a>の「サーバーに保存する情報」のすべて</td></tr>
+          <tr><td>移転の時期と方法</td><td>アプリを使うたびに、暗号化された通信（HTTPS）で送ります。</td></tr>
+          <tr><td>移転の目的</td><td>サーバー、データベース、サインイン、サーバー関数の運営</td></tr>
+          <tr><td>保有期間</td><td><a href="#ja-privacy-s8">第8項</a>の保有期間と同じです。</td></tr>
+          <tr><td>拒否の方法と影響</td><td>アプリを使わないか、アカウントを削除してください。アプリはサーバーなしでは記録できないため、拒否するとアプリを利用できません。</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Appleのサービス</h3>
+      <p>アプリは、<a href="#ja-privacy-s11">第11項</a>に記載したAppleの機能を使うときに、Appleに情報を送ります。詳しい内容は下のとおりです。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>移転を受ける者</td><td>Apple Inc.などのAppleの法人（連絡先：<a href="https://www.apple.com/jp/legal/privacy/contact/">apple.com/jp/legal/privacy/contact</a>）。Appleのプライバシーポリシーは、個人データを管理するAppleの法人は住んでいる場所によって異なることがあると記載しています。また、アメリカに住んでいない人の個人データは、Apple Inc.とAppleの関連会社が取り扱うことがあると記載しています。このアプリが送る情報をどのAppleの法人が受け取るかは、Appleのプライバシーポリシーに書かれていません。</td></tr>
+          <tr><td>移転先の国</td><td>アメリカなど。Appleのプライバシーポリシーは、Appleが収集した個人データはふつうアメリカのApple Inc.が保存すると記載しています。同じポリシーの韓国語版にある韓国の利用者向けの付則は、アメリカ、EU、イギリス、グローバル越境プライバシールール（CBPR）システムに参加している国にあるサーバーも記載しています。</td></tr>
+          <tr><td>移転する項目</td><td>Appleでサインイン：サインインの依頼。アカウントを削除するときは、サーバーがこのアプリの「Appleでサインイン」の連携の解除の依頼（トークンの取り消しの依頼、<a href="#ja-privacy-s11">第11項</a>）も送ります。ジオコーディング：位置情報を許可した場合だけ、端末の座標（約100mの精度）を送ります。位置を取得できない場合は、公開されている都市名とその座標だけを送ります。Appleマップ：地図の画像の依頼（地図に表示する地域を含みます）。地図には仮想位置を表示し、実際の現在地は表示しません。</td></tr>
+          <tr><td>移転の時期と方法</td><td>サインインするときとアカウントを削除するとき、登録時に出発都市を探すとき（「もう一度探す」を押したときを含みます）、地図を見るときに送ります。インターネット（通信網）で送ります。</td></tr>
+          <tr><td>移転の目的</td><td>Appleアカウントでのサインイン、出発都市を決めるために座標から都市名を探すこと、地図の表示</td></tr>
+          <tr><td>保有期間</td><td><a href="https://www.apple.com/jp/legal/privacy/">Appleのプライバシーポリシー</a>に従います。このポリシーは、Appleは個人データを収集した目的を果たすために必要な期間だけ保管すると記載しています。</td></tr>
+          <tr><td>拒否の方法と影響</td><td>ジオコーディング：位置情報を許可しなければ、端末の座標をAppleに送りません。この場合、出発都市は端末のタイムゾーンの代表都市に決まります。登録と記録はそのままできます。Appleでサインイン：拒否すると登録できません。アプリはAppleでサインインだけに対応しています。Appleマップ：地図だけをオフにする設定はありません。拒否するには、アプリを使わないでください。</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="ja-privacy-s13">
+      <h2>13. 利用者の権利と行使方法</h2>
+      <p>利用者は、いつでも自分の個人情報の閲覧、訂正、削除、取り扱いの停止を求めることができます。同意を撤回することもできます。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>権利</th><th>アプリの中での方法</th><th>メールでの方法</th></tr></thead>
+        <tbody>
+          <tr><td>閲覧</td><td>記録タブで自分の記録を確認します。設定で、保存されたタイムゾーンを確認します。</td><td>アプリに表示されない情報は、メールでご依頼ください。</td></tr>
+          <tr><td>訂正</td><td>記録タブで記録の公開・非公開を変えます。</td><td>そのほかの訂正はメールでご依頼ください。</td></tr>
+          <tr><td>削除</td><td>今日残した記録を削除します。アカウントを削除すると、すべての情報を削除します（<a href="#ja-privacy-s9">第9項</a>）。</td><td>そのほかの削除はメールでご依頼ください。</td></tr>
+          <tr><td>取り扱いの停止</td><td>iPhoneの「設定」Appで位置情報・ヘルスケアの許可をオフにします。毎日の通知をオフにします。記録を非公開にします。</td><td>そのほかの停止はメールでご依頼ください。</td></tr>
+          <tr><td>同意の撤回</td><td>許可をオフにするか、アカウントを削除します。</td><td>メールでも依頼できます。</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>メールアドレス：<a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></li>
+        <li>アプリには、自分のデータをファイルとしてダウンロードする機能はありません。</li>
+        <li>代理人を通じて依頼することもできます。</li>
+        <li>本人確認の方法：アプリは利用者のメールアドレスを求めません。そのため、メールでのご依頼では、アプリの設定に表示される匿名IDと、直近の記録2件の日付と歩数が、アカウントと一致するかを確認します。メッセージのある記録では、メッセージもあわせて確認します。データのコピーをお送りするなど、ほかの人に情報が渡るおそれのあるご依頼では、もう一度確認します。運営者が指定した記録1件の公開・非公開をアプリで切り替えていただくようメールでお願いし、切り替わったことを確認してから対応します。確認のあとは元に戻してかまいません。今日の記録の削除、記録の公開・非公開の切り替え、アカウントの削除は、アプリで直接できます（上の表）。代理人が依頼する場合は、委任の内容（委任状など）もあわせて送ってください。</li>
+        <li>回答までの期間：依頼を受けた日から10日以内に回答します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s14">
+      <h2>14. 14歳未満の子ども</h2>
+      <ul>
+        <li>アプリを利用できるのは満14歳以上の方だけです。</li>
+        <li>満14歳未満の方は、登録することもアプリを利用することもできません。</li>
+        <li>満14歳未満の子どもが登録したことがわかった場合は、わかった日から7日以内にそのアカウントを削除します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s15">
+      <h2>15. 安全管理措置</h2>
+      <p>運営者は、個人情報を守るために下の措置をとっています。</p>
+      <ul>
+        <li><strong>通信の暗号化：</strong>アプリとサーバーの間の通信はHTTPSで暗号化します。</li>
+        <li><strong>アクセスの制御：</strong>データベースのすべてのテーブルでRLSをオンにしています。RLSは、データベースが行ごとに、だれが読み書きできるかを確認する機能です。そのため、利用者は許可された情報だけを読み書きできます。</li>
+        <li><strong>列ごとの制限：</strong>だれがいいねを押したかと報告の内容は、アプリでは読み取れません。読み取れるのはサーバー関数だけです。</li>
+        <li><strong>識別情報の分離：</strong>ほかの利用者には、アカウントIDではなく匿名IDだけを送ります。匿名IDは90日ごとに変えます。</li>
+        <li><strong>位置をぼかす：</strong>記録するときは位置を読み取りません。出発点は都市の中心に移し、都市が見つからなければ約39km × 20kmのマスの中心に移します。</li>
+        <li><strong>秘密の値の管理：</strong>サーバー管理用の秘密鍵は、アプリとソースコードのリポジトリに入れません。Appleサインイン用の鍵は、サーバー上の秘密の値としてのみ保管します。</li>
+        <li><strong>記録（ログ）の最小化：</strong>エラーの記録に、利用者が書いたメッセージを残しません。アカウント削除の記録に、トークンと鍵を残しません。</li>
+        <li><strong>管理的な措置：</strong>運営者のアカウント（Supabase・GitHub・Apple Developer・メール）で2段階認証を使います。管理権限を持つのは運営者1人だけです。秘密の値はサーバーにだけ保管します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s16">
+      <h2>16. 自動収集の仕組み</h2>
+      <ul>
+        <li>アプリは、分析ツール、広告ツール、エラー収集ツールを使いません。</li>
+        <li>アプリは広告識別子を読み取らず、ほかの会社のアプリやウェブサイトをまたいで利用者を追跡しません。</li>
+        <li>アプリは、機能に必要な設定値だけを端末に保存します（<a href="#ja-privacy-s2">第2項</a>）。この値はサーバーに送りません。</li>
+        <li>このようなツールを新たに導入する場合は、先にこのポリシーを改定します。</li>
+        <li>このウェブページは、Cookie、スクリプト、追跡コードを使いません。</li>
+        <li>このウェブページを提供するホスティングサービスのアクセス記録：このウェブページは、GitHub Pages（GitHub, Inc.）で提供しています。<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHubの文書</a>によると、GitHubはセキュリティのために訪問者のIPアドレスを記録し、保管します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-privacy-s17">
+      <h2>17. 個人情報保護責任者</h2>
+      <p>アプリは個人の開発者が運営しているため、運営者本人が個人情報保護責任者です。</p>
+      <div class="table-wrap"><table>
+        <tbody>
+          <tr><th>名前</th><td>YoungBeom Seo</td></tr>
+          <tr><th>役割</th><td>運営者（個人の開発者）</td></tr>
+          <tr><th>メールアドレス</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+        </tbody>
+      </table></div>
+      <p>個人情報に関するお問い合わせ、苦情、被害の救済の依頼は、このメールアドレスにお送りください。</p>
+    </section>
+
+    <section id="ja-privacy-s18">
+      <h2>18. 権利侵害の救済方法</h2>
+      <p>個人情報の侵害について届け出や相談が必要な場合は、下の機関に問い合わせることができます。いずれも大韓民国の機関です。</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>機関</th><th>電話</th><th>ウェブサイト</th></tr></thead>
+        <tbody>
+          <tr><td>個人情報侵害申告センター（韓国インターネット振興院）</td><td>118（韓国国内、局番なし）</td><td><a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a></td></tr>
+          <tr><td>個人情報紛争調停委員会</td><td>1833-6972</td><td><a href="https://www.kopico.go.kr">www.kopico.go.kr</a></td></tr>
+          <tr><td>公訴庁（旧 大検察庁）</td><td>1301（韓国国内、局番なし）</td><td><a href="https://www.spo.go.kr">www.spo.go.kr</a></td></tr>
+          <tr><td>警察庁</td><td>182（韓国国内、局番なし）</td><td><a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="ja-privacy-s19">
+      <h2>19. ポリシーの変更</h2>
+      <ul>
+        <li>このポリシーを変更するときは、施行日と変更内容を、施行日の7日前からお知らせします。</li>
+        <li>利用者にとって不利な変更の場合（例：取り扱う個人情報の項目や利用目的が増える場合）は、施行日の30日前からお知らせします。</li>
+        <li>お知らせの方法：このウェブページに、変更後のポリシーと変更内容を掲載します。アプリのアップデートとあわせて変わる場合は、App Storeの「新機能」にも記載します。</li>
+        <li>このページのいちばん上に、施行日と最終更新日を記載しています。</li>
+      </ul>
+    </section>
+  </div>
+  <div class="doc" id="ja-terms">
+    <h1>利用規約</h1>
+    <p class="meta">施行日：2026-10-23 · 最終更新日：2026-10-23</p>
+
+    <nav class="toc" aria-label="目次">
+      <ol>
+        <li><a href="#ja-terms-s1">規約の目的と適用</a></li>
+        <li><a href="#ja-terms-s2">用語の意味</a></li>
+        <li><a href="#ja-terms-s3">利用資格</a></li>
+        <li><a href="#ja-terms-s4">アカウント</a></li>
+        <li><a href="#ja-terms-s5">サービスの内容</a></li>
+        <li><a href="#ja-terms-s6">記録のルール</a></li>
+        <li><a href="#ja-terms-s7">公開記録とフィード</a></li>
+        <li><a href="#ja-terms-s8">メッセージとコンテンツの権利</a></li>
+        <li><a href="#ja-terms-s9">禁止行為</a></li>
+        <li><a href="#ja-terms-s10">フィルター・報告・自動非表示・ブロック</a></li>
+        <li><a href="#ja-terms-s11">運営者の措置</a></li>
+        <li><a href="#ja-terms-s12">健康情報についての注意</a></li>
+        <li><a href="#ja-terms-s13">仮想位置についての注意</a></li>
+        <li><a href="#ja-terms-s14">サービスの変更と中断</a></li>
+        <li><a href="#ja-terms-s15">アカウントの削除</a></li>
+        <li><a href="#ja-terms-s16">責任の範囲</a></li>
+        <li><a href="#ja-terms-s17">規約の変更</a></li>
+        <li><a href="#ja-terms-s18">Appleとの関係</a></li>
+        <li><a href="#ja-terms-s19">準拠法と管轄裁判所</a></li>
+        <li><a href="#ja-terms-s20">運営者情報と連絡先</a></li>
+        <li><a href="#ja-terms-s21">言語版</a></li>
+      </ol>
+    </nav>
+
+    <section id="ja-terms-s1">
+      <h2>1. 規約の目的と適用</h2>
+      <ul>
+        <li>この規約は、StepStellaのサービスを利用する際のルールを定めます。</li>
+        <li>この規約は、サービスを利用するすべての利用者に適用されます。</li>
+        <li>登録画面で「Appleでサインイン」で続けると、この規約とプライバシーポリシーに同意したものとみなします。登録画面にもこのことが記載されています。</li>
+        <li>個人情報の取り扱いについては、<a href="#ja-privacy">プライバシーポリシー</a>に記載しています。</li>
+        <li>この規約に定めのないことは、大韓民国の関係法令に従います。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s2">
+      <h2>2. 用語の意味</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>用語</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr><td>サービス</td><td>StepStellaアプリと、アプリが使うサーバーです。韓国語のアプリ名は「걸음별자리」です。</td></tr>
+            <tr><td>運営者</td><td>サービスを運営する個人開発者です。連絡先は第20項にあります。</td></tr>
+            <tr><td>利用者</td><td>この規約に同意して、サービスを利用する人です。</td></tr>
+            <tr><td>記録</td><td>1日に1回残す、歩数・距離・方向・メッセージのまとまりです。</td></tr>
+            <tr><td>メッセージ</td><td>記録に残す140文字以内の文です。書かなくてもかまいません。</td></tr>
+            <tr><td>公開記録・非公開記録</td><td>公開記録は、旅の隣人のフィードに表示されます。非公開記録は、利用者本人だけが見られます。</td></tr>
+            <tr><td>出発都市</td><td>仮想位置が最初に出発する都市です。登録するときに一度だけ決めます。</td></tr>
+            <tr><td>仮想位置</td><td>出発都市から出発し、選んだ方向へ歩いた距離だけ動く、地球上の仮想の点です。実際の位置ではありません。</td></tr>
+            <tr><td>基準方向</td><td>最初の記録のときに、8方位から1つ選ぶ方向です。その後の記録で選べる方向の範囲は、この方向をもとに決まります。</td></tr>
+            <tr><td>旅の隣人</td><td>仮想位置が近いほかの利用者です。</td></tr>
+            <tr><td>フィード</td><td>旅の隣人の公開記録をまとめて表示する画面です。</td></tr>
+            <tr><td>探索半径</td><td>フィードに記録を表示する距離の範囲です。仮想位置を中心に約5kmから始まり、最大50kmまで広がります。</td></tr>
+            <tr><td>匿名ID</td><td>フィードで利用者を表すランダムな名前です。例：#A3F29C01。90日ごとに自動で変わります。</td></tr>
+            <tr><td>連続記録（streak）</td><td>1日も欠かさずに記録した日数です。</td></tr>
+            <tr><td>連続記録の保護</td><td>月に1回、今日を記録したものとして扱い、連続記録を守る機能です。</td></tr>
+            <tr><td>フォロー</td><td>旅の隣人の星座を、最大30日間見られるようにする機能です。</td></tr>
+            <tr><td>星座</td><td>毎日の記録を地球儀の上でつないで描いた形です。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ja-terms-s3">
+      <h2>3. 利用資格</h2>
+      <ul>
+        <li>満14歳以上の方だけが登録・利用できます。</li>
+        <li>満14歳未満の方は、登録も利用もできません。</li>
+        <li>運営者は、利用者が満14歳未満であると知った場合、アカウントを削除することがあります。</li>
+        <li>Appleアカウントが必要です。</li>
+        <li>iOS 17以降のiPhoneで利用できます。</li>
+        <li>インターネット接続が必要です。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s4">
+      <h2>4. アカウント</h2>
+      <ul>
+        <li>登録とサインインは「Appleでサインイン」（Appleアカウントでサインインする機能）だけで行います。メールアドレスとパスワードでサインインする方法はありません。</li>
+        <li>運営者は、登録のときにAppleアカウントの名前とメールアドレスを求めません。</li>
+        <li>ほかの人のAppleアカウントで登録してはいけません。</li>
+        <li>アカウントをほかの人に譲ったり、貸したりすることはできません。</li>
+        <li>利用者は、自分のAppleアカウントとiPhoneを安全に管理してください。ほかの人が利用者の端末でサービスを使うと、その記録は利用者のアカウントに残ります。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s5">
+      <h2>5. サービスの内容</h2>
+      <p>サービスは、次の機能を提供します。</p>
+      <ul>
+        <li>1日に1回、Appleの「ヘルスケア」Appから昨日1日の歩数とウォーキング・ランニングの距離を読み取り、記録します。</li>
+        <li>利用者が選んだ方向へ、その距離だけ仮想位置を動かします。</li>
+        <li>記録に短いメッセージを残せます。</li>
+        <li>毎日の記録を、地球儀の上に星座のようにつないで表示します。累計40,075kmで地球1周です。</li>
+        <li>旅の隣人の公開記録を、フィードで匿名で表示します。フィードでは、いいね・フォロー・報告・ブロックができます。</li>
+        <li>毎日決めた時刻に記録を促す通知をオンにできます。この通知はiPhone自体が表示します。</li>
+      </ul>
+      <ul>
+        <li>サービスは無料です。広告とアプリ内課金はありません。</li>
+        <li>今後、有料機能を追加する場合は、その前にこの規約を変更し、第17項に従ってお知らせします。</li>
+        <li>コメントと1対1のメッセージ機能はありません。</li>
+      </ul>
+      <p>運営者は、位置情報を<a href="#ja-privacy-s5">プライバシーポリシーの第5項</a>に記載した方法で取り扱います。</p>
+    </section>
+
+    <section id="ja-terms-s6">
+      <h2>6. 記録のルール</h2>
+      <h3>日付とインターネット接続</h3>
+      <ul>
+        <li>記録は、現地の日付で1日に1回だけ残せます。</li>
+        <li>日付は端末の時計ではなく、サーバーの時刻で決めます。サーバーの時刻を、登録のときに保存したタイムゾーン（時間帯）の現地の日付に変換して使います。</li>
+        <li>端末の時計を変えて連続記録を不正に操作できないように、このように定めています。</li>
+        <li>そのため、インターネットに接続していないと記録できません。フィードは最後に読み込んだ内容を表示します。</li>
+        <li>保存したタイムゾーンは、現在のバージョンのアプリでは変更できません。端末のタイムゾーンを変えても、記録の日付の基準は変わりません。</li>
+      </ul>
+      <h3>歩数と距離</h3>
+      <ul>
+        <li>今日の記録には、昨日0時から24時までの確定した歩数と距離を使います。</li>
+        <li>「ヘルスケア」Appに手で入力した歩数と距離は数えません。</li>
+        <li>1日の記録は、距離100kmまで、歩数200,000歩までです。この値を超えると、上限の値で記録します。</li>
+        <li>歩数が0の日も記録できます。0歩の日も記録すれば、連続記録は続きます。</li>
+      </ul>
+      <h3>方向と連続記録</h3>
+      <ul>
+        <li>最初の記録は出発都市に残ります。仮想位置は次の記録から動きます。</li>
+        <li>基準方向は、最初の記録のときに一度だけ選びます。選んだ後は変更できません。</li>
+        <li>1日記録しないと、連続記録は1日目からやり直しになります。</li>
+        <li>連続記録の保護は、月に1回無料で使えます。2日以上途切れた連続記録は元に戻せません。</li>
+      </ul>
+      <h3>記録の削除と公開設定の変更</h3>
+      <ul>
+        <li>削除できるのは、当日の記録だけです。</li>
+        <li>今日の位置は昨日の位置から続いています。そのため、過去の記録を消すと、その後の位置がすべてずれます。これが過去の記録を削除できない理由です。</li>
+        <li>削除した記録は元に戻せません。</li>
+        <li>過去の記録は、記録タブで公開と非公開を切り替えられます。</li>
+        <li>過去の記録をすべて消すには、アカウントを削除する必要があります（第15項）。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s7">
+      <h2>7. 公開記録とフィード</h2>
+      <ul>
+        <li>記録を残すときに、公開するかどうかを選びます。初期設定は公開です。</li>
+        <li>公開記録は、記録してから7日間、探索半径の中にいる旅の隣人のフィードに表示されます。</li>
+        <li>フィードのカードには、匿名ID、仮想位置どうしの距離の範囲、歩数、距離、メッセージ、いいねの数、日付が表示されます。</li>
+        <li>歩数と距離は、正確な値のまま表示されます。</li>
+        <li>フィードには、本名もプロフィール写真もありません。</li>
+        <li>だれがいいねを押したかは、記録の持ち主にも表示されません。数だけが表示されます。</li>
+        <li>利用者をフォローした人は、最大30日間、利用者の直近30日間の公開記録を地球儀で見られます。位置はおおよその位置で、距離と歩数は四捨五入した値で表示されます。メッセージは表示されません。</li>
+        <li>だれかが利用者をフォローしても、利用者に通知は届きません。</li>
+        <li>公開記録は、ほかの利用者の端末に一時的に保存（キャッシュ）されることがあります。記録を非公開にしたり削除したりしても、その端末でフィードを更新するまでは残ることがあります。</li>
+        <li>メッセージには、本名・住所・連絡先など、利用者を特定できる情報を書かないでください。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s8">
+      <h2>8. メッセージとコンテンツの権利</h2>
+      <h3>利用者のメッセージ</h3>
+      <ul>
+        <li>利用者が書いたメッセージの権利（著作権など）は、利用者にあります。</li>
+        <li>利用者は、運営者が次の範囲でメッセージを使うことを許可します。
+          <ul>
+            <li>目的：サービスの運営だけに使います。メッセージを保存し、利用者本人に表示し、公開記録であれば旅の隣人に表示します。</li>
+            <li>方法：保存・送信・画面表示を行います。そのために必要な複製（サーバー、端末のキャッシュ）も含みます。</li>
+            <li>対価：ありません。</li>
+            <li>運営者は、この許可をほかの人に譲りません。ただし、運営者がサーバーの運営を任せた会社がメッセージを保存・送信することは、この許可に含まれます。</li>
+            <li>運営者は、メッセージを広告・宣伝・販売に使いません。</li>
+            <li>期間：メッセージが削除されるまでです。当日の記録の削除やアカウントの削除でメッセージが消えると、許可も終わります。ただし、ほかの利用者の端末のキャッシュには、しばらく残ることがあります。</li>
+          </ul>
+        </li>
+        <li>利用者は、自分が使う権利を持つ内容だけをメッセージに書いてください。</li>
+        <li>ほかの人の著作物や個人情報を、許可なく使ってはいけません。</li>
+      </ul>
+      <h3>アプリの権利</h3>
+      <ul>
+        <li>アプリの画面・デザイン・コードの権利は、運営者または元の権利者にあります。</li>
+        <li>この規約が利用者に与えるのは、アプリを使う権利だけです。アプリを複製したり販売したりする権利は与えません。</li>
+        <li>アプリに含まれるオープンソースソフトウェアと地球の画像（NASA）のライセンスは、アプリの「設定 › プライバシー › データポリシー › オープンソースライセンス」で見られます。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s9">
+      <h2>9. 禁止行為</h2>
+      <p>サービスは、不適切な投稿と、ほかの利用者への嫌がらせを許しません。利用者は、次の行為をしてはいけません。</p>
+      <h3>メッセージとコンテンツ</h3>
+      <ul>
+        <li>暴言、ヘイト表現、差別的な表現を書くこと</li>
+        <li>ほかの人に嫌がらせをしたり、脅したりすること</li>
+        <li>性的な内容、暴力的な内容、ほかの人を不快にさせる内容を書くこと</li>
+        <li>違法な内容を書くこと、または違法な行為を助けたり、あおったりすること</li>
+        <li>ほかの人の個人情報（名前、住所、電話番号、位置など）を明かすこと</li>
+        <li>ほかの人の著作権などの権利を侵害すること</li>
+        <li>スパム、広告、同じ内容をくり返し投稿すること</li>
+        <li>ほかの人や運営者になりすますこと</li>
+      </ul>
+      <h3>サービスの利用</h3>
+      <ul>
+        <li>アプリ以外の方法（自動化プログラム、スクリプトなど）でサーバーにアクセスしたり、データを集めたりすること</li>
+        <li>歩数・距離・日付などの値を改ざんしてサーバーに送ること</li>
+        <li>サーバーに過剰なリクエストを送ったり、サービスを妨げたりすること</li>
+        <li>報告や自動非表示を悪用するために、複数のアカウントを作ったり、うその報告をしたりすること</li>
+        <li>セキュリティの仕組みを回避したり、ほかの利用者のアカウントにアクセスしようとしたりすること</li>
+        <li>そのほか、法令に違反すること</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s10">
+      <h2>10. フィルター・報告・自動非表示・ブロック</h2>
+      <h3>禁止語フィルター</h3>
+      <ul>
+        <li>メッセージに暴言やヘイト表現があると、アプリとサーバーは保存しません。</li>
+        <li>非公開記録のメッセージも確認します。後で公開に変えられるためです。</li>
+        <li>フィルターは、すべての表現を止められるわけではありません。問題のない表現を誤って止めることもあります。</li>
+      </ul>
+      <h3>報告</h3>
+      <ul>
+        <li>フィードのカードの「その他のオプション（…）› 報告」から、記録を報告できます。</li>
+        <li>報告の理由は、スパム・不適切なコンテンツ・プライバシーの侵害・その他から1つ選びます。</li>
+        <li>報告した記録は、利用者のフィードからすぐに消えます。</li>
+        <li>報告は、24時間で10件までできます。</li>
+        <li>同じ記録を何度報告しても、1件として数えます。</li>
+        <li>不適切な記録は、「設定 › サポート › お問い合わせ」からメールで知らせることもできます。</li>
+      </ul>
+      <h3>自動非表示</h3>
+      <ul>
+        <li>1つの記録を、異なる3人の利用者が報告すると、その記録は自動で非表示になります。</li>
+        <li>記録が1つ以上あるアカウントの報告だけを数えます。</li>
+        <li>非表示になった記録は、フィードとフォロワーの地球儀から消えます。記録の持ち主には、そのまま表示されます。</li>
+        <li>記録が非表示になっても、記録の持ち主には特に知らせません。</li>
+        <li>記録が誤って非表示になったと思う場合は、第20項の連絡先にお知らせください。運営者が確認します。</li>
+      </ul>
+      <h3>運営者による確認</h3>
+      <ul>
+        <li>運営者は、報告された記録を確認します。この規約に違反した記録は、非表示にするか、メッセージを削除します。</li>
+        <li>確認にかかる時間：報告を受けてから48時間以内に確認します。</li>
+      </ul>
+      <h3>ブロック</h3>
+      <ul>
+        <li>フィードのカードの「その他のオプション（…）› このユーザーをブロック」から、ブロックできます。</li>
+        <li>ブロックすると、2人の記録はお互いのフィードから消えます。</li>
+        <li>2人の間のフォローはすべて解除され、もう一度フォローすることはできません。</li>
+        <li>ブロックしたことは、相手に知らせません。</li>
+        <li>ブロックは、アプリの中で取り消せません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s11">
+      <h2>11. 運営者の措置</h2>
+      <ul>
+        <li>利用者がこの規約に違反した場合、運営者は次の措置をとることがあります。
+          <ul>
+            <li>記録を非表示にするか、メッセージを削除します。</li>
+            <li>アカウントを削除します。</li>
+          </ul>
+        </li>
+        <li>運営者は、違反の程度とくり返しの有無を見て、措置を決めます。</li>
+        <li>違法な内容や、ほかの人にすぐ被害を与えるおそれがある内容は、事前に知らせずにすぐ記録を非表示にするか、メッセージを削除することがあります。</li>
+        <li>サービスは利用者のメールアドレスを求めません。そのため、運営者が措置を利用者に直接知らせられないことがあります。</li>
+        <li>措置について意見がある場合は、第20項の連絡先にお知らせください。運営者がもう一度確認して返信します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s12">
+      <h2>12. 健康情報についての注意</h2>
+      <ul>
+        <li>サービスは医療サービスではありません。</li>
+        <li>サービスが表示する値は、医療情報でも医学的な助言でもありません。</li>
+        <li>歩数と距離は、Appleの「ヘルスケア」Appに保存された値を読み取って使います。運営者が直接測ることはありません。</li>
+        <li>そのため、記録された値が実際に歩いた量と違うことがあります。</li>
+        <li>1日の上限と、手で入力した値を除くルール（第6項）のため、記録された値が「ヘルスケア」Appの値と違うこともあります。</li>
+        <li>サービスは、「ヘルスケア」Appにデータを書き込みません。読み取るだけです。</li>
+        <li>健康データの読み取りを許可しないと、歩数と距離は0で記録されます。iOSは、許可したかどうかをアプリに知らせません。</li>
+        <li>健康に問題がある場合や、新しく運動を始める場合は、医師や専門家に相談してください。</li>
+        <li>連続記録や探索半径のために、無理をして歩かないでください。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s13">
+      <h2>13. 仮想位置についての注意</h2>
+      <ul>
+        <li>仮想位置は、実際の位置ではありません。記録をもとに計算した、地球上の仮想の点です。</li>
+        <li>仮想位置は道案内ではありません。仮想位置へ実際に移動するように求めるものではありません。</li>
+        <li>旅の隣人は、仮想位置をもとに決まります。旅の隣人の実際の位置は、利用者と違うことがあります。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s14">
+      <h2>14. サービスの変更と中断</h2>
+      <ul>
+        <li>運営者は、サービスを改善するために、機能を追加・変更・削除することがあります。</li>
+        <li>利用者にとって重要な変更は、変更する日の7日前からお知らせします。お知らせの方法：このウェブページに掲載します。アプリのアップデートとあわせて変わる場合は、App Storeの「新機能」にも記載します。</li>
+        <li>次の場合、サービスが一時的に止まることがあります。
+          <ul>
+            <li>サーバーを点検または交換するとき</li>
+            <li>サーバーの運営を任せた会社や、Appleのサービスに障害が起きたとき</li>
+            <li>停電、通信障害、天災が起きたとき</li>
+            <li>利用が急に集中したとき</li>
+          </ul>
+        </li>
+        <li>運営者は、サービス全体を終了することがあります。終了する日の30日前から、変更をお知らせするときと同じ方法でお知らせします。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s15">
+      <h2>15. アカウントの削除</h2>
+      <ul>
+        <li>利用者は、いつでもアプリでアカウントを削除できます。</li>
+        <li>削除の手順：設定 › アカウント › アカウントを削除 › 完全に削除 › Appleアカウントで確認</li>
+        <li>Appleアカウントの確認でキャンセルすると、何も削除されません。</li>
+        <li>削除はすぐに行われます。猶予期間はありません。</li>
+        <li>アカウントを削除すると、次のデータも一緒に削除されます。
+          <ul>
+            <li>すべての記録（歩数、距離、方向、メッセージ、位置を含む）</li>
+            <li>連続記録と、累計の距離・歩数</li>
+            <li>アカウントIDとAppleサインイン情報</li>
+            <li>サインインのセッション情報</li>
+            <li>匿名ID、タイムゾーン、出発都市、基準方向</li>
+            <li>利用者がしたフォロー・いいね・報告・ブロックと、利用者が受けたフォロー・いいね・報告・ブロック</li>
+          </ul>
+        </li>
+        <li>削除したアカウントと記録は元に戻せません。</li>
+        <li>アプリには、記録をファイルに書き出す機能はありません。</li>
+        <li>もう一度登録すると、新しいアカウントで最初から始まります。</li>
+        <li>削除した後も、次の場所にはしばらく残ることがあります。くわしくは<a href="#ja-privacy">プライバシーポリシー</a>をご覧ください。
+          <ul>
+            <li>ほかの利用者の端末のフィードのキャッシュ：その端末でフィードを更新するまで</li>
+            <li>サーバーのバックアップ：運営者はサーバーのバックアップを作成しません。そのため、削除したデータが運営者のバックアップに残ることはありません。サーバーで使っているSupabaseの無料プランには、自動バックアップがありません。</li>
+            <li>サーバーのログ（サーバーが自動で残すリクエストの記録）：1日（Supabaseの無料プランの場合）</li>
+            <li>利用者が運営者に送ったお問い合わせメール</li>
+          </ul>
+        </li>
+        <li>Appleの「ヘルスケア」Appのデータと、Appleアカウントは、アプリが削除することはありません。</li>
+        <li>アカウントを削除すると、運営者はAppleに、このアプリの「Appleでサインイン」の連携の解除を依頼します。この依頼が失敗しても、アカウントの削除は完了します。連携が残っている場合は、iPhoneでご自分で解除できます。「設定 › [ユーザ名] › Appleでサインイン」でこのアプリを選び、「削除」を押します。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s16">
+      <h2>16. 責任の範囲</h2>
+      <ul>
+        <li>運営者は、故意または過失によって利用者に損害を与えた場合、関係法令に従って責任を負います。</li>
+        <li>次の場合の損害について、運営者は責任を負いません。ただし、運営者に故意または過失がある場合は責任を負います。
+          <ul>
+            <li>天災、戦争、停電、通信障害など、運営者が防げないことで生じた損害</li>
+            <li>Apple、サーバーの運営を任せた会社、通信事業者など、ほかの会社のサービスの障害で生じた損害</li>
+            <li>利用者の責任で生じた損害（例：端末やAppleアカウントをきちんと管理しなかった場合）</li>
+            <li>Appleの「ヘルスケア」Appの値が実際と違ったために生じた損害</li>
+            <li>ほかの利用者が書いたメッセージによって生じた損害。ただし、運営者が報告を受けたのに正当な理由なく措置をとらなかった場合は責任を負います。</li>
+          </ul>
+        </li>
+        <li>利用者がこの規約に違反して、運営者やほかの人に損害を与えた場合は、利用者がその損害の責任を負います。</li>
+        <li>この項は、消費者保護に関する法令など、関係法令が利用者に保障する権利を狭めるものではありません。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s17">
+      <h2>17. 規約の変更</h2>
+      <ul>
+        <li>運営者は、関係法令に反しない範囲で、この規約を変更することがあります。</li>
+        <li>規約を変更するときは、施行日、変更内容、変更の理由を、施行日の7日前からお知らせします。</li>
+        <li>利用者にとって不利な変更の場合は、施行日の30日前からお知らせします。</li>
+        <li>お知らせの方法：このウェブページに、変更後の規約と変更内容を掲載します。アプリのアップデートとあわせて変わる場合は、App Storeの「新機能」にも記載します。</li>
+        <li>変更後の規約は、施行日から適用されます。</li>
+        <li>変更後の規約に同意しない場合は、施行日の前にアカウントを削除して、利用をやめることができます。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s18">
+      <h2>18. Appleとの関係</h2>
+      <p>このアプリは、AppleのApp Storeで配信しています。Appleが定める条件に従って、次の内容を定めます。この項で「Apple」とは、Apple Inc.とその子会社をいいます。</p>
+      <p>運営者は、このアプリに独自のエンドユーザー使用許諾契約（EULA）を設けていません。アプリには、Appleの標準の使用許諾契約（<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a>）が適用されます。この規約は、サービスを利用する条件を定めます。</p>
+      <ul>
+        <li>この規約は、利用者と運営者の間の約束です。Appleは、この規約の当事者ではありません。</li>
+        <li>アプリとアプリのコンテンツについての責任は、Appleではなく運営者にあります。</li>
+        <li>利用者は、自分が所有または管理するApple製の端末でアプリを使えます。そのときは、App Storeの利用条件（Appleメディアサービス利用規約の利用ルール）に従います。</li>
+        <li>アプリを使う権利は、ほかの人に譲れません。ただし、Appleの利用ルールが認めるファミリー共有などは例外です。</li>
+        <li>アプリの保守とサポートは、運営者が行います。Appleには、アプリをサポートする義務はありません。</li>
+        <li>アプリが法令で定める保証を満たさない場合、利用者はAppleに知らせて、アプリの購入代金の返金を受けられます。このアプリは無料なので、返金される金額はありません。</li>
+        <li>法令が認める範囲で、Appleはアプリについてそのほかの保証責任を負いません。</li>
+        <li>アプリについての請求は、Appleではなく運営者が対応します。例：製造物責任の請求、アプリが法令や規制を守っていないという請求、消費者保護やプライバシー保護に関する請求（HealthKitの使用を含む）</li>
+        <li>アプリがほかの人の知的財産権を侵害しているという請求があった場合は、Appleではなく運営者が調査し、対応します。</li>
+        <li>利用者は、米国政府が禁輸措置をとっている国や、米国政府がテロ支援国家に指定した国にいないことを確認します。</li>
+        <li>利用者は、米国政府の取引禁止・制限対象者のリストに載っていないことを確認します。</li>
+        <li>利用者は、アプリを使うときに関係するほかの会社の規約（例：通信事業者のデータ通信プランの規約）を守ってください。</li>
+        <li>Appleは、この規約の第三者受益者です。第三者受益者とは、契約の当事者ではないものの、契約にもとづく権利を持つ人のことです。</li>
+        <li>利用者がこの規約に同意すると、Appleはこの規約にもとづいて、利用者に対して権利を行使できます。</li>
+        <li>運営者の名前と連絡先は、第20項にあります。</li>
+      </ul>
+      <p>出典：Apple「<a href="https://www.apple.com/legal/internet-services/itunes/dev/minterms/">Minimum Terms of Developer's End-User License Agreement</a>」・「<a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms and Conditions</a>」</p>
+    </section>
+
+    <section id="ja-terms-s19">
+      <h2>19. 準拠法と管轄裁判所</h2>
+      <ul>
+        <li>この規約は、大韓民国の法律に従います。</li>
+        <li>サービスについて紛争が起きた場合、運営者と利用者は、まず話し合いで解決するよう努めます。</li>
+        <li>訴訟が必要な場合は、大韓民国の民事訴訟法にもとづく管轄裁判所で扱います。</li>
+      </ul>
+    </section>
+
+    <section id="ja-terms-s20">
+      <h2>20. 運営者情報と連絡先</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th scope="row">運営者</th><td>個人開発者 YoungBeom Seo</td></tr>
+            <tr><th scope="row">メール</th><td><a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a></td></tr>
+            <tr><th scope="row">アプリ内</th><td>設定 › サポート › お問い合わせ</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>ご質問、苦情、不適切な記録の報告、請求は、上の連絡先にお送りください。</p>
+    </section>
+
+    <section id="ja-terms-s21">
+      <h2>21. 言語版</h2>
+      <ul>
+        <li>この規約は、韓国語・英語・日本語で提供します。</li>
+        <li>韓国語版が基準となる文書です。言語版の間で内容が違う場合は、韓国語版に従います。</li>
+      </ul>
+    </section>
+  </div>
+</article>
+</main>
+<footer class="site-footer"><a href="https://purple-lamp-236.github.io/walk-log-landing/">StepStella</a> · <a href="https://purple-lamp-236.github.io/walk-log-privacy/">Privacy Policy &amp; Terms of Service</a> · <a href="https://purple-lamp-236.github.io/walk-log-support/">Support</a> · <a href="mailto:purple.lamp.236@gmail.com">purple.lamp.236@gmail.com</a><br>© 2026 YoungBeom Seo</footer>
+</body>
+</html>
